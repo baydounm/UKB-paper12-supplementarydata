@@ -1,0 +1,351 @@
+{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. 
+. use "E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin",clear
+{txt}
+{com}. 
+. capture mi set, clear
+{txt}
+{com}. 
+. save, replace
+{txt}{p 0 4 2}
+file {bf}
+E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. ****************************************KAPLAN-MEIER SURVIVAL CURVES********************************************************************
+. 
+. capture drop LE8_TOTALSCOREtertinv
+{txt}
+{com}. gen LE8_TOTALSCOREtertinv=.
+{txt}(40,139 missing values generated)
+
+{com}. replace LE8_TOTALSCOREtertinv=1 if LE8_TOTALSCOREtert==3
+{txt}(13,311 real changes made)
+
+{com}. replace LE8_TOTALSCOREtertinv=2 if LE8_TOTALSCOREtert==2
+{txt}(12,856 real changes made)
+
+{com}. replace LE8_TOTALSCOREtertinv=3 if LE8_TOTALSCOREtert==1
+{txt}(13,971 real changes made)
+
+{com}. 
+. save, replace
+{txt}{p 0 4 2}
+file {bf}
+E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. **Total sample**
+. 
+. 
+. set scheme sj
+{txt}
+{com}. 
+. stset Age_dementia, failure(dem_diag==1) enter(AGE) id(n_eid) scale(1) 
+
+{txt}Survival-time data settings
+
+{col 12}ID variable: {res}n_eid
+{col 10}{txt}Failure event: {res}dem_diag==1
+{col 1}{txt}Observed time interval: {res}(Age_dementia[_n-1], Age_dementia]
+{col 6}{txt}Enter on or after: {res}time AGE
+{col 6}{txt}Exit on or before: {res}failure
+
+{txt}{hline 74}
+{res}     40,139{txt}  total observations
+{res}          0{txt}  exclusions
+{hline 74}
+{res}     40,139{txt}  observations remaining, representing
+{res}     40,139{txt}  subjects
+{res}      1,167{txt}  failures in single-failure-per-subject data
+{res} 486,433.58{txt}  total analysis time at risk and under observation
+                                                At risk from t = {res}        0
+                                     {txt}Earliest observed entry t = {res} 50.00137
+                                          {txt}Last observed exit t = {res} 84.54757
+{txt}
+{com}. 
+. 
+. sts graph if sample_final==1 & _t<84, gwood legend(on) xlabel(65(5)90) ylabel(0.50(.10)1) xtitle("Age at diagnosis") ytitle("KM Estimated Proportion Dementia-Free (95%CI)") title("AD PGS tertile vs. dementia,total sample") by (AD_PGStert) tmin(65) tmax(90) 
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+{txt}
+{com}. graph save "FIGURE1A.gph", replace
+{res}{txt}file {bf:FIGURE1A.gph} saved
+
+{com}. sts test AD_PGStert if sample_final==1 & _t<84
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}Equality of survivor functions
+Log-rank test
+
+{col 11} {c |}  Observed       Expected
+AD_PGStert {c |}    events         events
+{hline 11}{c +}{hline 25}
+         1 {c |}{res}       182         389.38
+         {txt}2 {c |}{res}       280         391.86
+         {txt}3 {c |}{res}       704         384.76
+{txt}{hline 11}{c +}{hline 25}
+     Total {c |}{res}      1166        1166.00
+
+                     {txt}chi2(2) = {res}407.38
+                     {txt}Pr>chi2 = {res}0.0000
+{txt}
+{com}. stcox i.AD_PGStert if sample_final==1 & _t<84
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}Iteration 0:  Log likelihood = {res}-11064.899
+{txt}Iteration 1:  Log likelihood = {res}-10875.221
+{txt}Iteration 2:  Log likelihood = {res}-10872.056
+{txt}Iteration 3:  Log likelihood = {res}-10872.048
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-10872.048
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:40,107}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:40,107}
+{txt}No. of failures = {res}{ralign 11:1,166}
+{txt}Time at risk    = {res}{ralign 11:485,978.412}
+{col 57}{txt}{lalign 13:LR chi2({res:2})} = {res}{ralign 6:385.70}
+{txt}Log likelihood = {res}-10872.048{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 2}AD_PGStert {c |}
+{space 10}2  {c |}{col 14}{res}{space 2}  1.52845{col 26}{space 2} .1455355{col 37}{space 1}    4.46{col 46}{space 3}0.000{col 54}{space 4} 1.268241{col 67}{space 3} 1.842047
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 3.915689{col 26}{space 2} .3256319{col 37}{space 1}   16.41{col 46}{space 3}0.000{col 54}{space 4} 3.326761{col 67}{space 3} 4.608873
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. sts graph if sample_final==1 & _t<84, gwood legend(on) xlabel(65(5)90) ylabel(0.50(.10)1) xtitle("Age at diagnosis") ytitle("KM Estimated Proportion Dementia-Free (95%CI)") title("AD PGS tertile vs. dementia,total sample") by (AD_PGStert) tmin(65) tmax(90) risktable
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+{txt}
+{com}. 
+. 
+. **Men**
+. 
+. set scheme sj
+{txt}
+{com}. 
+. stset Age_dementia, failure(dem_diag==1) enter(AGE) id(n_eid) scale(1) 
+
+{txt}Survival-time data settings
+
+{col 12}ID variable: {res}n_eid
+{col 10}{txt}Failure event: {res}dem_diag==1
+{col 1}{txt}Observed time interval: {res}(Age_dementia[_n-1], Age_dementia]
+{col 6}{txt}Enter on or after: {res}time AGE
+{col 6}{txt}Exit on or before: {res}failure
+
+{txt}{hline 74}
+{res}     40,139{txt}  total observations
+{res}          0{txt}  exclusions
+{hline 74}
+{res}     40,139{txt}  observations remaining, representing
+{res}     40,139{txt}  subjects
+{res}      1,167{txt}  failures in single-failure-per-subject data
+{res} 486,433.58{txt}  total analysis time at risk and under observation
+                                                At risk from t = {res}        0
+                                     {txt}Earliest observed entry t = {res} 50.00137
+                                          {txt}Last observed exit t = {res} 84.54757
+{txt}
+{com}. 
+. 
+. sts graph if sample_final==1 & _t<84 & SEX==1, gwood legend(on) xlabel(65(5)90) ylabel(0.50(.10)1) xtitle("Age at diagnosis") ytitle("KM Estimated Proportion Dementia-Free (95%CI)") title("AD PGS tertile vs. dementia, Men") by (AD_PGStert) tmin(65) tmax(90) 
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+{txt}
+{com}. graph save "FIGURE1B.gph", replace
+{res}{txt}file {bf:FIGURE1B.gph} saved
+
+{com}. sts test AD_PGStert if sample_final==1 & _t<84 & SEX==1
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}Equality of survivor functions
+Log-rank test
+
+{col 11} {c |}  Observed       Expected
+AD_PGStert {c |}    events         events
+{hline 11}{c +}{hline 25}
+         1 {c |}{res}       109         205.06
+         {txt}2 {c |}{res}       169         207.01
+         {txt}3 {c |}{res}       338         203.93
+{txt}{hline 11}{c +}{hline 25}
+     Total {c |}{res}       616         616.00
+
+                     {txt}chi2(2) = {res}140.20
+                     {txt}Pr>chi2 = {res}0.0000
+{txt}
+{com}. stcox i.AD_PGStert if sample_final==1 & _t<84 & SEX==1
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}Iteration 0:  Log likelihood = {res}-5381.9582
+{txt}Iteration 1:  Log likelihood = {res}-5315.4208
+{txt}Iteration 2:  Log likelihood = {res}-5314.3109
+{txt}Iteration 3:  Log likelihood = {res}-5314.3096
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-5314.3096
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:18,549}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:18,549}
+{txt}No. of failures = {res}{ralign 11:616}
+{txt}Time at risk    = {res}{ralign 11:221,184.688}
+{col 57}{txt}{lalign 13:LR chi2({res:2})} = {res}{ralign 6:135.30}
+{txt}Log likelihood = {res}-5314.3096{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 2}AD_PGStert {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} 1.535505{col 26}{space 2} .1886432{col 37}{space 1}    3.49{col 46}{space 3}0.000{col 54}{space 4} 1.206918{col 67}{space 3} 1.953552
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 3.119538{col 26}{space 2} .3436564{col 37}{space 1}   10.33{col 46}{space 3}0.000{col 54}{space 4} 2.513736{col 67}{space 3} 3.871336
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. 
+. **Women**
+. 
+. set scheme sj
+{txt}
+{com}. 
+. stset Age_dementia, failure(dem_diag==1) enter(AGE) id(n_eid) scale(1) 
+
+{txt}Survival-time data settings
+
+{col 12}ID variable: {res}n_eid
+{col 10}{txt}Failure event: {res}dem_diag==1
+{col 1}{txt}Observed time interval: {res}(Age_dementia[_n-1], Age_dementia]
+{col 6}{txt}Enter on or after: {res}time AGE
+{col 6}{txt}Exit on or before: {res}failure
+
+{txt}{hline 74}
+{res}     40,139{txt}  total observations
+{res}          0{txt}  exclusions
+{hline 74}
+{res}     40,139{txt}  observations remaining, representing
+{res}     40,139{txt}  subjects
+{res}      1,167{txt}  failures in single-failure-per-subject data
+{res} 486,433.58{txt}  total analysis time at risk and under observation
+                                                At risk from t = {res}        0
+                                     {txt}Earliest observed entry t = {res} 50.00137
+                                          {txt}Last observed exit t = {res} 84.54757
+{txt}
+{com}. 
+. 
+. sts graph if sample_final==1 & _t<84 & SEX==2, gwood legend(on) xlabel(65(5)90) ylabel(0.50(.10)1) xtitle("Age at diagnosis") ytitle("KM Estimated Proportion Dementia-Free (95%CI)") title("AD PGS tertile vs. dementia, Women") by (AD_PGStert) tmin(65) tmax(90) 
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+{txt}
+{com}. graph save "FIGURE1C.gph", replace
+{res}{txt}file {bf:FIGURE1C.gph} saved
+
+{com}. sts test AD_PGStert if sample_final==1 & _t<84 & SEX==2
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}Equality of survivor functions
+Log-rank test
+
+{col 11} {c |}  Observed       Expected
+AD_PGStert {c |}    events         events
+{hline 11}{c +}{hline 25}
+         1 {c |}{res}        73         184.14
+         {txt}2 {c |}{res}       111         184.82
+         {txt}3 {c |}{res}       366         181.04
+{txt}{hline 11}{c +}{hline 25}
+     Total {c |}{res}       550         550.00
+
+                     {txt}chi2(2) = {res}285.60
+                     {txt}Pr>chi2 = {res}0.0000
+{txt}
+{com}. stcox i.AD_PGStert if sample_final==1 & _t<84 & SEX==2
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}Iteration 0:  Log likelihood = {res}-4868.9886
+{txt}Iteration 1:  Log likelihood = {res}-4737.2953
+{txt}Iteration 2:  Log likelihood = {res}-4735.4674
+{txt}Iteration 3:  Log likelihood = {res}-4735.4582
+{txt}Iteration 4:  Log likelihood = {res}-4735.4582
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-4735.4582
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:21,558}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:21,558}
+{txt}No. of failures = {res}{ralign 11:550}
+{txt}Time at risk    = {res}{ralign 11:264,793.724}
+{col 57}{txt}{lalign 13:LR chi2({res:2})} = {res}{ralign 6:267.06}
+{txt}Log likelihood = {res}-4735.4582{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 2}AD_PGStert {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} 1.514807{col 26}{space 2} .2282717{col 37}{space 1}    2.76{col 46}{space 3}0.006{col 54}{space 4} 1.127422{col 67}{space 3} 2.035298
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 5.101202{col 26}{space 2}  .653925{col 37}{space 1}   12.71{col 46}{space 3}0.000{col 54}{space 4} 3.967863{col 67}{space 3} 6.558256
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. graph combine "FIGURE1A.gph" "FIGURE1B.gph" "FIGURE1C.gph"
+{res}{txt}
+{com}. graph save "FIGURE1.gph", replace
+{res}{txt}file {bf:FIGURE1.gph} saved
+
+{com}. 
+. 
+. save, replace
+{txt}{p 0 4 2}
+file {bf}
+E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. capture log close
+{smcl}
+{com}{sf}{ul off}

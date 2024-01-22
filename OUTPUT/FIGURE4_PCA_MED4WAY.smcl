@@ -1,0 +1,1542 @@
+{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. use "E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin",clear
+{txt}
+{com}. 
+. 
+. 
+. **************************************************PRINCIPAL COMPONENTS ANALYSIS OF TOP 86 PROTEINS VS. AD PRS PASSED BONFERRONI CORRECTION, PLUS HAD A SIGNIFICANT TE and PIE AT TYPE I ERROR OF 0.05, CONSISTENT MEDIATORS (N=11)
+. 
+. 
+. **ztnc zpvr zpilrb zncs1 znefl  zldlr zkynu zgfap zfurin zdcbld2 zbrk1 
+. 
+. 
+. 
+. pca  ztnc zpvr zpilrb zncs1 znefl  zldlr zkynu zgfap zfurin zdcbld2 zbrk1 if sample_final==1
+
+{txt}Principal components/correlation{col 50}Number of obs    = {res}    34,574
+{col 50}{txt}Number of comp.  = {res}        11
+{col 50}{txt}Trace            {col 67}=  {res}       11
+{col 5}{txt}Rotation: (unrotated = principal){col 50}Rho              = {res}    1.0000
+
+{txt}{col 5}{hline 13}{c TT}{hline 60}
+{col 5}   Component {c |}   Eigenvalue   Difference         Proportion   Cumulative
+{col 5}{hline 13}{c +}{hline 60}
+{col 5}{ralign 12:Comp1} {c |}{res}      2.35124      .816828             0.2137       0.2137
+{txt}{col 5}{ralign 12:Comp2} {c |}{res}      1.53441      .491193             0.1395       0.3532
+{txt}{col 5}{ralign 12:Comp3} {c |}{res}      1.04322     .0827641             0.0948       0.4481
+{txt}{col 5}{ralign 12:Comp4} {c |}{res}      .960452     .0469388             0.0873       0.5354
+{txt}{col 5}{ralign 12:Comp5} {c |}{res}      .913513     .0298163             0.0830       0.6184
+{txt}{col 5}{ralign 12:Comp6} {c |}{res}      .883697     .0929687             0.0803       0.6988
+{txt}{col 5}{ralign 12:Comp7} {c |}{res}      .790728     .0141283             0.0719       0.7707
+{txt}{col 5}{ralign 12:Comp8} {c |}{res}        .7766      .142568             0.0706       0.8413
+{txt}{col 5}{ralign 12:Comp9} {c |}{res}      .634032     .0112187             0.0576       0.8989
+{txt}{col 5}{ralign 12:Comp10} {c |}{res}      .622814      .133513             0.0566       0.9555
+{txt}{col 5}{ralign 12:Comp11} {c |}{res}      .489301            .             0.0445       1.0000
+{txt}{col 5}{hline 13}{c BT}{hline 60}
+
+Principal components (eigenvectors) 
+
+{space 4}{hline 13}{c  TT}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{c  TT}{hline 13}
+{space 4}{space 0}{ralign 12:Variable}{space 1}{c |}{space 1}{ralign 8:Comp1}{space 1}{space 1}{ralign 8:Comp2}{space 1}{space 1}{ralign 8:Comp3}{space 1}{space 1}{ralign 8:Comp4}{space 1}{space 1}{ralign 8:Comp5}{space 1}{space 1}{ralign 8:Comp6}{space 1}{space 1}{ralign 8:Comp7}{space 1}{space 1}{ralign 8:Comp8}{space 1}{space 1}{ralign 8:Comp9}{space 1}{space 1}{ralign 8:Comp10}{space 1}{space 1}{ralign 8:Comp11}{space 1}{c |}{space 1}{ralign 11:Unexplained}{space 1}
+{space 4}{hline 13}{c   +}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{c   +}{hline 13}
+{space 4}{space 0}{ralign 12:ztnc}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.1306}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2488}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.7018}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2756}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0646}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2947}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1239}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.4651}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0896}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1142}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0943}}}{space 1}{c |}{space 1}{center 11:{res:{sf:          0}}}{space 1}
+{space 4}{space 0}{ralign 12:zpvr}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2914}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1018}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1403}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.5660}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.3884}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1748}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.5504}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1183}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1247}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2178}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0583}}}{space 1}{c |}{space 1}{center 11:{res:{sf:          0}}}{space 1}
+{space 4}{space 0}{ralign 12:zpilrb}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2696}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0842}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1482}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2684}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.7285}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.4610}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0317}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1048}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1493}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2148}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0502}}}{space 1}{c |}{space 1}{center 11:{res:{sf:          0}}}{space 1}
+{space 4}{space 0}{ralign 12:zncs1}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.3469}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1823}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.4265}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0602}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1854}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1162}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.5088}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.3731}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2657}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0995}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.3667}}}{space 1}{c |}{space 1}{center 11:{res:{sf:          0}}}{space 1}
+{space 4}{space 0}{ralign 12:znefl}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2711}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.4987}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1513}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1036}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0744}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1423}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0081}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0532}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.6624}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.4014}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1248}}}{space 1}{c |}{space 1}{center 11:{res:{sf:          0}}}{space 1}
+{space 4}{space 0}{ralign 12:zldlr}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.3485}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.3767}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1910}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1963}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1781}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.3293}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1380}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2733}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1617}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2829}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.5671}}}{space 1}{c |}{space 1}{center 11:{res:{sf:          0}}}{space 1}
+{space 4}{space 0}{ralign 12:zkynu}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.3600}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.3695}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0756}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0906}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1498}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.2800}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0021}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0816}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.3477}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.6692}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2089}}}{space 1}{c |}{space 1}{center 11:{res:{sf:          0}}}{space 1}
+{space 4}{space 0}{ralign 12:zgfap}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2296}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.3962}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0921}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.4458}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1079}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1865}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.5768}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1120}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.4334}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0551}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0230}}}{space 1}{c |}{space 1}{center 11:{res:{sf:          0}}}{space 1}
+{space 4}{space 0}{ralign 12:zfurin}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.3849}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.3820}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1924}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1218}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1803}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2419}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1342}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0321}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.2888}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0434}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.6773}}}{space 1}{c |}{space 1}{center 11:{res:{sf:          0}}}{space 1}
+{space 4}{space 0}{ralign 12:zdcbld2}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2984}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2139}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1184}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.3327}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0235}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.5185}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1601}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.6463}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1371}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0527}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0782}}}{space 1}{c |}{space 1}{center 11:{res:{sf:          0}}}{space 1}
+{space 4}{space 0}{ralign 12:zbrk1}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.3009}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1081}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.3990}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.3824}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.4189}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.2957}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1623}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.3227}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0873}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.4321}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0677}}}{space 1}{c |}{space 1}{center 11:{res:{sf:          0}}}{space 1}
+{space 4}{hline 13}{c  BT}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{hline 10}{c  BT}{hline 13}
+
+{com}. 
+. 
+. pca  ztnc zpvr zpilrb zncs1 znefl  zldlr zkynu zgfap zfurin zdcbld2 zbrk1 if sample_final==1, comp(3)
+
+{txt}Principal components/correlation{col 50}Number of obs    = {res}    34,574
+{col 50}{txt}Number of comp.  = {res}         3
+{col 50}{txt}Trace            {col 67}=  {res}       11
+{col 5}{txt}Rotation: (unrotated = principal){col 50}Rho              = {res}    0.4481
+
+{txt}{col 5}{hline 13}{c TT}{hline 60}
+{col 5}   Component {c |}   Eigenvalue   Difference         Proportion   Cumulative
+{col 5}{hline 13}{c +}{hline 60}
+{col 5}{ralign 12:Comp1} {c |}{res}      2.35124      .816828             0.2137       0.2137
+{txt}{col 5}{ralign 12:Comp2} {c |}{res}      1.53441      .491193             0.1395       0.3532
+{txt}{col 5}{ralign 12:Comp3} {c |}{res}      1.04322     .0827641             0.0948       0.4481
+{txt}{col 5}{ralign 12:Comp4} {c |}{res}      .960452     .0469388             0.0873       0.5354
+{txt}{col 5}{ralign 12:Comp5} {c |}{res}      .913513     .0298163             0.0830       0.6184
+{txt}{col 5}{ralign 12:Comp6} {c |}{res}      .883697     .0929687             0.0803       0.6988
+{txt}{col 5}{ralign 12:Comp7} {c |}{res}      .790728     .0141283             0.0719       0.7707
+{txt}{col 5}{ralign 12:Comp8} {c |}{res}        .7766      .142568             0.0706       0.8413
+{txt}{col 5}{ralign 12:Comp9} {c |}{res}      .634032     .0112187             0.0576       0.8989
+{txt}{col 5}{ralign 12:Comp10} {c |}{res}      .622814      .133513             0.0566       0.9555
+{txt}{col 5}{ralign 12:Comp11} {c |}{res}      .489301            .             0.0445       1.0000
+{txt}{col 5}{hline 13}{c BT}{hline 60}
+
+Principal components (eigenvectors) 
+
+{space 4}{hline 13}{c  TT}{hline 10}{hline 10}{hline 10}{c  TT}{hline 13}
+{space 4}{space 0}{ralign 12:Variable}{space 1}{c |}{space 1}{ralign 8:Comp1}{space 1}{space 1}{ralign 8:Comp2}{space 1}{space 1}{ralign 8:Comp3}{space 1}{c |}{space 1}{ralign 11:Unexplained}{space 1}
+{space 4}{hline 13}{c   +}{hline 10}{hline 10}{hline 10}{c   +}{hline 13}
+{space 4}{space 0}{ralign 12:ztnc}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.1306}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2488}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.7018}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .3511}}}{space 1}
+{space 4}{space 0}{ralign 12:zpvr}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2914}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1018}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1403}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .7639}}}{space 1}
+{space 4}{space 0}{ralign 12:zpilrb}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2696}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0842}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1482}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .7953}}}{space 1}
+{space 4}{space 0}{ralign 12:zncs1}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.3469}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1823}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.4265}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .4763}}}{space 1}
+{space 4}{space 0}{ralign 12:znefl}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2711}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.4987}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1513}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .4217}}}{space 1}
+{space 4}{space 0}{ralign 12:zldlr}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.3485}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.3767}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1910}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .4587}}}{space 1}
+{space 4}{space 0}{ralign 12:zkynu}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.3600}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.3695}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0756}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .4798}}}{space 1}
+{space 4}{space 0}{ralign 12:zgfap}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2296}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.3962}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0921}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .6263}}}{space 1}
+{space 4}{space 0}{ralign 12:zfurin}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.3849}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.3820}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1924}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .3892}}}{space 1}
+{space 4}{space 0}{ralign 12:zdcbld2}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2984}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2139}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.1184}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .7057}}}{space 1}
+{space 4}{space 0}{ralign 12:zbrk1}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.3009}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1081}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.3990}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .6031}}}{space 1}
+{space 4}{hline 13}{c  BT}{hline 10}{hline 10}{hline 10}{c  BT}{hline 13}
+
+{com}. rotate
+
+{txt}Principal components/correlation{col 50}Number of obs    = {res}    34,574
+{col 50}{txt}Number of comp.  = {res}         3
+{col 50}{txt}Trace            {col 67}=  {res}       11
+{col 5}{txt}Rotation: orthogonal varimax (Kaiser off){col 50}Rho              = {res}    0.4481
+
+{txt}{col 5}{hline 13}{c TT}{hline 60}
+{col 5}   Component {c |}     Variance   Difference         Proportion   Cumulative
+{col 5}{hline 13}{c +}{hline 60}
+{col 5}{ralign 12:Comp1} {c |}{res}      1.98463      .202051             0.1804       0.1804
+{txt}{col 5}{ralign 12:Comp2} {c |}{res}      1.78258      .620927             0.1621       0.3425
+{txt}{col 5}{ralign 12:Comp3} {c |}{res}      1.16165            .             0.1056       0.4481
+{txt}{col 5}{hline 13}{c BT}{hline 60}
+
+Rotated components 
+
+{space 4}{hline 13}{c  TT}{hline 10}{hline 10}{hline 10}{c  TT}{hline 13}
+{space 4}{space 0}{ralign 12:Variable}{space 1}{c |}{space 1}{ralign 8:Comp1}{space 1}{space 1}{ralign 8:Comp2}{space 1}{space 1}{ralign 8:Comp3}{space 1}{c |}{space 1}{ralign 11:Unexplained}{space 1}
+{space 4}{hline 13}{c   +}{hline 10}{hline 10}{hline 10}{c   +}{hline 13}
+{space 4}{space 0}{ralign 12:ztnc}{space 1}{c |}{space 1}{ralign 8:{res:{sf: -0.0304}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0264}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.7549}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .3511}}}{space 1}
+{space 4}{space 0}{ralign 12:zpvr}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2769}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1702}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0965}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .7639}}}{space 1}
+{space 4}{space 0}{ralign 12:zpilrb}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.1524}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1681}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2242}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .7953}}}{space 1}
+{space 4}{space 0}{ralign 12:zncs1}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.1133}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.5080}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.2542}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .4763}}}{space 1}
+{space 4}{space 0}{ralign 12:znefl}{space 1}{c |}{space 1}{ralign 8:{res:{sf: -0.1390}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.5645}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0847}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .4217}}}{space 1}
+{space 4}{space 0}{ralign 12:zldlr}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.4998}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0418}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.2198}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .4587}}}{space 1}
+{space 4}{space 0}{ralign 12:zkynu}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.5181}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0508}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0299}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .4798}}}{space 1}
+{space 4}{space 0}{ralign 12:zgfap}{space 1}{c |}{space 1}{ralign 8:{res:{sf: -0.0983}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.4464}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0963}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .6263}}}{space 1}
+{space 4}{space 0}{ralign 12:zfurin}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.5512}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0893}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1387}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .3892}}}{space 1}
+{space 4}{space 0}{ralign 12:zdcbld2}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.0729}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.3778}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0282}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .7057}}}{space 1}
+{space 4}{space 0}{ralign 12:zbrk1}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.1734}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1054}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.4693}}}{space 1}{c |}{space 1}{center 11:{res:{sf:      .6031}}}{space 1}
+{space 4}{hline 13}{c  BT}{hline 10}{hline 10}{hline 10}{c  BT}{hline 13}
+
+Component rotation matrix
+
+{space 4}{hline 13}{c  TT}{hline 10}{hline 10}{hline 10}
+{space 4}{space 0}{ralign 12:}{space 1}{c |}{space 1}{ralign 8:Comp1}{space 1}{space 1}{ralign 8:Comp2}{space 1}{space 1}{ralign 8:Comp3}{space 1}
+{space 4}{hline 13}{c   +}{hline 10}{hline 10}{hline 10}
+{space 4}{space 0}{ralign 12:Comp1}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.7436}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.6296}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2250}}}{space 1}
+{space 4}{space 0}{ralign 12:Comp2}{space 1}{c |}{space 1}{ralign 8:{res:{sf: -0.6664}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.6705}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.3261}}}{space 1}
+{space 4}{space 0}{ralign 12:Comp3}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.0545}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.3924}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.9182}}}{space 1}
+{space 4}{hline 13}{c  BT}{hline 10}{hline 10}{hline 10}
+
+{com}. scree
+{res}{txt}
+{com}. graph save "scree.gph", replace
+{res}{txt}file {bf:scree.gph} saved
+
+{com}. loadingplot, factors(3)
+{res}{txt}
+{com}. graph save "loadingplot.gph",replace
+{res}{txt}file {bf:loadingplot.gph} saved
+
+{com}. 
+. capture drop mediator*
+{txt}
+{com}. predict  mediator1-mediator3
+{txt}({bf:score} assumed)
+
+Scoring coefficients for orthogonal varimax rotation
+{col 5}sum of squares(column-loading) = 1
+
+{space 4}{hline 13}{c  TT}{hline 10}{hline 10}{hline 10}
+{space 4}{space 0}{ralign 12:Variable}{space 1}{c |}{space 1}{ralign 8:Comp1}{space 1}{space 1}{ralign 8:Comp2}{space 1}{space 1}{ralign 8:Comp3}{space 1}
+{space 4}{hline 13}{c   +}{hline 10}{hline 10}{hline 10}
+{space 4}{space 0}{ralign 12:ztnc}{space 1}{c |}{space 1}{ralign 8:{res:{sf: -0.0304}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0264}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.7549}}}{space 1}
+{space 4}{space 0}{ralign 12:zpvr}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.2769}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1702}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0965}}}{space 1}
+{space 4}{space 0}{ralign 12:zpilrb}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.1524}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1681}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.2242}}}{space 1}
+{space 4}{space 0}{ralign 12:zncs1}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.1133}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.5080}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.2542}}}{space 1}
+{space 4}{space 0}{ralign 12:znefl}{space 1}{c |}{space 1}{ralign 8:{res:{sf: -0.1390}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.5645}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0847}}}{space 1}
+{space 4}{space 0}{ralign 12:zldlr}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.4998}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0418}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.2198}}}{space 1}
+{space 4}{space 0}{ralign 12:zkynu}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.5181}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0508}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0299}}}{space 1}
+{space 4}{space 0}{ralign 12:zgfap}{space 1}{c |}{space 1}{ralign 8:{res:{sf: -0.0983}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.4464}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0963}}}{space 1}
+{space 4}{space 0}{ralign 12:zfurin}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.5512}}}{space 1}{space 1}{ralign 8:{res:{sf: -0.0893}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1387}}}{space 1}
+{space 4}{space 0}{ralign 12:zdcbld2}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.0729}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.3778}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.0282}}}{space 1}
+{space 4}{space 0}{ralign 12:zbrk1}{space 1}{c |}{space 1}{ralign 8:{res:{sf:  0.1734}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.1054}}}{space 1}{space 1}{ralign 8:{res:{sf:  0.4693}}}{space 1}
+{space 4}{hline 13}{c  BT}{hline 10}{hline 10}{hline 10}
+
+{com}. 
+. 
+. save, replace
+{txt}{p 0 4 2}
+file {bf}
+E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. save, replace
+{txt}{p 0 4 2}
+file {bf}
+E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. 
+. **OVERALL**
+. 
+. forval x=1(1)3 {c -(}
+{txt}  2{com}. 
+. med4way AD_PGS mediator`x' AGE Agesq SEX PC1-PC20  if sample_final==1 , a0(0) a1(1) m(0) yreg(cox) mreg(linear) fulloutput
+{txt}  3{com}. 
+. 
+. {c )-}
+{res}{err}Warning: this analysis assumes a rare outcome.
+Warning: fixed values for the covariates AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20 were not provided. All covariates are fixed at their respective mean.
+
+{txt}-> Summary
+
+{col 4}Outcome    (yvar):{col 24}{res}Age_dementia
+{col 4}{txt}Exposure   (avar):{col 24}{res}AD_PGS
+{col 4}{txt}Mediator   (mvar):{col 24}{res}mediator1
+{col 4}{txt}Covariates (cvars):{col 24}{res}AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20
+
+{col 4}{txt}Model for the outcome  (yreg):{col 35}{res}cox
+{col 4}{txt}Model for the mediator (mreg):{col 35}{res}linear
+
+{col 4}{txt}Referent exposure level (a0):{col 46}{res}0
+{col 4}{txt}Actual exposure level   (a1):{col 46}{res}1
+{col 4}{txt}Mediator level for the decomposition (m):{col 46}{res}0
+{col 4}{txt}Fixed values of the covariates (c):{col 46}{res}60.85 3733 1.537 -1.822 1.441 -.153 .09108 -.06076 -.1461 .04663 -.1019 .1128 .02278 .1152 .02839 .02011 .02935 .01699 .01835 .01629 .03277 -.008773 .01222
+
+
+{txt}-> Model for the outcome
+
+{col 10}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}Iteration 0:  Log likelihood = {res}-9439.9782
+{txt}Iteration 1:  Log likelihood = {res}-9205.4937
+{txt}Iteration 2:  Log likelihood = {res}-9156.0731
+{txt}Iteration 3:  Log likelihood = {res}-9154.1669
+{txt}Iteration 4:  Log likelihood = {res}-9154.1238
+{txt}Iteration 5:  Log likelihood = {res}-9154.1228
+{txt}Iteration 6:  Log likelihood = {res}-9154.1228
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-9154.1228
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:34,574}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:34,574}
+{txt}No. of failures = {res}{ralign 11:1,010}
+{txt}Time at risk    = {res}{ralign 11:419,155.479}
+{col 57}{txt}{lalign 13:LR chi2({res:26})} = {res}{ralign 6:571.71}
+{txt}Log likelihood = {res}-9154.1228{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}                   _t{col 23}{c |} Haz. ratio{col 35}   Std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 15}AD_PGS {c |}{col 23}{res}{space 2} 1.760192{col 35}{space 2} .0451493{col 46}{space 1}   22.04{col 55}{space 3}0.000{col 63}{space 4} 1.673889{col 76}{space 3} 1.850945
+{txt}{space 12}mediator1 {c |}{col 23}{res}{space 2} .9011949{col 35}{space 2} .0255794{col 46}{space 1}   -3.67{col 55}{space 3}0.000{col 63}{space 4} .8524292{col 76}{space 3} .9527504
+{txt}_AD_PGSXmediator1_000 {c |}{col 23}{res}{space 2} .9803994{col 35}{space 2} .0188252{col 46}{space 1}   -1.03{col 55}{space 3}0.303{col 63}{space 4} .9441884{col 76}{space 3} 1.017999
+{txt}{space 18}AGE {c |}{col 23}{res}{space 2}  .689823{col 35}{space 2} .1524356{col 46}{space 1}   -1.68{col 55}{space 3}0.093{col 63}{space 4} .4473434{col 76}{space 3} 1.063737
+{txt}{space 16}Agesq {c |}{col 23}{res}{space 2} 1.003263{col 35}{space 2} .0017385{col 46}{space 1}    1.88{col 55}{space 3}0.060{col 63}{space 4}  .999861{col 76}{space 3} 1.006676
+{txt}{space 18}SEX {c |}{col 23}{res}{space 2} .8003969{col 35}{space 2} .0507913{col 46}{space 1}   -3.51{col 55}{space 3}0.000{col 63}{space 4} .7067896{col 76}{space 3} .9064016
+{txt}{space 18}PC1 {c |}{col 23}{res}{space 2} 1.000889{col 35}{space 2} .0007741{col 46}{space 1}    1.15{col 55}{space 3}0.251{col 63}{space 4} .9993725{col 76}{space 3} 1.002407
+{txt}{space 18}PC2 {c |}{col 23}{res}{space 2} 1.006151{col 35}{space 2} .0036285{col 46}{space 1}    1.70{col 55}{space 3}0.089{col 63}{space 4} .9990643{col 76}{space 3} 1.013288
+{txt}{space 18}PC3 {c |}{col 23}{res}{space 2} 1.006892{col 35}{space 2} .0060957{col 46}{space 1}    1.13{col 55}{space 3}0.257{col 63}{space 4} .9950152{col 76}{space 3}  1.01891
+{txt}{space 18}PC4 {c |}{col 23}{res}{space 2} 1.004565{col 35}{space 2} .0036161{col 46}{space 1}    1.27{col 55}{space 3}0.206{col 63}{space 4} .9975023{col 76}{space 3} 1.011677
+{txt}{space 18}PC5 {c |}{col 23}{res}{space 2} 1.007148{col 35}{space 2} .0038758{col 46}{space 1}    1.85{col 55}{space 3}0.064{col 63}{space 4}   .99958{col 76}{space 3} 1.014773
+{txt}{space 18}PC6 {c |}{col 23}{res}{space 2} 1.003363{col 35}{space 2} .0108469{col 46}{space 1}    0.31{col 55}{space 3}0.756{col 63}{space 4} .9823268{col 76}{space 3} 1.024849
+{txt}{space 18}PC7 {c |}{col 23}{res}{space 2} 1.002003{col 35}{space 2} .0077068{col 46}{space 1}    0.26{col 55}{space 3}0.795{col 63}{space 4} .9870116{col 76}{space 3} 1.017223
+{txt}{space 18}PC8 {c |}{col 23}{res}{space 2}  .998094{col 35}{space 2} .0093589{col 46}{space 1}   -0.20{col 55}{space 3}0.839{col 63}{space 4} .9799183{col 76}{space 3} 1.016607
+{txt}{space 18}PC9 {c |}{col 23}{res}{space 2} 1.001322{col 35}{space 2} .0070494{col 46}{space 1}    0.19{col 55}{space 3}0.851{col 63}{space 4} .9875999{col 76}{space 3} 1.015234
+{txt}{space 17}PC10 {c |}{col 23}{res}{space 2} 1.002127{col 35}{space 2}  .009067{col 46}{space 1}    0.23{col 55}{space 3}0.814{col 63}{space 4} .9845127{col 76}{space 3} 1.020057
+{txt}{space 17}PC11 {c |}{col 23}{res}{space 2} 1.023102{col 35}{space 2}   .00789{col 46}{space 1}    2.96{col 55}{space 3}0.003{col 63}{space 4} 1.007754{col 76}{space 3} 1.038684
+{txt}{space 17}PC12 {c |}{col 23}{res}{space 2} .9792651{col 35}{space 2} .0090177{col 46}{space 1}   -2.28{col 55}{space 3}0.023{col 63}{space 4} .9617494{col 76}{space 3} .9970999
+{txt}{space 17}PC13 {c |}{col 23}{res}{space 2} 1.005827{col 35}{space 2} .0177822{col 46}{space 1}    0.33{col 55}{space 3}0.742{col 63}{space 4}  .971572{col 76}{space 3} 1.041291
+{txt}{space 17}PC14 {c |}{col 23}{res}{space 2} .9872262{col 35}{space 2} .0090023{col 46}{space 1}   -1.41{col 55}{space 3}0.159{col 63}{space 4} .9697387{col 76}{space 3} 1.005029
+{txt}{space 17}PC15 {c |}{col 23}{res}{space 2} .9993566{col 35}{space 2} .0102585{col 46}{space 1}   -0.06{col 55}{space 3}0.950{col 63}{space 4} .9794512{col 76}{space 3} 1.019667
+{txt}{space 17}PC16 {c |}{col 23}{res}{space 2} .9993725{col 35}{space 2} .0095834{col 46}{space 1}   -0.07{col 55}{space 3}0.948{col 63}{space 4} .9807649{col 76}{space 3} 1.018333
+{txt}{space 17}PC17 {c |}{col 23}{res}{space 2} .9996568{col 35}{space 2} .0127225{col 46}{space 1}   -0.03{col 55}{space 3}0.978{col 63}{space 4} .9750295{col 76}{space 3} 1.024906
+{txt}{space 17}PC18 {c |}{col 23}{res}{space 2} .9954899{col 35}{space 2} .0104954{col 46}{space 1}   -0.43{col 55}{space 3}0.668{col 63}{space 4} .9751303{col 76}{space 3} 1.016275
+{txt}{space 17}PC19 {c |}{col 23}{res}{space 2}  1.00825{col 35}{space 2} .0111609{col 46}{space 1}    0.74{col 55}{space 3}0.458{col 63}{space 4} .9866108{col 76}{space 3} 1.030364
+{txt}{space 17}PC20 {c |}{col 23}{res}{space 2} 1.017552{col 35}{space 2} .0114526{col 46}{space 1}    1.55{col 55}{space 3}0.122{col 63}{space 4}  .995351{col 76}{space 3} 1.040248
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+
+-> Model for the mediator
+{res}
+{txt}Iteration 0:{space 2}Log likelihood = {res:-60725.305}  
+Iteration 1:{space 2}Log likelihood = {res:-60725.305}  
+{res}
+{txt}{col 1}Linear regression (Maximum Likelihood){col 57}{lalign 13:Number of obs}{col 70} = {res}{ralign 6:34,574}
+{txt}{col 57}{lalign 13:Wald chi2({res:24})}{col 70} = {res}{ralign 6:365.22}
+{txt}{col 1}{lalign 14:Log likelihood}{col 15} = {res}{ralign 10:-60725.305}{txt}{col 57}{lalign 13:Prob > chi2}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   mediator1{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}mu           {txt}{c |}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2}-.0197316{col 26}{space 2} .0074408{col 37}{space 1}   -2.65{col 46}{space 3}0.008{col 54}{space 4}-.0343154{col 67}{space 3}-.0051478
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2} .2081742{col 26}{space 2} .0308227{col 37}{space 1}    6.75{col 46}{space 3}0.000{col 54}{space 4} .1477628{col 67}{space 3} .2685856
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2}-.0015958{col 26}{space 2} .0002553{col 37}{space 1}   -6.25{col 46}{space 3}0.000{col 54}{space 4}-.0020961{col 67}{space 3}-.0010955
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}-.0394457{col 26}{space 2} .0151551{col 37}{space 1}   -2.60{col 46}{space 3}0.009{col 54}{space 4}-.0691492{col 67}{space 3}-.0097421
+{txt}{space 9}PC1 {c |}{col 14}{res}{space 2}-.0005741{col 26}{space 2} .0001413{col 37}{space 1}   -4.06{col 46}{space 3}0.000{col 54}{space 4} -.000851{col 67}{space 3}-.0002972
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2}-.0014152{col 26}{space 2} .0003171{col 37}{space 1}   -4.46{col 46}{space 3}0.000{col 54}{space 4}-.0020368{col 67}{space 3}-.0007936
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2}  .004938{col 26}{space 2} .0005871{col 37}{space 1}    8.41{col 46}{space 3}0.000{col 54}{space 4} .0037873{col 67}{space 3} .0060887
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2}  .001698{col 26}{space 2} .0007199{col 37}{space 1}    2.36{col 46}{space 3}0.018{col 54}{space 4} .0002871{col 67}{space 3} .0031089
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2}-.0004641{col 26}{space 2} .0009947{col 37}{space 1}   -0.47{col 46}{space 3}0.641{col 54}{space 4}-.0024137{col 67}{space 3} .0014854
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} .0010751{col 26}{space 2} .0018286{col 37}{space 1}    0.59{col 46}{space 3}0.557{col 54}{space 4}-.0025089{col 67}{space 3} .0046591
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} .0044167{col 26}{space 2} .0015296{col 37}{space 1}    2.89{col 46}{space 3}0.004{col 54}{space 4} .0014188{col 67}{space 3} .0074147
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2}-.0025229{col 26}{space 2} .0017149{col 37}{space 1}   -1.47{col 46}{space 3}0.141{col 54}{space 4}-.0058841{col 67}{space 3} .0008383
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2}-.0013874{col 26}{space 2}  .001695{col 37}{space 1}   -0.82{col 46}{space 3}0.413{col 54}{space 4}-.0047095{col 67}{space 3} .0019348
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} .0024864{col 26}{space 2} .0018948{col 37}{space 1}    1.31{col 46}{space 3}0.189{col 54}{space 4}-.0012272{col 67}{space 3} .0062001
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2} .0014336{col 26}{space 2} .0018661{col 37}{space 1}    0.77{col 46}{space 3}0.442{col 54}{space 4}-.0022238{col 67}{space 3}  .005091
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .0001766{col 26}{space 2} .0020399{col 37}{space 1}    0.09{col 46}{space 3}0.931{col 54}{space 4}-.0038216{col 67}{space 3} .0041748
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} .0084873{col 26}{space 2} .0026387{col 37}{space 1}    3.22{col 46}{space 3}0.001{col 54}{space 4} .0033155{col 67}{space 3}  .013659
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2}-.0062095{col 26}{space 2} .0022476{col 37}{space 1}   -2.76{col 46}{space 3}0.006{col 54}{space 4}-.0106147{col 67}{space 3}-.0018043
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2}-.0045863{col 26}{space 2} .0022893{col 37}{space 1}   -2.00{col 46}{space 3}0.045{col 54}{space 4}-.0090733{col 67}{space 3}-.0000994
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2}-.0074876{col 26}{space 2} .0023671{col 37}{space 1}   -3.16{col 46}{space 3}0.002{col 54}{space 4} -.012127{col 67}{space 3}-.0028482
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2}-.0009114{col 26}{space 2} .0028702{col 37}{space 1}   -0.32{col 46}{space 3}0.751{col 54}{space 4} -.006537{col 67}{space 3} .0047142
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2} .0006637{col 26}{space 2} .0026287{col 37}{space 1}    0.25{col 46}{space 3}0.801{col 54}{space 4}-.0044884{col 67}{space 3} .0058157
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2} .0017405{col 26}{space 2} .0026666{col 37}{space 1}    0.65{col 46}{space 3}0.514{col 54}{space 4}-.0034859{col 67}{space 3} .0069669
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} .0066922{col 26}{space 2} .0026834{col 37}{space 1}    2.49{col 46}{space 3}0.013{col 54}{space 4} .0014329{col 67}{space 3} .0119515
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-6.646864{col 26}{space 2} .9245522{col 37}{space 1}   -7.19{col 46}{space 3}0.000{col 54}{space 4}-8.458953{col 67}{space 3}-4.834775
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sigma2       {txt}{c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 1.963828{col 26}{space 2} .0149363{col 37}{space 1}  131.48{col 46}{space 3}0.000{col 54}{space 4} 1.934554{col 67}{space 3} 1.993103
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+
+{txt}-> 4-way decomposition: delta method
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}tereri {c |}{col 14}{res}{space 2} .7722829{col 26}{space 2} .0449585{col 37}{space 1}   17.18{col 46}{space 3}0.000{col 54}{space 4} .6841658{col 67}{space 3} .8603999
+{txt}{space 3}ereri_cde {c |}{col 14}{res}{space 2} .7522627{col 26}{space 2} .0447302{col 37}{space 1}   16.82{col 46}{space 3}0.000{col 54}{space 4} .6645931{col 67}{space 3} .8399324
+{txt}ereri_intref {c |}{col 14}{res}{space 2} .0156951{col 26}{space 2} .0072057{col 37}{space 1}    2.18{col 46}{space 3}0.029{col 54}{space 4} .0015723{col 67}{space 3}  .029818
+{txt}ereri_intmed {c |}{col 14}{res}{space 2} .0022702{col 26}{space 2} .0010374{col 37}{space 1}    2.19{col 46}{space 3}0.029{col 54}{space 4}  .000237{col 67}{space 3} .0043033
+{txt}{space 3}ereri_pie {c |}{col 14}{res}{space 2} .0020549{col 26}{space 2} .0009574{col 37}{space 1}    2.15{col 46}{space 3}0.032{col 54}{space 4} .0001784{col 67}{space 3} .0039314
+{txt}{space 6}terira {c |}{col 14}{res}{space 2} 1.772283{col 26}{space 2} .0449585{col 37}{space 1}   39.42{col 46}{space 3}0.000{col 54}{space 4} 1.684166{col 67}{space 3}   1.8604
+{txt}{space 7}p_cde {c |}{col 14}{res}{space 2} .9740767{col 26}{space 2} .0104134{col 37}{space 1}   93.54{col 46}{space 3}0.000{col 54}{space 4} .9536667{col 67}{space 3} .9944866
+{txt}{space 4}p_intref {c |}{col 14}{res}{space 2}  .020323{col 26}{space 2} .0092772{col 37}{space 1}    2.19{col 46}{space 3}0.028{col 54}{space 4} .0021401{col 67}{space 3}  .038506
+{txt}{space 4}p_intmed {c |}{col 14}{res}{space 2} .0029395{col 26}{space 2} .0013293{col 37}{space 1}    2.21{col 46}{space 3}0.027{col 54}{space 4} .0003341{col 67}{space 3} .0055449
+{txt}{space 7}p_pie {c |}{col 14}{res}{space 2} .0026608{col 26}{space 2} .0012451{col 37}{space 1}    2.14{col 46}{space 3}0.033{col 54}{space 4} .0002205{col 67}{space 3}  .005101
+{txt}{space 8}op_m {c |}{col 14}{res}{space 2} .0056003{col 26}{space 2}   .00238{col 37}{space 1}    2.35{col 46}{space 3}0.019{col 54}{space 4} .0009356{col 67}{space 3}  .010265
+{txt}{space 6}op_ati {c |}{col 14}{res}{space 2} .0232626{col 26}{space 2}  .010053{col 37}{space 1}    2.31{col 46}{space 3}0.021{col 54}{space 4}  .003559{col 67}{space 3} .0429661
+{txt}{space 8}op_e {c |}{col 14}{res}{space 2} .0259233{col 26}{space 2} .0104134{col 37}{space 1}    2.49{col 46}{space 3}0.013{col 54}{space 4} .0055134{col 67}{space 3} .0463333
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{p 3 3 5 0}
+tereri=total excess relative risk; ereri_cde=excess relative risk due to controlled direct effect; ereri_intref=excess relative risk due to reference interaction; ereri_intmed=excess relative risk due to mediated interaction; ereri_pie=excess relative risk due to pure indirect effect; terira=total effect risk ratio; p_cde=proportion controlled direct effect; p_intref=proportion reference interaction; p_intmed=proportion mediated interaction; p_pie=proportion pure indirect effect; op_m=overall proportion mediated; op_ati=overall proportion attributable to interaction; op_e=overall proportion eliminated.
+{p_end}
+{res}{err}Warning: this analysis assumes a rare outcome.
+Warning: fixed values for the covariates AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20 were not provided. All covariates are fixed at their respective mean.
+
+{txt}-> Summary
+
+{col 4}Outcome    (yvar):{col 24}{res}Age_dementia
+{col 4}{txt}Exposure   (avar):{col 24}{res}AD_PGS
+{col 4}{txt}Mediator   (mvar):{col 24}{res}mediator2
+{col 4}{txt}Covariates (cvars):{col 24}{res}AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20
+
+{col 4}{txt}Model for the outcome  (yreg):{col 35}{res}cox
+{col 4}{txt}Model for the mediator (mreg):{col 35}{res}linear
+
+{col 4}{txt}Referent exposure level (a0):{col 46}{res}0
+{col 4}{txt}Actual exposure level   (a1):{col 46}{res}1
+{col 4}{txt}Mediator level for the decomposition (m):{col 46}{res}0
+{col 4}{txt}Fixed values of the covariates (c):{col 46}{res}60.85 3733 1.537 -1.822 1.441 -.153 .09108 -.06076 -.1461 .04663 -.1019 .1128 .02278 .1152 .02839 .02011 .02935 .01699 .01835 .01629 .03277 -.008773 .01222
+
+
+{txt}-> Model for the outcome
+
+{col 10}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}Iteration 0:  Log likelihood = {res}-9439.9782
+{txt}Iteration 1:  Log likelihood = {res}-9083.4905
+{txt}Iteration 2:  Log likelihood = {res}-9026.6115
+{txt}Iteration 3:  Log likelihood = {res} -9026.016
+{txt}Iteration 4:  Log likelihood = {res}-9025.9977
+{txt}Iteration 5:  Log likelihood = {res}-9025.9974
+{txt}Iteration 6:  Log likelihood = {res}-9025.9974
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-9025.9974
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:34,574}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:34,574}
+{txt}No. of failures = {res}{ralign 11:1,010}
+{txt}Time at risk    = {res}{ralign 11:419,155.479}
+{col 57}{txt}{lalign 13:LR chi2({res:26})} = {res}{ralign 6:827.96}
+{txt}Log likelihood = {res}-9025.9974{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}                   _t{col 23}{c |} Haz. ratio{col 35}   Std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 15}AD_PGS {c |}{col 23}{res}{space 2} 1.679757{col 35}{space 2} .0565812{col 46}{space 1}   15.40{col 55}{space 3}0.000{col 63}{space 4} 1.572441{col 76}{space 3} 1.794396
+{txt}{space 12}mediator2 {c |}{col 23}{res}{space 2} 1.485727{col 35}{space 2} .0384852{col 46}{space 1}   15.28{col 55}{space 3}0.000{col 63}{space 4}  1.41218{col 76}{space 3} 1.563105
+{txt}_AD_PGSXmediator2_000 {c |}{col 23}{res}{space 2} 1.010568{col 35}{space 2}  .017064{col 46}{space 1}    0.62{col 55}{space 3}0.534{col 63}{space 4} .9776701{col 76}{space 3} 1.044572
+{txt}{space 18}AGE {c |}{col 23}{res}{space 2} .7199394{col 35}{space 2} .1594313{col 46}{space 1}   -1.48{col 55}{space 3}0.138{col 63}{space 4} .4664409{col 76}{space 3} 1.111208
+{txt}{space 16}Agesq {c |}{col 23}{res}{space 2} 1.002524{col 35}{space 2} .0017417{col 46}{space 1}    1.45{col 55}{space 3}0.147{col 63}{space 4} .9991158{col 76}{space 3} 1.005943
+{txt}{space 18}SEX {c |}{col 23}{res}{space 2} .7788905{col 35}{space 2}  .049338{col 46}{space 1}   -3.94{col 55}{space 3}0.000{col 63}{space 4} .6879516{col 76}{space 3} .8818504
+{txt}{space 18}PC1 {c |}{col 23}{res}{space 2} 1.001589{col 35}{space 2}  .000807{col 46}{space 1}    1.97{col 55}{space 3}0.049{col 63}{space 4} 1.000008{col 76}{space 3} 1.003172
+{txt}{space 18}PC2 {c |}{col 23}{res}{space 2} 1.006491{col 35}{space 2} .0038949{col 46}{space 1}    1.67{col 55}{space 3}0.095{col 63}{space 4} .9988858{col 76}{space 3} 1.014154
+{txt}{space 18}PC3 {c |}{col 23}{res}{space 2} 1.005438{col 35}{space 2} .0064923{col 46}{space 1}    0.84{col 55}{space 3}0.401{col 63}{space 4} .9927934{col 76}{space 3} 1.018244
+{txt}{space 18}PC4 {c |}{col 23}{res}{space 2} 1.004142{col 35}{space 2} .0036539{col 46}{space 1}    1.14{col 55}{space 3}0.256{col 63}{space 4} .9970061{col 76}{space 3} 1.011329
+{txt}{space 18}PC5 {c |}{col 23}{res}{space 2} 1.007672{col 35}{space 2} .0038773{col 46}{space 1}    1.99{col 55}{space 3}0.047{col 63}{space 4} 1.000101{col 76}{space 3}   1.0153
+{txt}{space 18}PC6 {c |}{col 23}{res}{space 2} 1.002066{col 35}{space 2} .0107401{col 46}{space 1}    0.19{col 55}{space 3}0.847{col 63}{space 4} .9812356{col 76}{space 3} 1.023339
+{txt}{space 18}PC7 {c |}{col 23}{res}{space 2}  1.00194{col 35}{space 2} .0077817{col 46}{space 1}    0.25{col 55}{space 3}0.803{col 63}{space 4} .9868034{col 76}{space 3} 1.017308
+{txt}{space 18}PC8 {c |}{col 23}{res}{space 2} 1.002133{col 35}{space 2} .0094519{col 46}{space 1}    0.23{col 55}{space 3}0.821{col 63}{space 4} .9837778{col 76}{space 3}  1.02083
+{txt}{space 18}PC9 {c |}{col 23}{res}{space 2} 1.002206{col 35}{space 2} .0070344{col 46}{space 1}    0.31{col 55}{space 3}0.754{col 63}{space 4} .9885133{col 76}{space 3} 1.016089
+{txt}{space 17}PC10 {c |}{col 23}{res}{space 2} 1.003318{col 35}{space 2} .0092027{col 46}{space 1}    0.36{col 55}{space 3}0.718{col 63}{space 4} .9854418{col 76}{space 3} 1.021518
+{txt}{space 17}PC11 {c |}{col 23}{res}{space 2} 1.020466{col 35}{space 2} .0079315{col 46}{space 1}    2.61{col 55}{space 3}0.009{col 63}{space 4} 1.005038{col 76}{space 3}  1.03613
+{txt}{space 17}PC12 {c |}{col 23}{res}{space 2}  .978397{col 35}{space 2} .0092512{col 46}{space 1}   -2.31{col 55}{space 3}0.021{col 63}{space 4} .9604319{col 76}{space 3} .9966981
+{txt}{space 17}PC13 {c |}{col 23}{res}{space 2}   1.0028{col 35}{space 2} .0179986{col 46}{space 1}    0.16{col 55}{space 3}0.876{col 63}{space 4} .9681369{col 76}{space 3} 1.038705
+{txt}{space 17}PC14 {c |}{col 23}{res}{space 2}  .983935{col 35}{space 2} .0090663{col 46}{space 1}   -1.76{col 55}{space 3}0.079{col 63}{space 4} .9663249{col 76}{space 3} 1.001866
+{txt}{space 17}PC15 {c |}{col 23}{res}{space 2} .9975431{col 35}{space 2} .0103495{col 46}{space 1}   -0.24{col 55}{space 3}0.813{col 63}{space 4} .9774633{col 76}{space 3} 1.018036
+{txt}{space 17}PC16 {c |}{col 23}{res}{space 2} 1.003327{col 35}{space 2} .0096829{col 46}{space 1}    0.34{col 55}{space 3}0.731{col 63}{space 4} .9845269{col 76}{space 3} 1.022485
+{txt}{space 17}PC17 {c |}{col 23}{res}{space 2} .9972419{col 35}{space 2} .0115467{col 46}{space 1}   -0.24{col 55}{space 3}0.811{col 63}{space 4} .9748658{col 76}{space 3} 1.020132
+{txt}{space 17}PC18 {c |}{col 23}{res}{space 2} .9978879{col 35}{space 2} .0105161{col 46}{space 1}   -0.20{col 55}{space 3}0.841{col 63}{space 4} .9774882{col 76}{space 3} 1.018713
+{txt}{space 17}PC19 {c |}{col 23}{res}{space 2} 1.013107{col 35}{space 2} .0112753{col 46}{space 1}    1.17{col 55}{space 3}0.242{col 63}{space 4} .9912467{col 76}{space 3} 1.035449
+{txt}{space 17}PC20 {c |}{col 23}{res}{space 2} 1.010141{col 35}{space 2} .0114193{col 46}{space 1}    0.89{col 55}{space 3}0.372{col 63}{space 4} .9880061{col 76}{space 3} 1.032773
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+
+-> Model for the mediator
+{res}
+{txt}Iteration 0:{space 2}Log likelihood = {res:-55232.568}  
+Iteration 1:{space 2}Log likelihood = {res:-55232.568}  
+{res}
+{txt}{col 1}Linear regression (Maximum Likelihood){col 56}{lalign 13:Number of obs}{col 69} = {res}{ralign 7:34,574}
+{txt}{col 56}{lalign 13:Wald chi2({res:24})}{col 69} = {res}{ralign 7:8545.55}
+{txt}{col 1}{lalign 14:Log likelihood}{col 15} = {res}{ralign 10:-55232.568}{txt}{col 56}{lalign 13:Prob > chi2}{col 69} = {res}{ralign 7:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   mediator2{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}mu           {txt}{c |}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2} .0914844{col 26}{space 2} .0063478{col 37}{space 1}   14.41{col 46}{space 3}0.000{col 54}{space 4} .0790429{col 67}{space 3} .1039259
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2}-.0331743{col 26}{space 2} .0262951{col 37}{space 1}   -1.26{col 46}{space 3}0.207{col 54}{space 4}-.0847118{col 67}{space 3} .0183631
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2} .0011305{col 26}{space 2} .0002178{col 37}{space 1}    5.19{col 46}{space 3}0.000{col 54}{space 4} .0007037{col 67}{space 3} .0015573
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .0028778{col 26}{space 2}  .012929{col 37}{space 1}    0.22{col 46}{space 3}0.824{col 54}{space 4}-.0224625{col 67}{space 3} .0282181
+{txt}{space 9}PC1 {c |}{col 14}{res}{space 2}-.0013244{col 26}{space 2} .0001205{col 37}{space 1}  -10.99{col 46}{space 3}0.000{col 54}{space 4}-.0015606{col 67}{space 3}-.0010881
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2}-.0006008{col 26}{space 2} .0002706{col 37}{space 1}   -2.22{col 46}{space 3}0.026{col 54}{space 4}-.0011311{col 67}{space 3}-.0000705
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} .0032866{col 26}{space 2} .0005009{col 37}{space 1}    6.56{col 46}{space 3}0.000{col 54}{space 4}  .002305{col 67}{space 3} .0042683
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} .0019101{col 26}{space 2} .0006141{col 37}{space 1}    3.11{col 46}{space 3}0.002{col 54}{space 4} .0007064{col 67}{space 3} .0031137
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2} -.002127{col 26}{space 2} .0008486{col 37}{space 1}   -2.51{col 46}{space 3}0.012{col 54}{space 4}-.0037901{col 67}{space 3}-.0004638
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2}-.0023271{col 26}{space 2}   .00156{col 37}{space 1}   -1.49{col 46}{space 3}0.136{col 54}{space 4}-.0053846{col 67}{space 3} .0007304
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2}-.0016696{col 26}{space 2} .0013049{col 37}{space 1}   -1.28{col 46}{space 3}0.201{col 54}{space 4}-.0042272{col 67}{space 3} .0008879
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2}-.0032906{col 26}{space 2}  .001463{col 37}{space 1}   -2.25{col 46}{space 3}0.025{col 54}{space 4}-.0061581{col 67}{space 3}-.0004231
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2}-.0012968{col 26}{space 2}  .001446{col 37}{space 1}   -0.90{col 46}{space 3}0.370{col 54}{space 4}-.0041309{col 67}{space 3} .0015373
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} .0023841{col 26}{space 2} .0016164{col 37}{space 1}    1.47{col 46}{space 3}0.140{col 54}{space 4}-.0007841{col 67}{space 3} .0055522
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2} .0001837{col 26}{space 2} .0015919{col 37}{space 1}    0.12{col 46}{space 3}0.908{col 54}{space 4}-.0029365{col 67}{space 3} .0033038
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .0029307{col 26}{space 2} .0017403{col 37}{space 1}    1.68{col 46}{space 3}0.092{col 54}{space 4}-.0004801{col 67}{space 3} .0063416
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} .0026752{col 26}{space 2} .0022511{col 37}{space 1}    1.19{col 46}{space 3}0.235{col 54}{space 4}-.0017368{col 67}{space 3} .0070872
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2} .0027046{col 26}{space 2} .0019174{col 37}{space 1}    1.41{col 46}{space 3}0.158{col 54}{space 4}-.0010536{col 67}{space 3} .0064627
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2}-.0019242{col 26}{space 2}  .001953{col 37}{space 1}   -0.99{col 46}{space 3}0.325{col 54}{space 4} -.005752{col 67}{space 3} .0019037
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2}-.0043815{col 26}{space 2} .0020194{col 37}{space 1}   -2.17{col 46}{space 3}0.030{col 54}{space 4}-.0083394{col 67}{space 3}-.0004236
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2}  .004127{col 26}{space 2} .0024486{col 37}{space 1}    1.69{col 46}{space 3}0.092{col 54}{space 4}-.0006723{col 67}{space 3} .0089262
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2}-.0028435{col 26}{space 2} .0022425{col 37}{space 1}   -1.27{col 46}{space 3}0.205{col 54}{space 4}-.0072388{col 67}{space 3} .0015517
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2}-.0009608{col 26}{space 2} .0022749{col 37}{space 1}   -0.42{col 46}{space 3}0.673{col 54}{space 4}-.0054194{col 67}{space 3} .0034979
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} .0015969{col 26}{space 2} .0022892{col 37}{space 1}    0.70{col 46}{space 3}0.485{col 54}{space 4}-.0028899{col 67}{space 3} .0060836
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-2.214411{col 26}{space 2}  .788743{col 37}{space 1}   -2.81{col 46}{space 3}0.005{col 54}{space 4}-3.760319{col 67}{space 3}-.6685036
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sigma2       {txt}{c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 1.429261{col 26}{space 2} .0108706{col 37}{space 1}  131.48{col 46}{space 3}0.000{col 54}{space 4} 1.407956{col 67}{space 3} 1.450567
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+
+{txt}-> 4-way decomposition: delta method
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}tereri {c |}{col 14}{res}{space 2} .7538103{col 26}{space 2} .0494337{col 37}{space 1}   15.25{col 46}{space 3}0.000{col 54}{space 4} .6569221{col 67}{space 3} .8506984
+{txt}{space 3}ereri_cde {c |}{col 14}{res}{space 2} .6092454{col 26}{space 2} .0492222{col 37}{space 1}   12.38{col 46}{space 3}0.000{col 54}{space 4} .5127716{col 67}{space 3} .7057191
+{txt}ereri_intref {c |}{col 14}{res}{space 2} .0805542{col 26}{space 2} .0121829{col 37}{space 1}    6.61{col 46}{space 3}0.000{col 54}{space 4} .0566761{col 67}{space 3} .1044323
+{txt}ereri_intmed {c |}{col 14}{res}{space 2} .0271277{col 26}{space 2} .0030611{col 37}{space 1}    8.86{col 46}{space 3}0.000{col 54}{space 4} .0211281{col 67}{space 3} .0331272
+{txt}{space 3}ereri_pie {c |}{col 14}{res}{space 2}  .036883{col 26}{space 2} .0035816{col 37}{space 1}   10.30{col 46}{space 3}0.000{col 54}{space 4} .0298632{col 67}{space 3} .0439028
+{txt}{space 6}terira {c |}{col 14}{res}{space 2}  1.75381{col 26}{space 2} .0494337{col 37}{space 1}   35.48{col 46}{space 3}0.000{col 54}{space 4} 1.656922{col 67}{space 3} 1.850698
+{txt}{space 7}p_cde {c |}{col 14}{res}{space 2} .8082211{col 26}{space 2} .0226018{col 37}{space 1}   35.76{col 46}{space 3}0.000{col 54}{space 4} .7639224{col 67}{space 3} .8525198
+{txt}{space 4}p_intref {c |}{col 14}{res}{space 2} .1068627{col 26}{space 2} .0171647{col 37}{space 1}    6.23{col 46}{space 3}0.000{col 54}{space 4} .0732205{col 67}{space 3}  .140505
+{txt}{space 4}p_intmed {c |}{col 14}{res}{space 2} .0359874{col 26}{space 2} .0038456{col 37}{space 1}    9.36{col 46}{space 3}0.000{col 54}{space 4} .0284502{col 67}{space 3} .0435246
+{txt}{space 7}p_pie {c |}{col 14}{res}{space 2} .0489287{col 26}{space 2} .0051347{col 37}{space 1}    9.53{col 46}{space 3}0.000{col 54}{space 4} .0388648{col 67}{space 3} .0589926
+{txt}{space 8}op_m {c |}{col 14}{res}{space 2} .0849162{col 26}{space 2} .0080742{col 37}{space 1}   10.52{col 46}{space 3}0.000{col 54}{space 4} .0690911{col 67}{space 3} .1007412
+{txt}{space 6}op_ati {c |}{col 14}{res}{space 2} .1428501{col 26}{space 2} .0202391{col 37}{space 1}    7.06{col 46}{space 3}0.000{col 54}{space 4} .1031822{col 67}{space 3} .1825181
+{txt}{space 8}op_e {c |}{col 14}{res}{space 2} .1917789{col 26}{space 2} .0226018{col 37}{space 1}    8.49{col 46}{space 3}0.000{col 54}{space 4} .1474802{col 67}{space 3} .2360776
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{p 3 3 5 0}
+tereri=total excess relative risk; ereri_cde=excess relative risk due to controlled direct effect; ereri_intref=excess relative risk due to reference interaction; ereri_intmed=excess relative risk due to mediated interaction; ereri_pie=excess relative risk due to pure indirect effect; terira=total effect risk ratio; p_cde=proportion controlled direct effect; p_intref=proportion reference interaction; p_intmed=proportion mediated interaction; p_pie=proportion pure indirect effect; op_m=overall proportion mediated; op_ati=overall proportion attributable to interaction; op_e=overall proportion eliminated.
+{p_end}
+{res}{err}Warning: this analysis assumes a rare outcome.
+Warning: fixed values for the covariates AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20 were not provided. All covariates are fixed at their respective mean.
+
+{txt}-> Summary
+
+{col 4}Outcome    (yvar):{col 24}{res}Age_dementia
+{col 4}{txt}Exposure   (avar):{col 24}{res}AD_PGS
+{col 4}{txt}Mediator   (mvar):{col 24}{res}mediator3
+{col 4}{txt}Covariates (cvars):{col 24}{res}AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20
+
+{col 4}{txt}Model for the outcome  (yreg):{col 35}{res}cox
+{col 4}{txt}Model for the mediator (mreg):{col 35}{res}linear
+
+{col 4}{txt}Referent exposure level (a0):{col 46}{res}0
+{col 4}{txt}Actual exposure level   (a1):{col 46}{res}1
+{col 4}{txt}Mediator level for the decomposition (m):{col 46}{res}0
+{col 4}{txt}Fixed values of the covariates (c):{col 46}{res}60.85 3733 1.537 -1.822 1.441 -.153 .09108 -.06076 -.1461 .04663 -.1019 .1128 .02278 .1152 .02839 .02011 .02935 .01699 .01835 .01629 .03277 -.008773 .01222
+
+
+{txt}-> Model for the outcome
+
+{col 10}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}Iteration 0:  Log likelihood = {res}-9439.9782
+{txt}Iteration 1:  Log likelihood = {res}-9235.4972
+{txt}Iteration 2:  Log likelihood = {res}-9154.6354
+{txt}Iteration 3:  Log likelihood = {res}-9148.3831
+{txt}Iteration 4:  Log likelihood = {res}-9148.3282
+{txt}Iteration 5:  Log likelihood = {res}-9148.3282
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-9148.3282
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:34,574}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:34,574}
+{txt}No. of failures = {res}{ralign 11:1,010}
+{txt}Time at risk    = {res}{ralign 11:419,155.479}
+{col 57}{txt}{lalign 13:LR chi2({res:26})} = {res}{ralign 6:583.30}
+{txt}Log likelihood = {res}-9148.3282{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}                   _t{col 23}{c |} Haz. ratio{col 35}   Std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 15}AD_PGS {c |}{col 23}{res}{space 2} 1.741032{col 35}{space 2} .0472345{col 46}{space 1}   20.44{col 55}{space 3}0.000{col 63}{space 4} 1.650872{col 76}{space 3} 1.836116
+{txt}{space 12}mediator3 {c |}{col 23}{res}{space 2} 1.189947{col 35}{space 2} .0414078{col 46}{space 1}    5.00{col 55}{space 3}0.000{col 63}{space 4} 1.111495{col 76}{space 3} 1.273937
+{txt}_AD_PGSXmediator3_000 {c |}{col 23}{res}{space 2} 1.011129{col 35}{space 2} .0235341{col 46}{space 1}    0.48{col 55}{space 3}0.634{col 63}{space 4} .9660396{col 76}{space 3} 1.058324
+{txt}{space 18}AGE {c |}{col 23}{res}{space 2} .6898879{col 35}{space 2} .1524649{col 46}{space 1}   -1.68{col 55}{space 3}0.093{col 63}{space 4} .4473664{col 76}{space 3} 1.063883
+{txt}{space 16}Agesq {c |}{col 23}{res}{space 2} 1.003197{col 35}{space 2} .0017388{col 46}{space 1}    1.84{col 55}{space 3}0.066{col 63}{space 4} .9997947{col 76}{space 3} 1.006611
+{txt}{space 18}SEX {c |}{col 23}{res}{space 2} .7434099{col 35}{space 2}  .047535{col 46}{space 1}   -4.64{col 55}{space 3}0.000{col 63}{space 4} .6558446{col 76}{space 3} .8426665
+{txt}{space 18}PC1 {c |}{col 23}{res}{space 2} 1.001216{col 35}{space 2} .0007953{col 46}{space 1}    1.53{col 55}{space 3}0.126{col 63}{space 4} .9996582{col 76}{space 3} 1.002776
+{txt}{space 18}PC2 {c |}{col 23}{res}{space 2} 1.006304{col 35}{space 2} .0038143{col 46}{space 1}    1.66{col 55}{space 3}0.097{col 63}{space 4} .9988562{col 76}{space 3} 1.013808
+{txt}{space 18}PC3 {c |}{col 23}{res}{space 2} 1.006524{col 35}{space 2} .0064094{col 46}{space 1}    1.02{col 55}{space 3}0.307{col 63}{space 4} .9940403{col 76}{space 3} 1.019165
+{txt}{space 18}PC4 {c |}{col 23}{res}{space 2} 1.004618{col 35}{space 2} .0036569{col 46}{space 1}    1.27{col 55}{space 3}0.206{col 63}{space 4} .9974756{col 76}{space 3} 1.011811
+{txt}{space 18}PC5 {c |}{col 23}{res}{space 2} 1.007084{col 35}{space 2} .0038941{col 46}{space 1}    1.83{col 55}{space 3}0.068{col 63}{space 4} .9994802{col 76}{space 3} 1.014745
+{txt}{space 18}PC6 {c |}{col 23}{res}{space 2} 1.001023{col 35}{space 2} .0109051{col 46}{space 1}    0.09{col 55}{space 3}0.925{col 63}{space 4} .9798762{col 76}{space 3} 1.022627
+{txt}{space 18}PC7 {c |}{col 23}{res}{space 2}  1.00061{col 35}{space 2} .0077527{col 46}{space 1}    0.08{col 55}{space 3}0.937{col 63}{space 4} .9855302{col 76}{space 3} 1.015921
+{txt}{space 18}PC8 {c |}{col 23}{res}{space 2} .9980904{col 35}{space 2}  .009451{col 46}{space 1}   -0.20{col 55}{space 3}0.840{col 63}{space 4} .9797376{col 76}{space 3} 1.016787
+{txt}{space 18}PC9 {c |}{col 23}{res}{space 2} 1.001159{col 35}{space 2} .0070685{col 46}{space 1}    0.16{col 55}{space 3}0.870{col 63}{space 4} .9874008{col 76}{space 3}  1.01511
+{txt}{space 17}PC10 {c |}{col 23}{res}{space 2} 1.002322{col 35}{space 2} .0091092{col 46}{space 1}    0.26{col 55}{space 3}0.799{col 63}{space 4} .9846264{col 76}{space 3} 1.020336
+{txt}{space 17}PC11 {c |}{col 23}{res}{space 2}  1.02324{col 35}{space 2} .0079059{col 46}{space 1}    2.97{col 55}{space 3}0.003{col 63}{space 4} 1.007862{col 76}{space 3} 1.038853
+{txt}{space 17}PC12 {c |}{col 23}{res}{space 2} .9802775{col 35}{space 2} .0090788{col 46}{space 1}   -2.15{col 55}{space 3}0.031{col 63}{space 4}  .962644{col 76}{space 3} .9982341
+{txt}{space 17}PC13 {c |}{col 23}{res}{space 2}  1.00037{col 35}{space 2} .0178995{col 46}{space 1}    0.02{col 55}{space 3}0.984{col 63}{space 4} .9658952{col 76}{space 3} 1.036074
+{txt}{space 17}PC14 {c |}{col 23}{res}{space 2}  .989034{col 35}{space 2} .0090543{col 46}{space 1}   -1.20{col 55}{space 3}0.228{col 63}{space 4} .9714462{col 76}{space 3}  1.00694
+{txt}{space 17}PC15 {c |}{col 23}{res}{space 2} .9990198{col 35}{space 2} .0103474{col 46}{space 1}   -0.09{col 55}{space 3}0.925{col 63}{space 4} .9789436{col 76}{space 3} 1.019508
+{txt}{space 17}PC16 {c |}{col 23}{res}{space 2}  1.00164{col 35}{space 2} .0096496{col 46}{space 1}    0.17{col 55}{space 3}0.865{col 63}{space 4} .9829042{col 76}{space 3} 1.020732
+{txt}{space 17}PC17 {c |}{col 23}{res}{space 2} .9993455{col 35}{space 2} .0129909{col 46}{space 1}   -0.05{col 55}{space 3}0.960{col 63}{space 4} .9742055{col 76}{space 3} 1.025134
+{txt}{space 17}PC18 {c |}{col 23}{res}{space 2} .9953521{col 35}{space 2} .0104996{col 46}{space 1}   -0.44{col 55}{space 3}0.659{col 63}{space 4} .9749845{col 76}{space 3} 1.016145
+{txt}{space 17}PC19 {c |}{col 23}{res}{space 2} 1.008811{col 35}{space 2}  .011172{col 46}{space 1}    0.79{col 55}{space 3}0.428{col 63}{space 4} .9871503{col 76}{space 3} 1.030947
+{txt}{space 17}PC20 {c |}{col 23}{res}{space 2} 1.015529{col 35}{space 2} .0114184{col 46}{space 1}    1.37{col 55}{space 3}0.171{col 63}{space 4} .9933939{col 76}{space 3} 1.038157
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+
+-> Model for the mediator
+{res}
+{txt}Iteration 0:{space 2}Log likelihood = {res:-50877.537}  
+Iteration 1:{space 2}Log likelihood = {res:-50877.537}  
+{res}
+{txt}{col 1}Linear regression (Maximum Likelihood){col 56}{lalign 13:Number of obs}{col 69} = {res}{ralign 7:34,574}
+{txt}{col 56}{lalign 13:Wald chi2({res:24})}{col 69} = {res}{ralign 7:1576.26}
+{txt}{col 1}{lalign 14:Log likelihood}{col 15} = {res}{ralign 10:-50877.537}{txt}{col 56}{lalign 13:Prob > chi2}{col 69} = {res}{ralign 7:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   mediator3{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}mu           {txt}{c |}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2} .0578658{col 26}{space 2} .0055966{col 37}{space 1}   10.34{col 46}{space 3}0.000{col 54}{space 4} .0468968{col 67}{space 3} .0688349
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2} -.126934{col 26}{space 2}  .023183{col 37}{space 1}   -5.48{col 46}{space 3}0.000{col 54}{space 4}-.1723719{col 67}{space 3}-.0814961
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2} .0012965{col 26}{space 2}  .000192{col 37}{space 1}    6.75{col 46}{space 3}0.000{col 54}{space 4} .0009202{col 67}{space 3} .0016728
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .2406618{col 26}{space 2} .0113988{col 37}{space 1}   21.11{col 46}{space 3}0.000{col 54}{space 4} .2183206{col 67}{space 3}  .263003
+{txt}{space 9}PC1 {c |}{col 14}{res}{space 2}-.0010748{col 26}{space 2} .0001063{col 37}{space 1}  -10.12{col 46}{space 3}0.000{col 54}{space 4}-.0012831{col 67}{space 3}-.0008665
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2} .0000273{col 26}{space 2} .0002385{col 37}{space 1}    0.11{col 46}{space 3}0.909{col 54}{space 4}-.0004403{col 67}{space 3} .0004948
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} .0010692{col 26}{space 2} .0004416{col 37}{space 1}    2.42{col 46}{space 3}0.015{col 54}{space 4} .0002037{col 67}{space 3} .0019347
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} .0019969{col 26}{space 2} .0005414{col 37}{space 1}    3.69{col 46}{space 3}0.000{col 54}{space 4} .0009357{col 67}{space 3} .0030581
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2}-.0010262{col 26}{space 2} .0007481{col 37}{space 1}   -1.37{col 46}{space 3}0.170{col 54}{space 4}-.0024926{col 67}{space 3} .0004401
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} .0001064{col 26}{space 2} .0013754{col 37}{space 1}    0.08{col 46}{space 3}0.938{col 54}{space 4}-.0025893{col 67}{space 3}  .002802
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} .0012995{col 26}{space 2} .0011505{col 37}{space 1}    1.13{col 46}{space 3}0.259{col 54}{space 4}-.0009554{col 67}{space 3} .0035544
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2} .0044578{col 26}{space 2} .0012899{col 37}{space 1}    3.46{col 46}{space 3}0.001{col 54}{space 4} .0019297{col 67}{space 3} .0069859
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2} .0029173{col 26}{space 2} .0012749{col 37}{space 1}    2.29{col 46}{space 3}0.022{col 54}{space 4} .0004186{col 67}{space 3}  .005416
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2}-.0001303{col 26}{space 2} .0014251{col 37}{space 1}   -0.09{col 46}{space 3}0.927{col 54}{space 4}-.0029235{col 67}{space 3} .0026629
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2}-.0035759{col 26}{space 2} .0014035{col 37}{space 1}   -2.55{col 46}{space 3}0.011{col 54}{space 4}-.0063268{col 67}{space 3} -.000825
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .0013198{col 26}{space 2} .0015343{col 37}{space 1}    0.86{col 46}{space 3}0.390{col 54}{space 4}-.0016874{col 67}{space 3}  .004327
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} .0031969{col 26}{space 2} .0019847{col 37}{space 1}    1.61{col 46}{space 3}0.107{col 54}{space 4} -.000693{col 67}{space 3} .0070868
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2}-.0042335{col 26}{space 2} .0016905{col 37}{space 1}   -2.50{col 46}{space 3}0.012{col 54}{space 4}-.0075468{col 67}{space 3}-.0009201
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2} .0041585{col 26}{space 2} .0017219{col 37}{space 1}    2.42{col 46}{space 3}0.016{col 54}{space 4} .0007837{col 67}{space 3} .0075334
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2}-.0032594{col 26}{space 2} .0017804{col 37}{space 1}   -1.83{col 46}{space 3}0.067{col 54}{space 4}-.0067489{col 67}{space 3} .0002301
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2}-.0002422{col 26}{space 2} .0021588{col 37}{space 1}   -0.11{col 46}{space 3}0.911{col 54}{space 4}-.0044734{col 67}{space 3} .0039891
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2}-.0011056{col 26}{space 2} .0019771{col 37}{space 1}   -0.56{col 46}{space 3}0.576{col 54}{space 4}-.0049807{col 67}{space 3} .0027694
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2}-.0001397{col 26}{space 2} .0020056{col 37}{space 1}   -0.07{col 46}{space 3}0.944{col 54}{space 4}-.0040706{col 67}{space 3} .0037913
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2}-.0003426{col 26}{space 2} .0020183{col 37}{space 1}   -0.17{col 46}{space 3}0.865{col 54}{space 4}-.0042984{col 67}{space 3} .0036131
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 2.508426{col 26}{space 2} .6953935{col 37}{space 1}    3.61{col 46}{space 3}0.000{col 54}{space 4}  1.14548{col 67}{space 3} 3.871373
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sigma2       {txt}{c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 1.110969{col 26}{space 2} .0084497{col 37}{space 1}  131.48{col 46}{space 3}0.000{col 54}{space 4} 1.094408{col 67}{space 3}  1.12753
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+
+{txt}-> 4-way decomposition: delta method
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}tereri {c |}{col 14}{res}{space 2}  .763577{col 26}{space 2} .0454264{col 37}{space 1}   16.81{col 46}{space 3}0.000{col 54}{space 4} .6745428{col 67}{space 3} .8526112
+{txt}{space 3}ereri_cde {c |}{col 14}{res}{space 2} .7291923{col 26}{space 2}   .04617{col 37}{space 1}   15.79{col 46}{space 3}0.000{col 54}{space 4} .6387008{col 67}{space 3} .8196838
+{txt}ereri_intref {c |}{col 14}{res}{space 2} .0156083{col 26}{space 2} .0068691{col 37}{space 1}    2.27{col 46}{space 3}0.023{col 54}{space 4} .0021452{col 67}{space 3} .0290715
+{txt}ereri_intmed {c |}{col 14}{res}{space 2} .0086622{col 26}{space 2} .0021616{col 37}{space 1}    4.01{col 46}{space 3}0.000{col 54}{space 4} .0044255{col 67}{space 3} .0128988
+{txt}{space 3}ereri_pie {c |}{col 14}{res}{space 2} .0101142{col 26}{space 2} .0022591{col 37}{space 1}    4.48{col 46}{space 3}0.000{col 54}{space 4} .0056864{col 67}{space 3}  .014542
+{txt}{space 6}terira {c |}{col 14}{res}{space 2} 1.763577{col 26}{space 2} .0454264{col 37}{space 1}   38.82{col 46}{space 3}0.000{col 54}{space 4} 1.674543{col 67}{space 3} 1.852611
+{txt}{space 7}p_cde {c |}{col 14}{res}{space 2} .9549689{col 26}{space 2} .0127574{col 37}{space 1}   74.86{col 46}{space 3}0.000{col 54}{space 4} .9299648{col 67}{space 3}  .979973
+{txt}{space 4}p_intref {c |}{col 14}{res}{space 2} .0204411{col 26}{space 2} .0091096{col 37}{space 1}    2.24{col 46}{space 3}0.025{col 54}{space 4} .0025865{col 67}{space 3} .0382956
+{txt}{space 4}p_intmed {c |}{col 14}{res}{space 2} .0113442{col 26}{space 2}  .002845{col 37}{space 1}    3.99{col 46}{space 3}0.000{col 54}{space 4}  .005768{col 67}{space 3} .0169204
+{txt}{space 7}p_pie {c |}{col 14}{res}{space 2} .0132458{col 26}{space 2} .0029831{col 37}{space 1}    4.44{col 46}{space 3}0.000{col 54}{space 4}  .007399{col 67}{space 3} .0190926
+{txt}{space 8}op_m {c |}{col 14}{res}{space 2}   .02459{col 26}{space 2} .0046901{col 37}{space 1}    5.24{col 46}{space 3}0.000{col 54}{space 4} .0153977{col 67}{space 3} .0337824
+{txt}{space 6}op_ati {c |}{col 14}{res}{space 2} .0317853{col 26}{space 2} .0117623{col 37}{space 1}    2.70{col 46}{space 3}0.007{col 54}{space 4} .0087316{col 67}{space 3}  .054839
+{txt}{space 8}op_e {c |}{col 14}{res}{space 2} .0450311{col 26}{space 2} .0127574{col 37}{space 1}    3.53{col 46}{space 3}0.000{col 54}{space 4}  .020027{col 67}{space 3} .0700352
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{p 3 3 5 0}
+tereri=total excess relative risk; ereri_cde=excess relative risk due to controlled direct effect; ereri_intref=excess relative risk due to reference interaction; ereri_intmed=excess relative risk due to mediated interaction; ereri_pie=excess relative risk due to pure indirect effect; terira=total effect risk ratio; p_cde=proportion controlled direct effect; p_intref=proportion reference interaction; p_intmed=proportion mediated interaction; p_pie=proportion pure indirect effect; op_m=overall proportion mediated; op_ati=overall proportion attributable to interaction; op_e=overall proportion eliminated.
+{p_end}
+
+{com}. 
+. 
+. **MEN***************************************
+. 
+. 
+. forval x=1(1)3 {c -(}
+{txt}  2{com}. 
+. med4way AD_PGS mediator`x' AGE Agesq SEX PC1-PC20  if sample_final==1 & SEX==1 , a0(0) a1(1) m(0) yreg(cox) mreg(linear) fulloutput
+{txt}  3{com}. 
+. 
+. {c )-}
+{res}{err}Warning: this analysis assumes a rare outcome.
+Warning: fixed values for the covariates AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20 were not provided. All covariates are fixed at their respective mean.
+
+{txt}-> Summary
+
+{col 4}Outcome    (yvar):{col 24}{res}Age_dementia
+{col 4}{txt}Exposure   (avar):{col 24}{res}AD_PGS
+{col 4}{txt}Mediator   (mvar):{col 24}{res}mediator1
+{col 4}{txt}Covariates (cvars):{col 24}{res}AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20
+
+{col 4}{txt}Model for the outcome  (yreg):{col 35}{res}cox
+{col 4}{txt}Model for the mediator (mreg):{col 35}{res}linear
+
+{col 4}{txt}Referent exposure level (a0):{col 46}{res}0
+{col 4}{txt}Actual exposure level   (a1):{col 46}{res}1
+{col 4}{txt}Mediator level for the decomposition (m):{col 46}{res}0
+{col 4}{txt}Fixed values of the covariates (c):{col 46}{res}61.14 3769 1 -2.457 1.486 .2042 .06001 -.07538 -.2236 .2024 -.1186 .1037 .04085 .1677 .07011 .02173 .02984 .06403 -.02517 -.005922 .04541 .004782 .02431
+
+
+{txt}-> Model for the outcome
+
+{col 10}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}note: {bf:SEX} omitted because of collinearity.
+Iteration 0:  Log likelihood = {res}-4658.1515
+{txt}Iteration 1:  Log likelihood = {res} -4561.973
+{txt}Iteration 2:  Log likelihood = {res}-4542.4114
+{txt}Iteration 3:  Log likelihood = {res} -4541.663
+{txt}Iteration 4:  Log likelihood = {res}-4541.6326
+{txt}Iteration 5:  Log likelihood = {res}-4541.6315
+{txt}Iteration 6:  Log likelihood = {res}-4541.6315
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-4541.6315
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:16,011}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:16,011}
+{txt}No. of failures = {res}{ralign 11:541}
+{txt}Time at risk    = {res}{ralign 11:191,142.002}
+{col 57}{txt}{lalign 13:LR chi2({res:25})} = {res}{ralign 6:233.04}
+{txt}Log likelihood = {res}-4541.6315{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}                   _t{col 23}{c |} Haz. ratio{col 35}   Std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 15}AD_PGS {c |}{col 23}{res}{space 2} 1.586476{col 35}{space 2} .0576188{col 46}{space 1}   12.71{col 55}{space 3}0.000{col 63}{space 4} 1.477471{col 76}{space 3} 1.703523
+{txt}{space 12}mediator1 {c |}{col 23}{res}{space 2} .9045443{col 35}{space 2} .0340308{col 46}{space 1}   -2.67{col 55}{space 3}0.008{col 63}{space 4} .8402449{col 76}{space 3} .9737641
+{txt}_AD_PGSXmediator1_000 {c |}{col 23}{res}{space 2} .9446498{col 35}{space 2} .0256123{col 46}{space 1}   -2.10{col 55}{space 3}0.036{col 63}{space 4} .8957611{col 76}{space 3} .9962068
+{txt}{space 18}AGE {c |}{col 23}{res}{space 2} .7370589{col 35}{space 2}  .238093{col 46}{space 1}   -0.94{col 55}{space 3}0.345{col 63}{space 4} .3913251{col 76}{space 3} 1.388247
+{txt}{space 16}Agesq {c |}{col 23}{res}{space 2} 1.002793{col 35}{space 2} .0025313{col 46}{space 1}    1.11{col 55}{space 3}0.269{col 63}{space 4} .9978445{col 76}{space 3} 1.007767
+{txt}{space 18}SEX {c |}{col 23}{res}{space 2}        1{col 35}{txt}  (omitted)
+{space 18}PC1 {c |}{col 23}{res}{space 2} 1.000385{col 35}{space 2} .0011961{col 46}{space 1}    0.32{col 55}{space 3}0.747{col 63}{space 4} .9980436{col 76}{space 3} 1.002732
+{txt}{space 18}PC2 {c |}{col 23}{res}{space 2} 1.007488{col 35}{space 2} .0055463{col 46}{space 1}    1.36{col 55}{space 3}0.175{col 63}{space 4} .9966759{col 76}{space 3} 1.018417
+{txt}{space 18}PC3 {c |}{col 23}{res}{space 2} 1.007914{col 35}{space 2} .0090637{col 46}{space 1}    0.88{col 55}{space 3}0.381{col 63}{space 4} .9903053{col 76}{space 3} 1.025836
+{txt}{space 18}PC4 {c |}{col 23}{res}{space 2} 1.007306{col 35}{space 2} .0054352{col 46}{space 1}    1.35{col 55}{space 3}0.177{col 63}{space 4} .9967093{col 76}{space 3} 1.018015
+{txt}{space 18}PC5 {c |}{col 23}{res}{space 2} 1.008736{col 35}{space 2} .0055452{col 46}{space 1}    1.58{col 55}{space 3}0.114{col 63}{space 4}  .997926{col 76}{space 3} 1.019663
+{txt}{space 18}PC6 {c |}{col 23}{res}{space 2} .9920752{col 35}{space 2} .0227394{col 46}{space 1}   -0.35{col 55}{space 3}0.729{col 63}{space 4} .9484931{col 76}{space 3}  1.03766
+{txt}{space 18}PC7 {c |}{col 23}{res}{space 2} 1.011154{col 35}{space 2} .0123803{col 46}{space 1}    0.91{col 55}{space 3}0.365{col 63}{space 4} .9871774{col 76}{space 3} 1.035712
+{txt}{space 18}PC8 {c |}{col 23}{res}{space 2} .9996391{col 35}{space 2}  .016855{col 46}{space 1}   -0.02{col 55}{space 3}0.983{col 63}{space 4} .9671438{col 76}{space 3} 1.033226
+{txt}{space 18}PC9 {c |}{col 23}{res}{space 2} 1.004792{col 35}{space 2} .0095493{col 46}{space 1}    0.50{col 55}{space 3}0.615{col 63}{space 4} .9862488{col 76}{space 3} 1.023684
+{txt}{space 17}PC10 {c |}{col 23}{res}{space 2} 1.020613{col 35}{space 2} .0128855{col 46}{space 1}    1.62{col 55}{space 3}0.106{col 63}{space 4}  .995668{col 76}{space 3} 1.046183
+{txt}{space 17}PC11 {c |}{col 23}{res}{space 2} 1.012347{col 35}{space 2}  .012245{col 46}{space 1}    1.01{col 55}{space 3}0.310{col 63}{space 4} .9886294{col 76}{space 3} 1.036633
+{txt}{space 17}PC12 {c |}{col 23}{res}{space 2} .9769702{col 35}{space 2} .0143467{col 46}{space 1}   -1.59{col 55}{space 3}0.113{col 63}{space 4}  .949252{col 76}{space 3} 1.005498
+{txt}{space 17}PC13 {c |}{col 23}{res}{space 2}  .991051{col 35}{space 2} .0251451{col 46}{space 1}   -0.35{col 55}{space 3}0.723{col 63}{space 4} .9429728{col 76}{space 3} 1.041581
+{txt}{space 17}PC14 {c |}{col 23}{res}{space 2} .9836374{col 35}{space 2} .0123586{col 46}{space 1}   -1.31{col 55}{space 3}0.189{col 63}{space 4} .9597108{col 76}{space 3} 1.008161
+{txt}{space 17}PC15 {c |}{col 23}{res}{space 2} .9993657{col 35}{space 2} .0162877{col 46}{space 1}   -0.04{col 55}{space 3}0.969{col 63}{space 4} .9679468{col 76}{space 3} 1.031804
+{txt}{space 17}PC16 {c |}{col 23}{res}{space 2} 1.007635{col 35}{space 2} .0131997{col 46}{space 1}    0.58{col 55}{space 3}0.562{col 63}{space 4}  .982093{col 76}{space 3} 1.033841
+{txt}{space 17}PC17 {c |}{col 23}{res}{space 2} 1.008766{col 35}{space 2} .0168219{col 46}{space 1}    0.52{col 55}{space 3}0.601{col 63}{space 4} .9763291{col 76}{space 3} 1.042281
+{txt}{space 17}PC18 {c |}{col 23}{res}{space 2} .9971195{col 35}{space 2} .0143667{col 46}{space 1}   -0.20{col 55}{space 3}0.841{col 63}{space 4} .9693552{col 76}{space 3} 1.025679
+{txt}{space 17}PC19 {c |}{col 23}{res}{space 2}  1.00599{col 35}{space 2} .0151155{col 46}{space 1}    0.40{col 55}{space 3}0.691{col 63}{space 4} .9767963{col 76}{space 3} 1.036056
+{txt}{space 17}PC20 {c |}{col 23}{res}{space 2} 1.008859{col 35}{space 2} .0154991{col 46}{space 1}    0.57{col 55}{space 3}0.566{col 63}{space 4} .9789337{col 76}{space 3} 1.039698
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+
+-> Model for the mediator
+{res}{txt}note: {bf:SEX} omitted because of collinearity.
+{res}
+{txt}Iteration 0:{space 2}Log likelihood = {res:-27866.393}  
+Iteration 1:{space 2}Log likelihood = {res:-27866.393}  
+{res}
+{txt}{col 1}Linear regression (Maximum Likelihood){col 57}{lalign 13:Number of obs}{col 70} = {res}{ralign 6:16,011}
+{txt}{col 57}{lalign 13:Wald chi2({res:23})}{col 70} = {res}{ralign 6:117.86}
+{txt}{col 1}{lalign 14:Log likelihood}{col 15} = {res}{ralign 10:-27866.393}{txt}{col 57}{lalign 13:Prob > chi2}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   mediator1{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}mu           {txt}{c |}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2}-.0259556{col 26}{space 2}  .010689{col 37}{space 1}   -2.43{col 46}{space 3}0.015{col 54}{space 4}-.0469057{col 67}{space 3}-.0050054
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2} .0108421{col 26}{space 2} .0445003{col 37}{space 1}    0.24{col 46}{space 3}0.808{col 54}{space 4}-.0763768{col 67}{space 3}  .098061
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2}-.0001827{col 26}{space 2} .0003678{col 37}{space 1}   -0.50{col 46}{space 3}0.619{col 54}{space 4}-.0009035{col 67}{space 3} .0005381
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 9}PC1 {c |}{col 14}{res}{space 2}-.0009779{col 26}{space 2} .0002163{col 37}{space 1}   -4.52{col 46}{space 3}0.000{col 54}{space 4}-.0014019{col 67}{space 3}-.0005539
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2}-.0011025{col 26}{space 2} .0005139{col 37}{space 1}   -2.15{col 46}{space 3}0.032{col 54}{space 4}-.0021098{col 67}{space 3}-.0000953
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} .0041733{col 26}{space 2} .0009213{col 37}{space 1}    4.53{col 46}{space 3}0.000{col 54}{space 4} .0023676{col 67}{space 3}  .005979
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} .0010923{col 26}{space 2} .0010346{col 37}{space 1}    1.06{col 46}{space 3}0.291{col 54}{space 4}-.0009356{col 67}{space 3} .0031201
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2} .0005138{col 26}{space 2} .0014538{col 37}{space 1}    0.35{col 46}{space 3}0.724{col 54}{space 4}-.0023356{col 67}{space 3} .0033632
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} .0009042{col 26}{space 2} .0032916{col 37}{space 1}    0.27{col 46}{space 3}0.784{col 54}{space 4}-.0055471{col 67}{space 3} .0073556
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} .0024612{col 26}{space 2} .0022537{col 37}{space 1}    1.09{col 46}{space 3}0.275{col 54}{space 4} -.001956{col 67}{space 3} .0068784
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2} .0001759{col 26}{space 2} .0027541{col 37}{space 1}    0.06{col 46}{space 3}0.949{col 54}{space 4} -.005222{col 67}{space 3} .0055738
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2}-.0042446{col 26}{space 2} .0024407{col 37}{space 1}   -1.74{col 46}{space 3}0.082{col 54}{space 4}-.0090282{col 67}{space 3}  .000539
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} .0005994{col 26}{space 2} .0026148{col 37}{space 1}    0.23{col 46}{space 3}0.819{col 54}{space 4}-.0045255{col 67}{space 3} .0057244
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2} .0011588{col 26}{space 2} .0026131{col 37}{space 1}    0.44{col 46}{space 3}0.657{col 54}{space 4}-.0039627{col 67}{space 3} .0062803
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2}  .000865{col 26}{space 2} .0028415{col 37}{space 1}    0.30{col 46}{space 3}0.761{col 54}{space 4}-.0047041{col 67}{space 3} .0064342
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} .0043789{col 26}{space 2}   .00467{col 37}{space 1}    0.94{col 46}{space 3}0.348{col 54}{space 4}-.0047742{col 67}{space 3}  .013532
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2}-.0064549{col 26}{space 2} .0032537{col 37}{space 1}   -1.98{col 46}{space 3}0.047{col 54}{space 4} -.012832{col 67}{space 3}-.0000778
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2}-.0007319{col 26}{space 2} .0034705{col 37}{space 1}   -0.21{col 46}{space 3}0.833{col 54}{space 4}-.0075339{col 67}{space 3} .0060701
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2}-.0090675{col 26}{space 2} .0033992{col 37}{space 1}   -2.67{col 46}{space 3}0.008{col 54}{space 4}-.0157299{col 67}{space 3}-.0024051
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2}-.0063799{col 26}{space 2} .0043137{col 37}{space 1}   -1.48{col 46}{space 3}0.139{col 54}{space 4}-.0148345{col 67}{space 3} .0020747
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2} .0047917{col 26}{space 2}  .003799{col 37}{space 1}    1.26{col 46}{space 3}0.207{col 54}{space 4}-.0026542{col 67}{space 3} .0122375
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2}-.0023878{col 26}{space 2} .0038547{col 37}{space 1}   -0.62{col 46}{space 3}0.536{col 54}{space 4}-.0099428{col 67}{space 3} .0051673
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} .0064716{col 26}{space 2} .0038906{col 37}{space 1}    1.66{col 46}{space 3}0.096{col 54}{space 4}-.0011539{col 67}{space 3} .0140971
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .0531657{col 26}{space 2} 1.337606{col 37}{space 1}    0.04{col 46}{space 3}0.968{col 54}{space 4}-2.568494{col 67}{space 3} 2.674826
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sigma2       {txt}{c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 1.902234{col 26}{space 2} .0212603{col 37}{space 1}   89.47{col 46}{space 3}0.000{col 54}{space 4} 1.860564{col 67}{space 3} 1.943903
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+
+{txt}-> 4-way decomposition: delta method
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}tereri {c |}{col 14}{res}{space 2} .6126232{col 26}{space 2} .0570589{col 37}{space 1}   10.74{col 46}{space 3}0.000{col 54}{space 4} .5007898{col 67}{space 3} .7244566
+{txt}{space 3}ereri_cde {c |}{col 14}{res}{space 2} .5826155{col 26}{space 2} .0572787{col 37}{space 1}   10.17{col 46}{space 3}0.000{col 54}{space 4} .4703514{col 67}{space 3} .6948796
+{txt}ereri_intref {c |}{col 14}{res}{space 2} .0234385{col 26}{space 2} .0113376{col 37}{space 1}    2.07{col 46}{space 3}0.039{col 54}{space 4} .0012172{col 67}{space 3} .0456599
+{txt}ereri_intmed {c |}{col 14}{res}{space 2} .0039618{col 26}{space 2} .0019278{col 37}{space 1}    2.06{col 46}{space 3}0.040{col 54}{space 4} .0001834{col 67}{space 3} .0077402
+{txt}{space 3}ereri_pie {c |}{col 14}{res}{space 2} .0026074{col 26}{space 2} .0014541{col 37}{space 1}    1.79{col 46}{space 3}0.073{col 54}{space 4}-.0002427{col 67}{space 3} .0054574
+{txt}{space 6}terira {c |}{col 14}{res}{space 2} 1.612623{col 26}{space 2} .0570589{col 37}{space 1}   28.26{col 46}{space 3}0.000{col 54}{space 4}  1.50079{col 67}{space 3} 1.724457
+{txt}{space 7}p_cde {c |}{col 14}{res}{space 2} .9510177{col 26}{space 2} .0212019{col 37}{space 1}   44.86{col 46}{space 3}0.000{col 54}{space 4} .9094627{col 67}{space 3} .9925727
+{txt}{space 4}p_intref {c |}{col 14}{res}{space 2} .0382593{col 26}{space 2} .0185734{col 37}{space 1}    2.06{col 46}{space 3}0.039{col 54}{space 4}  .001856{col 67}{space 3} .0746626
+{txt}{space 4}p_intmed {c |}{col 14}{res}{space 2} .0064669{col 26}{space 2} .0031217{col 37}{space 1}    2.07{col 46}{space 3}0.038{col 54}{space 4} .0003485{col 67}{space 3} .0125854
+{txt}{space 7}p_pie {c |}{col 14}{res}{space 2} .0042561{col 26}{space 2} .0023773{col 37}{space 1}    1.79{col 46}{space 3}0.073{col 54}{space 4}-.0004034{col 67}{space 3} .0089156
+{txt}{space 8}op_m {c |}{col 14}{res}{space 2}  .010723{col 26}{space 2} .0050107{col 37}{space 1}    2.14{col 46}{space 3}0.032{col 54}{space 4} .0009023{col 67}{space 3} .0205437
+{txt}{space 6}op_ati {c |}{col 14}{res}{space 2} .0447263{col 26}{space 2} .0202497{col 37}{space 1}    2.21{col 46}{space 3}0.027{col 54}{space 4} .0050375{col 67}{space 3}  .084415
+{txt}{space 8}op_e {c |}{col 14}{res}{space 2} .0489823{col 26}{space 2} .0212019{col 37}{space 1}    2.31{col 46}{space 3}0.021{col 54}{space 4} .0074273{col 67}{space 3} .0905373
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{p 3 3 5 0}
+tereri=total excess relative risk; ereri_cde=excess relative risk due to controlled direct effect; ereri_intref=excess relative risk due to reference interaction; ereri_intmed=excess relative risk due to mediated interaction; ereri_pie=excess relative risk due to pure indirect effect; terira=total effect risk ratio; p_cde=proportion controlled direct effect; p_intref=proportion reference interaction; p_intmed=proportion mediated interaction; p_pie=proportion pure indirect effect; op_m=overall proportion mediated; op_ati=overall proportion attributable to interaction; op_e=overall proportion eliminated.
+{p_end}
+{res}{err}Warning: this analysis assumes a rare outcome.
+Warning: fixed values for the covariates AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20 were not provided. All covariates are fixed at their respective mean.
+
+{txt}-> Summary
+
+{col 4}Outcome    (yvar):{col 24}{res}Age_dementia
+{col 4}{txt}Exposure   (avar):{col 24}{res}AD_PGS
+{col 4}{txt}Mediator   (mvar):{col 24}{res}mediator2
+{col 4}{txt}Covariates (cvars):{col 24}{res}AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20
+
+{col 4}{txt}Model for the outcome  (yreg):{col 35}{res}cox
+{col 4}{txt}Model for the mediator (mreg):{col 35}{res}linear
+
+{col 4}{txt}Referent exposure level (a0):{col 46}{res}0
+{col 4}{txt}Actual exposure level   (a1):{col 46}{res}1
+{col 4}{txt}Mediator level for the decomposition (m):{col 46}{res}0
+{col 4}{txt}Fixed values of the covariates (c):{col 46}{res}61.14 3769 1 -2.457 1.486 .2042 .06001 -.07538 -.2236 .2024 -.1186 .1037 .04085 .1677 .07011 .02173 .02984 .06403 -.02517 -.005922 .04541 .004782 .02431
+
+
+{txt}-> Model for the outcome
+
+{col 10}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}note: {bf:SEX} omitted because of collinearity.
+Iteration 0:  Log likelihood = {res}-4658.1515
+{txt}Iteration 1:  Log likelihood = {res}-4654.4101
+{txt}Iteration 2:  Log likelihood = {res}-4505.7642
+{txt}Iteration 3:  Log likelihood = {res} -4485.083
+{txt}Iteration 4:  Log likelihood = {res}-4484.3949
+{txt}Iteration 5:  Log likelihood = {res}-4484.3939
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-4484.3939
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:16,011}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:16,011}
+{txt}No. of failures = {res}{ralign 11:541}
+{txt}Time at risk    = {res}{ralign 11:191,142.002}
+{col 57}{txt}{lalign 13:LR chi2({res:25})} = {res}{ralign 6:347.52}
+{txt}Log likelihood = {res}-4484.3939{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}                   _t{col 23}{c |} Haz. ratio{col 35}   Std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 15}AD_PGS {c |}{col 23}{res}{space 2} 1.533662{col 35}{space 2} .0707626{col 46}{space 1}    9.27{col 55}{space 3}0.000{col 63}{space 4} 1.401056{col 76}{space 3} 1.678818
+{txt}{space 12}mediator2 {c |}{col 23}{res}{space 2} 1.442496{col 35}{space 2} .0476428{col 46}{space 1}   11.09{col 55}{space 3}0.000{col 63}{space 4} 1.352076{col 76}{space 3} 1.538963
+{txt}_AD_PGSXmediator2_000 {c |}{col 23}{res}{space 2} 1.014717{col 35}{space 2} .0237538{col 46}{space 1}    0.62{col 55}{space 3}0.533{col 63}{space 4} .9692124{col 76}{space 3} 1.062358
+{txt}{space 18}AGE {c |}{col 23}{res}{space 2} .7680282{col 35}{space 2} .2472086{col 46}{space 1}   -0.82{col 55}{space 3}0.412{col 63}{space 4}  .408693{col 76}{space 3} 1.443302
+{txt}{space 16}Agesq {c |}{col 23}{res}{space 2} 1.002118{col 35}{space 2} .0025219{col 46}{space 1}    0.84{col 55}{space 3}0.400{col 63}{space 4} .9971877{col 76}{space 3} 1.007073
+{txt}{space 18}SEX {c |}{col 23}{res}{space 2}        1{col 35}{txt}  (omitted)
+{space 18}PC1 {c |}{col 23}{res}{space 2} 1.001087{col 35}{space 2} .0013045{col 46}{space 1}    0.83{col 55}{space 3}0.404{col 63}{space 4} .9985338{col 76}{space 3} 1.003647
+{txt}{space 18}PC2 {c |}{col 23}{res}{space 2} 1.007604{col 35}{space 2} .0063779{col 46}{space 1}    1.20{col 55}{space 3}0.231{col 63}{space 4} .9951811{col 76}{space 3} 1.020183
+{txt}{space 18}PC3 {c |}{col 23}{res}{space 2} 1.005956{col 35}{space 2} .0103837{col 46}{space 1}    0.58{col 55}{space 3}0.565{col 63}{space 4} .9858088{col 76}{space 3} 1.026515
+{txt}{space 18}PC4 {c |}{col 23}{res}{space 2} 1.006655{col 35}{space 2}  .005502{col 46}{space 1}    1.21{col 55}{space 3}0.225{col 63}{space 4} .9959284{col 76}{space 3} 1.017496
+{txt}{space 18}PC5 {c |}{col 23}{res}{space 2}  1.00933{col 35}{space 2}  .005573{col 46}{space 1}    1.68{col 55}{space 3}0.093{col 63}{space 4} .9984663{col 76}{space 3} 1.020312
+{txt}{space 18}PC6 {c |}{col 23}{res}{space 2} .9962641{col 35}{space 2} .0226028{col 46}{space 1}   -0.16{col 55}{space 3}0.869{col 63}{space 4}  .952934{col 76}{space 3} 1.041564
+{txt}{space 18}PC7 {c |}{col 23}{res}{space 2} 1.010434{col 35}{space 2} .0124366{col 46}{space 1}    0.84{col 55}{space 3}0.399{col 63}{space 4} .9863503{col 76}{space 3} 1.035106
+{txt}{space 18}PC8 {c |}{col 23}{res}{space 2} 1.001556{col 35}{space 2} .0168499{col 46}{space 1}    0.09{col 55}{space 3}0.926{col 63}{space 4} .9690693{col 76}{space 3} 1.035132
+{txt}{space 18}PC9 {c |}{col 23}{res}{space 2}   1.0035{col 35}{space 2} .0094392{col 46}{space 1}    0.37{col 55}{space 3}0.710{col 63}{space 4} .9851693{col 76}{space 3} 1.022172
+{txt}{space 17}PC10 {c |}{col 23}{res}{space 2}  1.02138{col 35}{space 2} .0132251{col 46}{space 1}    1.63{col 55}{space 3}0.102{col 63}{space 4} .9957854{col 76}{space 3} 1.047632
+{txt}{space 17}PC11 {c |}{col 23}{res}{space 2} 1.008391{col 35}{space 2} .0125415{col 46}{space 1}    0.67{col 55}{space 3}0.502{col 63}{space 4} .9841077{col 76}{space 3} 1.033274
+{txt}{space 17}PC12 {c |}{col 23}{res}{space 2} .9731863{col 35}{space 2} .0151002{col 46}{space 1}   -1.75{col 55}{space 3}0.080{col 63}{space 4} .9440359{col 76}{space 3} 1.003237
+{txt}{space 17}PC13 {c |}{col 23}{res}{space 2} .9898442{col 35}{space 2} .0253239{col 46}{space 1}   -0.40{col 55}{space 3}0.690{col 63}{space 4} .9414342{col 76}{space 3} 1.040744
+{txt}{space 17}PC14 {c |}{col 23}{res}{space 2} .9828087{col 35}{space 2} .0125322{col 46}{space 1}   -1.36{col 55}{space 3}0.174{col 63}{space 4} .9585504{col 76}{space 3} 1.007681
+{txt}{space 17}PC15 {c |}{col 23}{res}{space 2} .9965754{col 35}{space 2} .0161462{col 46}{space 1}   -0.21{col 55}{space 3}0.832{col 63}{space 4} .9654266{col 76}{space 3} 1.028729
+{txt}{space 17}PC16 {c |}{col 23}{res}{space 2} 1.009908{col 35}{space 2} .0131989{col 46}{space 1}    0.75{col 55}{space 3}0.451{col 63}{space 4} .9843675{col 76}{space 3} 1.036112
+{txt}{space 17}PC17 {c |}{col 23}{res}{space 2} 1.005948{col 35}{space 2} .0178863{col 46}{space 1}    0.33{col 55}{space 3}0.739{col 63}{space 4} .9714953{col 76}{space 3} 1.041623
+{txt}{space 17}PC18 {c |}{col 23}{res}{space 2} 1.002891{col 35}{space 2} .0144458{col 46}{space 1}    0.20{col 55}{space 3}0.841{col 63}{space 4}  .974974{col 76}{space 3} 1.031608
+{txt}{space 17}PC19 {c |}{col 23}{res}{space 2}  1.01282{col 35}{space 2} .0152675{col 46}{space 1}    0.85{col 55}{space 3}0.398{col 63}{space 4} .9833344{col 76}{space 3} 1.043191
+{txt}{space 17}PC20 {c |}{col 23}{res}{space 2} 1.001683{col 35}{space 2} .0154376{col 46}{space 1}    0.11{col 55}{space 3}0.913{col 63}{space 4} .9718781{col 76}{space 3} 1.032402
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+
+-> Model for the mediator
+{res}{txt}note: {bf:SEX} omitted because of collinearity.
+{res}
+{txt}Iteration 0:{space 2}Log likelihood = {res:-25957.714}  
+Iteration 1:{space 2}Log likelihood = {res:-25957.714}  
+{res}
+{txt}{col 1}Linear regression (Maximum Likelihood){col 56}{lalign 13:Number of obs}{col 69} = {res}{ralign 7:16,011}
+{txt}{col 56}{lalign 13:Wald chi2({res:23})}{col 69} = {res}{ralign 7:3618.52}
+{txt}{col 1}{lalign 14:Log likelihood}{col 15} = {res}{ralign 10:-25957.714}{txt}{col 56}{lalign 13:Prob > chi2}{col 69} = {res}{ralign 7:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   mediator2{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}mu           {txt}{c |}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2}  .092286{col 26}{space 2} .0094878{col 37}{space 1}    9.73{col 46}{space 3}0.000{col 54}{space 4} .0736902{col 67}{space 3} .1108818
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2}-.1195497{col 26}{space 2} .0394994{col 37}{space 1}   -3.03{col 46}{space 3}0.002{col 54}{space 4} -.196967{col 67}{space 3}-.0421324
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2} .0018172{col 26}{space 2} .0003264{col 37}{space 1}    5.57{col 46}{space 3}0.000{col 54}{space 4} .0011774{col 67}{space 3}  .002457
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 9}PC1 {c |}{col 14}{res}{space 2}-.0013606{col 26}{space 2}  .000192{col 37}{space 1}   -7.09{col 46}{space 3}0.000{col 54}{space 4}-.0017369{col 67}{space 3}-.0009842
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2} .0000975{col 26}{space 2} .0004562{col 37}{space 1}    0.21{col 46}{space 3}0.831{col 54}{space 4}-.0007966{col 67}{space 3} .0009915
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} .0045059{col 26}{space 2} .0008178{col 37}{space 1}    5.51{col 46}{space 3}0.000{col 54}{space 4} .0029031{col 67}{space 3} .0061086
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} .0016655{col 26}{space 2} .0009184{col 37}{space 1}    1.81{col 46}{space 3}0.070{col 54}{space 4}-.0001345{col 67}{space 3} .0034655
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2}-.0032232{col 26}{space 2} .0012904{col 37}{space 1}   -2.50{col 46}{space 3}0.012{col 54}{space 4}-.0057524{col 67}{space 3} -.000694
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2}-.0019713{col 26}{space 2} .0029217{col 37}{space 1}   -0.67{col 46}{space 3}0.500{col 54}{space 4}-.0076977{col 67}{space 3} .0037551
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2}-.0020215{col 26}{space 2} .0020005{col 37}{space 1}   -1.01{col 46}{space 3}0.312{col 54}{space 4}-.0059423{col 67}{space 3} .0018993
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2}-.0021652{col 26}{space 2} .0024446{col 37}{space 1}   -0.89{col 46}{space 3}0.376{col 54}{space 4}-.0069565{col 67}{space 3} .0026261
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2} .0017257{col 26}{space 2} .0021664{col 37}{space 1}    0.80{col 46}{space 3}0.426{col 54}{space 4}-.0025204{col 67}{space 3} .0059717
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} .0033595{col 26}{space 2}  .002321{col 37}{space 1}    1.45{col 46}{space 3}0.148{col 54}{space 4}-.0011895{col 67}{space 3} .0079085
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2} .0032743{col 26}{space 2} .0023194{col 37}{space 1}    1.41{col 46}{space 3}0.158{col 54}{space 4}-.0012717{col 67}{space 3} .0078202
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .0036831{col 26}{space 2} .0025221{col 37}{space 1}    1.46{col 46}{space 3}0.144{col 54}{space 4}-.0012602{col 67}{space 3} .0086264
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2}-.0027923{col 26}{space 2} .0041452{col 37}{space 1}   -0.67{col 46}{space 3}0.501{col 54}{space 4}-.0109168{col 67}{space 3} .0053322
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2} .0002636{col 26}{space 2}  .002888{col 37}{space 1}    0.09{col 46}{space 3}0.927{col 54}{space 4}-.0053969{col 67}{space 3}  .005924
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2} .0005175{col 26}{space 2} .0030805{col 37}{space 1}    0.17{col 46}{space 3}0.867{col 54}{space 4}-.0055201{col 67}{space 3} .0065551
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2}-.0040157{col 26}{space 2} .0030172{col 37}{space 1}   -1.33{col 46}{space 3}0.183{col 54}{space 4}-.0099294{col 67}{space 3}  .001898
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2} .0035478{col 26}{space 2} .0038289{col 37}{space 1}    0.93{col 46}{space 3}0.354{col 54}{space 4}-.0039567{col 67}{space 3} .0110523
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2} -.007907{col 26}{space 2}  .003372{col 37}{space 1}   -2.34{col 46}{space 3}0.019{col 54}{space 4}-.0145161{col 67}{space 3}-.0012979
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2} .0022911{col 26}{space 2} .0034215{col 37}{space 1}    0.67{col 46}{space 3}0.503{col 54}{space 4}-.0044149{col 67}{space 3} .0089971
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} .0021761{col 26}{space 2} .0034534{col 37}{space 1}    0.63{col 46}{space 3}0.529{col 54}{space 4}-.0045925{col 67}{space 3} .0089447
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} .4793964{col 26}{space 2} 1.187287{col 37}{space 1}    0.40{col 46}{space 3}0.686{col 54}{space 4}-1.847644{col 67}{space 3} 2.806437
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sigma2       {txt}{c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 1.498715{col 26}{space 2} .0167504{col 37}{space 1}   89.47{col 46}{space 3}0.000{col 54}{space 4} 1.465885{col 67}{space 3} 1.531545
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+
+{txt}-> 4-way decomposition: delta method
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}tereri {c |}{col 14}{res}{space 2} .6021826{col 26}{space 2} .0615189{col 37}{space 1}    9.79{col 46}{space 3}0.000{col 54}{space 4} .4816077{col 67}{space 3} .7227575
+{txt}{space 3}ereri_cde {c |}{col 14}{res}{space 2} .4781715{col 26}{space 2} .0622315{col 37}{space 1}    7.68{col 46}{space 3}0.000{col 54}{space 4}    .3562{col 67}{space 3} .6001429
+{txt}ereri_intref {c |}{col 14}{res}{space 2} .0686579{col 26}{space 2}  .016592{col 37}{space 1}    4.14{col 46}{space 3}0.000{col 54}{space 4} .0361381{col 67}{space 3} .1011777
+{txt}ereri_intmed {c |}{col 14}{res}{space 2} .0209639{col 26}{space 2}  .003788{col 37}{space 1}    5.53{col 46}{space 3}0.000{col 54}{space 4} .0135395{col 67}{space 3} .0283882
+{txt}{space 3}ereri_pie {c |}{col 14}{res}{space 2} .0343894{col 26}{space 2} .0047822{col 37}{space 1}    7.19{col 46}{space 3}0.000{col 54}{space 4} .0250165{col 67}{space 3} .0437622
+{txt}{space 6}terira {c |}{col 14}{res}{space 2} 1.602183{col 26}{space 2} .0615189{col 37}{space 1}   26.04{col 46}{space 3}0.000{col 54}{space 4} 1.481608{col 67}{space 3} 1.722757
+{txt}{space 7}p_cde {c |}{col 14}{res}{space 2} .7940639{col 26}{space 2} .0384146{col 37}{space 1}   20.67{col 46}{space 3}0.000{col 54}{space 4} .7187727{col 67}{space 3} .8693551
+{txt}{space 4}p_intref {c |}{col 14}{res}{space 2} .1140151{col 26}{space 2} .0294088{col 37}{space 1}    3.88{col 46}{space 3}0.000{col 54}{space 4} .0563749{col 67}{space 3} .1716553
+{txt}{space 4}p_intmed {c |}{col 14}{res}{space 2} .0348131{col 26}{space 2} .0061103{col 37}{space 1}    5.70{col 46}{space 3}0.000{col 54}{space 4} .0228371{col 67}{space 3} .0467891
+{txt}{space 7}p_pie {c |}{col 14}{res}{space 2} .0571079{col 26}{space 2} .0089285{col 37}{space 1}    6.40{col 46}{space 3}0.000{col 54}{space 4} .0396083{col 67}{space 3} .0746074
+{txt}{space 8}op_m {c |}{col 14}{res}{space 2}  .091921{col 26}{space 2} .0133451{col 37}{space 1}    6.89{col 46}{space 3}0.000{col 54}{space 4} .0657652{col 67}{space 3} .1180768
+{txt}{space 6}op_ati {c |}{col 14}{res}{space 2} .1488282{col 26}{space 2} .0345394{col 37}{space 1}    4.31{col 46}{space 3}0.000{col 54}{space 4} .0811322{col 67}{space 3} .2165242
+{txt}{space 8}op_e {c |}{col 14}{res}{space 2} .2059361{col 26}{space 2} .0384146{col 37}{space 1}    5.36{col 46}{space 3}0.000{col 54}{space 4} .1306449{col 67}{space 3} .2812273
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{p 3 3 5 0}
+tereri=total excess relative risk; ereri_cde=excess relative risk due to controlled direct effect; ereri_intref=excess relative risk due to reference interaction; ereri_intmed=excess relative risk due to mediated interaction; ereri_pie=excess relative risk due to pure indirect effect; terira=total effect risk ratio; p_cde=proportion controlled direct effect; p_intref=proportion reference interaction; p_intmed=proportion mediated interaction; p_pie=proportion pure indirect effect; op_m=overall proportion mediated; op_ati=overall proportion attributable to interaction; op_e=overall proportion eliminated.
+{p_end}
+{res}{err}Warning: this analysis assumes a rare outcome.
+Warning: fixed values for the covariates AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20 were not provided. All covariates are fixed at their respective mean.
+
+{txt}-> Summary
+
+{col 4}Outcome    (yvar):{col 24}{res}Age_dementia
+{col 4}{txt}Exposure   (avar):{col 24}{res}AD_PGS
+{col 4}{txt}Mediator   (mvar):{col 24}{res}mediator3
+{col 4}{txt}Covariates (cvars):{col 24}{res}AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20
+
+{col 4}{txt}Model for the outcome  (yreg):{col 35}{res}cox
+{col 4}{txt}Model for the mediator (mreg):{col 35}{res}linear
+
+{col 4}{txt}Referent exposure level (a0):{col 46}{res}0
+{col 4}{txt}Actual exposure level   (a1):{col 46}{res}1
+{col 4}{txt}Mediator level for the decomposition (m):{col 46}{res}0
+{col 4}{txt}Fixed values of the covariates (c):{col 46}{res}61.14 3769 1 -2.457 1.486 .2042 .06001 -.07538 -.2236 .2024 -.1186 .1037 .04085 .1677 .07011 .02173 .02984 .06403 -.02517 -.005922 .04541 .004782 .02431
+
+
+{txt}-> Model for the outcome
+
+{col 10}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}note: {bf:SEX} omitted because of collinearity.
+Iteration 0:  Log likelihood = {res}-4658.1515
+{txt}Iteration 1:  Log likelihood = {res}-4560.5809
+{txt}Iteration 2:  Log likelihood = {res}-4541.7738
+{txt}Iteration 3:  Log likelihood = {res}-4541.0663
+{txt}Iteration 4:  Log likelihood = {res}-4541.0625
+{txt}Iteration 5:  Log likelihood = {res}-4541.0625
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-4541.0625
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:16,011}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:16,011}
+{txt}No. of failures = {res}{ralign 11:541}
+{txt}Time at risk    = {res}{ralign 11:191,142.002}
+{col 57}{txt}{lalign 13:LR chi2({res:25})} = {res}{ralign 6:234.18}
+{txt}Log likelihood = {res}-4541.0625{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}                   _t{col 23}{c |} Haz. ratio{col 35}   Std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 15}AD_PGS {c |}{col 23}{res}{space 2} 1.604314{col 35}{space 2} .0581012{col 46}{space 1}   13.05{col 55}{space 3}0.000{col 63}{space 4} 1.494385{col 76}{space 3} 1.722329
+{txt}{space 12}mediator3 {c |}{col 23}{res}{space 2} 1.231319{col 35}{space 2} .0559557{col 46}{space 1}    4.58{col 55}{space 3}0.000{col 63}{space 4}  1.12639{col 76}{space 3} 1.346023
+{txt}_AD_PGSXmediator3_000 {c |}{col 23}{res}{space 2} .9758161{col 35}{space 2} .0319907{col 46}{space 1}   -0.75{col 55}{space 3}0.455{col 63}{space 4} .9150874{col 76}{space 3} 1.040575
+{txt}{space 18}AGE {c |}{col 23}{res}{space 2} .7364582{col 35}{space 2} .2373831{col 46}{space 1}   -0.95{col 55}{space 3}0.343{col 63}{space 4} .3915432{col 76}{space 3} 1.385213
+{txt}{space 16}Agesq {c |}{col 23}{res}{space 2}  1.00276{col 35}{space 2} .0025261{col 46}{space 1}    1.09{col 55}{space 3}0.274{col 63}{space 4} .9978216{col 76}{space 3} 1.007724
+{txt}{space 18}SEX {c |}{col 23}{res}{space 2}        1{col 35}{txt}  (omitted)
+{space 18}PC1 {c |}{col 23}{res}{space 2} 1.000826{col 35}{space 2}  .001269{col 46}{space 1}    0.65{col 55}{space 3}0.515{col 63}{space 4} .9983416{col 76}{space 3} 1.003316
+{txt}{space 18}PC2 {c |}{col 23}{res}{space 2} 1.007772{col 35}{space 2} .0061563{col 46}{space 1}    1.27{col 55}{space 3}0.205{col 63}{space 4} .9957776{col 76}{space 3}  1.01991
+{txt}{space 18}PC3 {c |}{col 23}{res}{space 2} 1.007869{col 35}{space 2} .0100545{col 46}{space 1}    0.79{col 55}{space 3}0.432{col 63}{space 4}  .988354{col 76}{space 3}  1.02777
+{txt}{space 18}PC4 {c |}{col 23}{res}{space 2} 1.007181{col 35}{space 2} .0055601{col 46}{space 1}    1.30{col 55}{space 3}0.195{col 63}{space 4} .9963426{col 76}{space 3} 1.018138
+{txt}{space 18}PC5 {c |}{col 23}{res}{space 2} 1.008648{col 35}{space 2} .0055637{col 46}{space 1}    1.56{col 55}{space 3}0.119{col 63}{space 4} .9978016{col 76}{space 3} 1.019611
+{txt}{space 18}PC6 {c |}{col 23}{res}{space 2} .9922455{col 35}{space 2} .0224659{col 46}{space 1}   -0.34{col 55}{space 3}0.731{col 63}{space 4} .9491759{col 76}{space 3} 1.037269
+{txt}{space 18}PC7 {c |}{col 23}{res}{space 2} 1.010569{col 35}{space 2}  .012464{col 46}{space 1}    0.85{col 55}{space 3}0.394{col 63}{space 4} .9864325{col 76}{space 3} 1.035295
+{txt}{space 18}PC8 {c |}{col 23}{res}{space 2} .9976734{col 35}{space 2} .0168421{col 46}{space 1}   -0.14{col 55}{space 3}0.890{col 63}{space 4} .9652036{col 76}{space 3} 1.031236
+{txt}{space 18}PC9 {c |}{col 23}{res}{space 2} 1.004605{col 35}{space 2} .0095606{col 46}{space 1}    0.48{col 55}{space 3}0.629{col 63}{space 4} .9860404{col 76}{space 3} 1.023519
+{txt}{space 17}PC10 {c |}{col 23}{res}{space 2} 1.020624{col 35}{space 2} .0129827{col 46}{space 1}    1.60{col 55}{space 3}0.109{col 63}{space 4} .9954931{col 76}{space 3}  1.04639
+{txt}{space 17}PC11 {c |}{col 23}{res}{space 2} 1.011832{col 35}{space 2} .0122323{col 46}{space 1}    0.97{col 55}{space 3}0.331{col 63}{space 4} .9881391{col 76}{space 3} 1.036093
+{txt}{space 17}PC12 {c |}{col 23}{res}{space 2} .9775886{col 35}{space 2} .0144521{col 46}{space 1}   -1.53{col 55}{space 3}0.125{col 63}{space 4} .9496694{col 76}{space 3} 1.006329
+{txt}{space 17}PC13 {c |}{col 23}{res}{space 2} .9864169{col 35}{space 2} .0252382{col 46}{space 1}   -0.53{col 55}{space 3}0.593{col 63}{space 4} .9381707{col 76}{space 3} 1.037144
+{txt}{space 17}PC14 {c |}{col 23}{res}{space 2} .9861257{col 35}{space 2} .0124246{col 46}{space 1}   -1.11{col 55}{space 3}0.267{col 63}{space 4} .9620722{col 76}{space 3} 1.010781
+{txt}{space 17}PC15 {c |}{col 23}{res}{space 2} .9975361{col 35}{space 2} .0165065{col 46}{space 1}   -0.15{col 55}{space 3}0.881{col 63}{space 4} .9657029{col 76}{space 3} 1.030419
+{txt}{space 17}PC16 {c |}{col 23}{res}{space 2} 1.009837{col 35}{space 2} .0132839{col 46}{space 1}    0.74{col 55}{space 3}0.457{col 63}{space 4} .9841342{col 76}{space 3} 1.036212
+{txt}{space 17}PC17 {c |}{col 23}{res}{space 2}  1.00823{col 35}{space 2}  .018042{col 46}{space 1}    0.46{col 55}{space 3}0.647{col 63}{space 4} .9734816{col 76}{space 3}  1.04422
+{txt}{space 17}PC18 {c |}{col 23}{res}{space 2} .9971553{col 35}{space 2} .0143157{col 46}{space 1}   -0.20{col 55}{space 3}0.843{col 63}{space 4} .9694881{col 76}{space 3} 1.025612
+{txt}{space 17}PC19 {c |}{col 23}{res}{space 2} 1.009007{col 35}{space 2} .0151403{col 46}{space 1}    0.60{col 55}{space 3}0.550{col 63}{space 4} .9797643{col 76}{space 3} 1.039122
+{txt}{space 17}PC20 {c |}{col 23}{res}{space 2} 1.006179{col 35}{space 2} .0154644{col 46}{space 1}    0.40{col 55}{space 3}0.689{col 63}{space 4} .9763213{col 76}{space 3}  1.03695
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+
+-> Model for the mediator
+{res}{txt}note: {bf:SEX} omitted because of collinearity.
+{res}
+{txt}Iteration 0:{space 2}Log likelihood = {res:-23704.403}  
+Iteration 1:{space 2}Log likelihood = {res:-23704.403}  
+{res}
+{txt}{col 1}Linear regression (Maximum Likelihood){col 57}{lalign 13:Number of obs}{col 70} = {res}{ralign 6:16,011}
+{txt}{col 57}{lalign 13:Wald chi2({res:23})}{col 70} = {res}{ralign 6:515.39}
+{txt}{col 1}{lalign 14:Log likelihood}{col 15} = {res}{ralign 10:-23704.403}{txt}{col 57}{lalign 13:Prob > chi2}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   mediator3{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}mu           {txt}{c |}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2} .0573357{col 26}{space 2} .0082423{col 37}{space 1}    6.96{col 46}{space 3}0.000{col 54}{space 4} .0411811{col 67}{space 3} .0734902
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2}-.1327812{col 26}{space 2} .0343139{col 37}{space 1}   -3.87{col 46}{space 3}0.000{col 54}{space 4}-.2000351{col 67}{space 3}-.0655273
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2} .0013115{col 26}{space 2} .0002836{col 37}{space 1}    4.62{col 46}{space 3}0.000{col 54}{space 4} .0007557{col 67}{space 3} .0018673
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 9}PC1 {c |}{col 14}{res}{space 2}-.0014665{col 26}{space 2} .0001668{col 37}{space 1}   -8.79{col 46}{space 3}0.000{col 54}{space 4}-.0017934{col 67}{space 3}-.0011395
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2}  .000385{col 26}{space 2} .0003963{col 37}{space 1}    0.97{col 46}{space 3}0.331{col 54}{space 4}-.0003917{col 67}{space 3} .0011617
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} .0008644{col 26}{space 2} .0007104{col 37}{space 1}    1.22{col 46}{space 3}0.224{col 54}{space 4}-.0005279{col 67}{space 3} .0022568
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} .0025334{col 26}{space 2} .0007978{col 37}{space 1}    3.18{col 46}{space 3}0.001{col 54}{space 4} .0009698{col 67}{space 3} .0040971
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2}-.0009371{col 26}{space 2}  .001121{col 37}{space 1}   -0.84{col 46}{space 3}0.403{col 54}{space 4}-.0031343{col 67}{space 3}   .00126
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} .0048723{col 26}{space 2} .0025381{col 37}{space 1}    1.92{col 46}{space 3}0.055{col 54}{space 4}-.0001023{col 67}{space 3} .0098469
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} .0011894{col 26}{space 2} .0017378{col 37}{space 1}    0.68{col 46}{space 3}0.494{col 54}{space 4}-.0022167{col 67}{space 3} .0045955
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2} .0061856{col 26}{space 2} .0021237{col 37}{space 1}    2.91{col 46}{space 3}0.004{col 54}{space 4} .0020234{col 67}{space 3} .0103479
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2}  .003308{col 26}{space 2}  .001882{col 37}{space 1}    1.76{col 46}{space 3}0.079{col 54}{space 4}-.0003806{col 67}{space 3} .0069967
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} .0005327{col 26}{space 2} .0020163{col 37}{space 1}    0.26{col 46}{space 3}0.792{col 54}{space 4}-.0034191{col 67}{space 3} .0044846
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2}-.0011964{col 26}{space 2} .0020149{col 37}{space 1}   -0.59{col 46}{space 3}0.553{col 54}{space 4}-.0051455{col 67}{space 3} .0027528
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2}  .001106{col 26}{space 2}  .002191{col 37}{space 1}    0.50{col 46}{space 3}0.614{col 54}{space 4}-.0031883{col 67}{space 3} .0054004
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} .0007199{col 26}{space 2}  .003601{col 37}{space 1}    0.20{col 46}{space 3}0.842{col 54}{space 4} -.006338{col 67}{space 3} .0077778
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2}-.0043055{col 26}{space 2} .0025089{col 37}{space 1}   -1.72{col 46}{space 3}0.086{col 54}{space 4}-.0092228{col 67}{space 3} .0006119
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2} .0079019{col 26}{space 2} .0026761{col 37}{space 1}    2.95{col 46}{space 3}0.003{col 54}{space 4} .0026569{col 67}{space 3} .0131468
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2}-.0046907{col 26}{space 2} .0026211{col 37}{space 1}   -1.79{col 46}{space 3}0.074{col 54}{space 4} -.009828{col 67}{space 3} .0004466
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2}-6.10e-06{col 26}{space 2} .0033262{col 37}{space 1}   -0.00{col 46}{space 3}0.999{col 54}{space 4}-.0065254{col 67}{space 3} .0065132
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2}-.0061327{col 26}{space 2} .0029294{col 37}{space 1}   -2.09{col 46}{space 3}0.036{col 54}{space 4}-.0118741{col 67}{space 3}-.0003913
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2}-.0034196{col 26}{space 2} .0029723{col 37}{space 1}   -1.15{col 46}{space 3}0.250{col 54}{space 4}-.0092452{col 67}{space 3} .0024061
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} -.001434{col 26}{space 2} .0030001{col 37}{space 1}   -0.48{col 46}{space 3}0.633{col 54}{space 4} -.007314{col 67}{space 3}  .004446
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 3.049587{col 26}{space 2}  1.03142{col 37}{space 1}    2.96{col 46}{space 3}0.003{col 54}{space 4} 1.028042{col 67}{space 3} 5.071132
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sigma2       {txt}{c |}
+{space 7}_cons {c |}{col 14}{res}{space 2}  1.13104{col 26}{space 2} .0126411{col 37}{space 1}   89.47{col 46}{space 3}0.000{col 54}{space 4} 1.106264{col 67}{space 3} 1.155816
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+
+{txt}-> 4-way decomposition: delta method
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}tereri {c |}{col 14}{res}{space 2} .6173622{col 26}{space 2} .0573249{col 37}{space 1}   10.77{col 46}{space 3}0.000{col 54}{space 4} .5050075{col 67}{space 3} .7297169
+{txt}{space 3}ereri_cde {c |}{col 14}{res}{space 2} .6049062{col 26}{space 2} .0580078{col 37}{space 1}   10.43{col 46}{space 3}0.000{col 54}{space 4} .4912131{col 67}{space 3} .7185993
+{txt}ereri_intref {c |}{col 14}{res}{space 2}-.0044809{col 26}{space 2} .0042102{col 37}{space 1}   -1.06{col 46}{space 3}0.287{col 54}{space 4}-.0127327{col 67}{space 3} .0037709
+{txt}ereri_intmed {c |}{col 14}{res}{space 2} .0049346{col 26}{space 2} .0027683{col 37}{space 1}    1.78{col 46}{space 3}0.075{col 54}{space 4}-.0004911{col 67}{space 3} .0103604
+{txt}{space 3}ereri_pie {c |}{col 14}{res}{space 2} .0120022{col 26}{space 2} .0031568{col 37}{space 1}    3.80{col 46}{space 3}0.000{col 54}{space 4}  .005815{col 67}{space 3} .0181894
+{txt}{space 6}terira {c |}{col 14}{res}{space 2} 1.617362{col 26}{space 2} .0573249{col 37}{space 1}   28.21{col 46}{space 3}0.000{col 54}{space 4} 1.505008{col 67}{space 3} 1.729717
+{txt}{space 7}p_cde {c |}{col 14}{res}{space 2} .9798239{col 26}{space 2} .0120841{col 37}{space 1}   81.08{col 46}{space 3}0.000{col 54}{space 4} .9561396{col 67}{space 3} 1.003508
+{txt}{space 4}p_intref {c |}{col 14}{res}{space 2}-.0072581{col 26}{space 2}  .006732{col 37}{space 1}   -1.08{col 46}{space 3}0.281{col 54}{space 4}-.0204527{col 67}{space 3} .0059364
+{txt}{space 4}p_intmed {c |}{col 14}{res}{space 2} .0079931{col 26}{space 2} .0044631{col 37}{space 1}    1.79{col 46}{space 3}0.073{col 54}{space 4}-.0007545{col 67}{space 3} .0167407
+{txt}{space 7}p_pie {c |}{col 14}{res}{space 2} .0194411{col 26}{space 2} .0052989{col 37}{space 1}    3.67{col 46}{space 3}0.000{col 54}{space 4} .0090555{col 67}{space 3} .0298267
+{txt}{space 8}op_m {c |}{col 14}{res}{space 2} .0274342{col 26}{space 2} .0075822{col 37}{space 1}    3.62{col 46}{space 3}0.000{col 54}{space 4} .0125733{col 67}{space 3} .0422951
+{txt}{space 6}op_ati {c |}{col 14}{res}{space 2} .0007349{col 26}{space 2} .0109493{col 37}{space 1}    0.07{col 46}{space 3}0.946{col 54}{space 4}-.0207252{col 67}{space 3} .0221951
+{txt}{space 8}op_e {c |}{col 14}{res}{space 2} .0201761{col 26}{space 2} .0120841{col 37}{space 1}    1.67{col 46}{space 3}0.095{col 54}{space 4}-.0035083{col 67}{space 3} .0438604
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{p 3 3 5 0}
+tereri=total excess relative risk; ereri_cde=excess relative risk due to controlled direct effect; ereri_intref=excess relative risk due to reference interaction; ereri_intmed=excess relative risk due to mediated interaction; ereri_pie=excess relative risk due to pure indirect effect; terira=total effect risk ratio; p_cde=proportion controlled direct effect; p_intref=proportion reference interaction; p_intmed=proportion mediated interaction; p_pie=proportion pure indirect effect; op_m=overall proportion mediated; op_ati=overall proportion attributable to interaction; op_e=overall proportion eliminated.
+{p_end}
+
+{com}. 
+. 
+. 
+. 
+. 
+. **WOMEN***************************************
+. 
+. 
+. forval x=1(1)3 {c -(}
+{txt}  2{com}. 
+. med4way AD_PGS mediator`x' AGE Agesq SEX PC1-PC20  if sample_final==1 & SEX==2 , a0(0) a1(1) m(0) yreg(cox) mreg(linear) fulloutput
+{txt}  3{com}. 
+. 
+. {c )-}
+{res}{err}Warning: this analysis assumes a rare outcome.
+Warning: fixed values for the covariates AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20 were not provided. All covariates are fixed at their respective mean.
+
+{txt}-> Summary
+
+{col 4}Outcome    (yvar):{col 24}{res}Age_dementia
+{col 4}{txt}Exposure   (avar):{col 24}{res}AD_PGS
+{col 4}{txt}Mediator   (mvar):{col 24}{res}mediator1
+{col 4}{txt}Covariates (cvars):{col 24}{res}AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20
+
+{col 4}{txt}Model for the outcome  (yreg):{col 35}{res}cox
+{col 4}{txt}Model for the mediator (mreg):{col 35}{res}linear
+
+{col 4}{txt}Referent exposure level (a0):{col 46}{res}0
+{col 4}{txt}Actual exposure level   (a1):{col 46}{res}1
+{col 4}{txt}Mediator level for the decomposition (m):{col 46}{res}0
+{col 4}{txt}Fixed values of the covariates (c):{col 46}{res}60.6 3702 2 -1.274 1.402 -.4611 .1179 -.04816 -.07928 -.08769 -.08756 .1206 .007199 .06987 -.007599 .01872 .02892 -.02357 .0559 .03545 .02186 -.02046 .001782
+
+
+{txt}-> Model for the outcome
+
+{col 10}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}note: {bf:SEX} omitted because of collinearity.
+Iteration 0:  Log likelihood = {res}-4076.6137
+{txt}Iteration 1:  Log likelihood = {res}-3936.1874
+{txt}Iteration 2:  Log likelihood = {res}-3902.0811
+{txt}Iteration 3:  Log likelihood = {res}-3900.6517
+{txt}Iteration 4:  Log likelihood = {res}-3900.6407
+{txt}Iteration 5:  Log likelihood = {res}-3900.6407
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-3900.6407
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:18,563}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:18,563}
+{txt}No. of failures = {res}{ralign 11:469}
+{txt}Time at risk    = {res}{ralign 11:228,013.477}
+{col 57}{txt}{lalign 13:LR chi2({res:25})} = {res}{ralign 6:351.95}
+{txt}Log likelihood = {res}-3900.6407{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}                   _t{col 23}{c |} Haz. ratio{col 35}   Std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 15}AD_PGS {c |}{col 23}{res}{space 2} 1.967632{col 35}{space 2} .0727545{col 46}{space 1}   18.30{col 55}{space 3}0.000{col 63}{space 4} 1.830081{col 76}{space 3} 2.115523
+{txt}{space 12}mediator1 {c |}{col 23}{res}{space 2} .8993593{col 35}{space 2} .0390488{col 46}{space 1}   -2.44{col 55}{space 3}0.015{col 63}{space 4} .8259912{col 76}{space 3} .9792444
+{txt}_AD_PGSXmediator1_000 {c |}{col 23}{res}{space 2} 1.009557{col 35}{space 2} .0277402{col 46}{space 1}    0.35{col 55}{space 3}0.729{col 63}{space 4} .9566248{col 76}{space 3} 1.065417
+{txt}{space 18}AGE {c |}{col 23}{res}{space 2} .6556567{col 35}{space 2} .1999758{col 46}{space 1}   -1.38{col 55}{space 3}0.166{col 63}{space 4} .3606279{col 76}{space 3} 1.192048
+{txt}{space 16}Agesq {c |}{col 23}{res}{space 2} 1.003595{col 35}{space 2} .0024092{col 46}{space 1}    1.49{col 55}{space 3}0.135{col 63}{space 4} .9988842{col 76}{space 3} 1.008328
+{txt}{space 18}SEX {c |}{col 23}{res}{space 2}        1{col 35}{txt}  (omitted)
+{space 18}PC1 {c |}{col 23}{res}{space 2} 1.000814{col 35}{space 2} .0011073{col 46}{space 1}    0.74{col 55}{space 3}0.462{col 63}{space 4} .9986462{col 76}{space 3} 1.002987
+{txt}{space 18}PC2 {c |}{col 23}{res}{space 2} 1.007464{col 35}{space 2} .0054202{col 46}{space 1}    1.38{col 55}{space 3}0.167{col 63}{space 4} .9968961{col 76}{space 3} 1.018143
+{txt}{space 18}PC3 {c |}{col 23}{res}{space 2} 1.005248{col 35}{space 2} .0094416{col 46}{space 1}    0.56{col 55}{space 3}0.577{col 63}{space 4} .9869125{col 76}{space 3} 1.023925
+{txt}{space 18}PC4 {c |}{col 23}{res}{space 2} 1.003709{col 35}{space 2} .0051915{col 46}{space 1}    0.72{col 55}{space 3}0.474{col 63}{space 4} .9935854{col 76}{space 3} 1.013936
+{txt}{space 18}PC5 {c |}{col 23}{res}{space 2} 1.005024{col 35}{space 2} .0055111{col 46}{space 1}    0.91{col 55}{space 3}0.361{col 63}{space 4} .9942799{col 76}{space 3} 1.015883
+{txt}{space 18}PC6 {c |}{col 23}{res}{space 2} 1.003714{col 35}{space 2} .0120023{col 46}{space 1}    0.31{col 55}{space 3}0.757{col 63}{space 4} .9804635{col 76}{space 3} 1.027516
+{txt}{space 18}PC7 {c |}{col 23}{res}{space 2} .9918248{col 35}{space 2} .0104254{col 46}{space 1}   -0.78{col 55}{space 3}0.435{col 63}{space 4} .9716003{col 76}{space 3}  1.01247
+{txt}{space 18}PC8 {c |}{col 23}{res}{space 2} .9945205{col 35}{space 2} .0117838{col 46}{space 1}   -0.46{col 55}{space 3}0.643{col 63}{space 4} .9716908{col 76}{space 3} 1.017887
+{txt}{space 18}PC9 {c |}{col 23}{res}{space 2} .9949544{col 35}{space 2} .0105829{col 46}{space 1}   -0.48{col 55}{space 3}0.634{col 63}{space 4} .9744269{col 76}{space 3} 1.015914
+{txt}{space 17}PC10 {c |}{col 23}{res}{space 2} .9770842{col 35}{space 2} .0151219{col 46}{space 1}   -1.50{col 55}{space 3}0.134{col 63}{space 4} .9478909{col 76}{space 3} 1.007177
+{txt}{space 17}PC11 {c |}{col 23}{res}{space 2} 1.034779{col 35}{space 2} .0112686{col 46}{space 1}    3.14{col 55}{space 3}0.002{col 63}{space 4} 1.012927{col 76}{space 3} 1.057102
+{txt}{space 17}PC12 {c |}{col 23}{res}{space 2} .9792754{col 35}{space 2} .0131576{col 46}{space 1}   -1.56{col 55}{space 3}0.119{col 63}{space 4} .9538236{col 76}{space 3} 1.005406
+{txt}{space 17}PC13 {c |}{col 23}{res}{space 2} 1.022062{col 35}{space 2} .0252523{col 46}{space 1}    0.88{col 55}{space 3}0.377{col 63}{space 4} .9737473{col 76}{space 3} 1.072773
+{txt}{space 17}PC14 {c |}{col 23}{res}{space 2} .9917307{col 35}{space 2} .0132612{col 46}{space 1}   -0.62{col 55}{space 3}0.535{col 63}{space 4} .9660768{col 76}{space 3} 1.018066
+{txt}{space 17}PC15 {c |}{col 23}{res}{space 2}  1.00143{col 35}{space 2} .0137993{col 46}{space 1}    0.10{col 55}{space 3}0.917{col 63}{space 4}  .974746{col 76}{space 3} 1.028845
+{txt}{space 17}PC16 {c |}{col 23}{res}{space 2} .9887627{col 35}{space 2} .0142534{col 46}{space 1}   -0.78{col 55}{space 3}0.433{col 63}{space 4} .9612175{col 76}{space 3} 1.017097
+{txt}{space 17}PC17 {c |}{col 23}{res}{space 2} .9927914{col 35}{space 2} .0194556{col 46}{space 1}   -0.37{col 55}{space 3}0.712{col 63}{space 4} .9553822{col 76}{space 3} 1.031666
+{txt}{space 17}PC18 {c |}{col 23}{res}{space 2} .9916462{col 35}{space 2}  .015486{col 46}{space 1}   -0.54{col 55}{space 3}0.591{col 63}{space 4} .9617539{col 76}{space 3} 1.022468
+{txt}{space 17}PC19 {c |}{col 23}{res}{space 2} 1.012045{col 35}{space 2}  .016664{col 46}{space 1}    0.73{col 55}{space 3}0.467{col 63}{space 4} .9799052{col 76}{space 3} 1.045238
+{txt}{space 17}PC20 {c |}{col 23}{res}{space 2} 1.027522{col 35}{space 2} .0170517{col 46}{space 1}    1.64{col 55}{space 3}0.102{col 63}{space 4} .9946392{col 76}{space 3} 1.061492
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+
+-> Model for the mediator
+{res}{txt}note: {bf:SEX} omitted because of collinearity.
+{res}
+{txt}Iteration 0:{space 2}Log likelihood = {res:-32665.285}  
+Iteration 1:{space 2}Log likelihood = {res:-32665.285}  
+{res}
+{txt}{col 1}Linear regression (Maximum Likelihood){col 57}{lalign 13:Number of obs}{col 70} = {res}{ralign 6:18,563}
+{txt}{col 57}{lalign 13:Wald chi2({res:23})}{col 70} = {res}{ralign 6:614.15}
+{txt}{col 1}{lalign 14:Log likelihood}{col 15} = {res}{ralign 10:-32665.285}{txt}{col 57}{lalign 13:Prob > chi2}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   mediator1{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}mu           {txt}{c |}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2}-.0139266{col 26}{space 2} .0102514{col 37}{space 1}   -1.36{col 46}{space 3}0.174{col 54}{space 4} -.034019{col 67}{space 3} .0061658
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2}   .33663{col 26}{space 2} .0423559{col 37}{space 1}    7.95{col 46}{space 3}0.000{col 54}{space 4}  .253614{col 67}{space 3} .4196459
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2}-.0024679{col 26}{space 2} .0003514{col 37}{space 1}   -7.02{col 46}{space 3}0.000{col 54}{space 4}-.0031567{col 67}{space 3}-.0017792
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 9}PC1 {c |}{col 14}{res}{space 2}-.0002906{col 26}{space 2}  .000187{col 37}{space 1}   -1.55{col 46}{space 3}0.120{col 54}{space 4}-.0006572{col 67}{space 3}  .000076
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2}-.0018119{col 26}{space 2} .0004129{col 37}{space 1}   -4.39{col 46}{space 3}0.000{col 54}{space 4}-.0026212{col 67}{space 3}-.0010027
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} .0056851{col 26}{space 2} .0007862{col 37}{space 1}    7.23{col 46}{space 3}0.000{col 54}{space 4} .0041442{col 67}{space 3}  .007226
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} .0023954{col 26}{space 2}  .001007{col 37}{space 1}    2.38{col 46}{space 3}0.017{col 54}{space 4} .0004218{col 67}{space 3}  .004369
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2}-.0017449{col 26}{space 2} .0013524{col 37}{space 1}   -1.29{col 46}{space 3}0.197{col 54}{space 4}-.0043957{col 67}{space 3} .0009058
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} .0014927{col 26}{space 2} .0022068{col 37}{space 1}    0.68{col 46}{space 3}0.499{col 54}{space 4}-.0028325{col 67}{space 3} .0058178
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} .0052466{col 26}{space 2} .0021365{col 37}{space 1}    2.46{col 46}{space 3}0.014{col 54}{space 4} .0010591{col 67}{space 3}  .009434
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2}-.0042461{col 26}{space 2} .0022273{col 37}{space 1}   -1.91{col 46}{space 3}0.057{col 54}{space 4}-.0086116{col 67}{space 3} .0001193
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2} .0011756{col 26}{space 2} .0023341{col 37}{space 1}    0.50{col 46}{space 3}0.615{col 54}{space 4}-.0033992{col 67}{space 3} .0057503
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} .0060394{col 26}{space 2} .0027952{col 37}{space 1}    2.16{col 46}{space 3}0.031{col 54}{space 4} .0005609{col 67}{space 3} .0115179
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2} .0000332{col 26}{space 2} .0027706{col 37}{space 1}    0.01{col 46}{space 3}0.990{col 54}{space 4} -.005397{col 67}{space 3} .0054635
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2}-.0016505{col 26}{space 2}   .00311{col 37}{space 1}   -0.53{col 46}{space 3}0.596{col 54}{space 4}-.0077459{col 67}{space 3} .0044449
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} .0102352{col 26}{space 2}  .003222{col 37}{space 1}    3.18{col 46}{space 3}0.001{col 54}{space 4} .0039202{col 67}{space 3} .0165502
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2}  -.00594{col 26}{space 2} .0030792{col 37}{space 1}   -1.93{col 46}{space 3}0.054{col 54}{space 4}-.0119751{col 67}{space 3} .0000951
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2}-.0086302{col 26}{space 2} .0031651{col 37}{space 1}   -2.73{col 46}{space 3}0.006{col 54}{space 4}-.0148336{col 67}{space 3}-.0024268
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2}-.0055421{col 26}{space 2} .0032806{col 37}{space 1}   -1.69{col 46}{space 3}0.091{col 54}{space 4}-.0119719{col 67}{space 3} .0008876
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2} .0033995{col 26}{space 2} .0038163{col 37}{space 1}    0.89{col 46}{space 3}0.373{col 54}{space 4}-.0040803{col 67}{space 3} .0108794
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2}-.0030874{col 26}{space 2} .0036034{col 37}{space 1}   -0.86{col 46}{space 3}0.392{col 54}{space 4}-.0101499{col 67}{space 3} .0039751
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2} .0044296{col 26}{space 2} .0036545{col 37}{space 1}    1.21{col 46}{space 3}0.225{col 54}{space 4} -.002733{col 67}{space 3} .0115923
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} .0066774{col 26}{space 2} .0036685{col 37}{space 1}    1.82{col 46}{space 3}0.069{col 54}{space 4}-.0005127{col 67}{space 3} .0138675
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-11.28091{col 26}{space 2} 1.268409{col 37}{space 1}   -8.89{col 46}{space 3}0.000{col 54}{space 4}-13.76695{col 67}{space 3}-8.794872
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sigma2       {txt}{c |}
+{space 7}_cons {c |}{col 14}{res}{space 2}  1.97688{col 26}{space 2} .0205197{col 37}{space 1}   96.34{col 46}{space 3}0.000{col 54}{space 4} 1.936663{col 67}{space 3} 2.017098
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+
+{txt}-> 4-way decomposition: delta method
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}tereri {c |}{col 14}{res}{space 2} .9661007{col 26}{space 2} .0727295{col 37}{space 1}   13.28{col 46}{space 3}0.000{col 54}{space 4} .8235535{col 67}{space 3} 1.108648
+{txt}{space 3}ereri_cde {c |}{col 14}{res}{space 2} .9546021{col 26}{space 2} .0720631{col 37}{space 1}   13.25{col 46}{space 3}0.000{col 54}{space 4} .8133609{col 67}{space 3} 1.095843
+{txt}ereri_intref {c |}{col 14}{res}{space 2} .0088564{col 26}{space 2} .0093315{col 37}{space 1}    0.95{col 46}{space 3}0.343{col 54}{space 4}-.0094329{col 67}{space 3} .0271458
+{txt}ereri_intmed {c |}{col 14}{res}{space 2} .0011639{col 26}{space 2} .0010627{col 37}{space 1}    1.10{col 46}{space 3}0.273{col 54}{space 4} -.000919{col 67}{space 3} .0032467
+{txt}{space 3}ereri_pie {c |}{col 14}{res}{space 2} .0014783{col 26}{space 2}  .001246{col 37}{space 1}    1.19{col 46}{space 3}0.235{col 54}{space 4}-.0009639{col 67}{space 3} .0039205
+{txt}{space 6}terira {c |}{col 14}{res}{space 2} 1.966101{col 26}{space 2} .0727295{col 37}{space 1}   27.03{col 46}{space 3}0.000{col 54}{space 4} 1.823553{col 67}{space 3} 2.108648
+{txt}{space 7}p_cde {c |}{col 14}{res}{space 2} .9880979{col 26}{space 2} .0105025{col 37}{space 1}   94.08{col 46}{space 3}0.000{col 54}{space 4} .9675133{col 67}{space 3} 1.008682
+{txt}{space 4}p_intref {c |}{col 14}{res}{space 2} .0091672{col 26}{space 2} .0095909{col 37}{space 1}    0.96{col 46}{space 3}0.339{col 54}{space 4}-.0096307{col 67}{space 3} .0279651
+{txt}{space 4}p_intmed {c |}{col 14}{res}{space 2} .0012047{col 26}{space 2} .0010913{col 37}{space 1}    1.10{col 46}{space 3}0.270{col 54}{space 4}-.0009342{col 67}{space 3} .0033436
+{txt}{space 7}p_pie {c |}{col 14}{res}{space 2} .0015302{col 26}{space 2}  .001296{col 37}{space 1}    1.18{col 46}{space 3}0.238{col 54}{space 4}  -.00101{col 67}{space 3} .0040704
+{txt}{space 8}op_m {c |}{col 14}{res}{space 2} .0027349{col 26}{space 2} .0022411{col 37}{space 1}    1.22{col 46}{space 3}0.222{col 54}{space 4}-.0016576{col 67}{space 3} .0071274
+{txt}{space 6}op_ati {c |}{col 14}{res}{space 2} .0103719{col 26}{space 2} .0102567{col 37}{space 1}    1.01{col 46}{space 3}0.312{col 54}{space 4}-.0097309{col 67}{space 3} .0304747
+{txt}{space 8}op_e {c |}{col 14}{res}{space 2} .0119021{col 26}{space 2} .0105025{col 37}{space 1}    1.13{col 46}{space 3}0.257{col 54}{space 4}-.0086825{col 67}{space 3} .0324867
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{p 3 3 5 0}
+tereri=total excess relative risk; ereri_cde=excess relative risk due to controlled direct effect; ereri_intref=excess relative risk due to reference interaction; ereri_intmed=excess relative risk due to mediated interaction; ereri_pie=excess relative risk due to pure indirect effect; terira=total effect risk ratio; p_cde=proportion controlled direct effect; p_intref=proportion reference interaction; p_intmed=proportion mediated interaction; p_pie=proportion pure indirect effect; op_m=overall proportion mediated; op_ati=overall proportion attributable to interaction; op_e=overall proportion eliminated.
+{p_end}
+{res}{err}Warning: this analysis assumes a rare outcome.
+Warning: fixed values for the covariates AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20 were not provided. All covariates are fixed at their respective mean.
+
+{txt}-> Summary
+
+{col 4}Outcome    (yvar):{col 24}{res}Age_dementia
+{col 4}{txt}Exposure   (avar):{col 24}{res}AD_PGS
+{col 4}{txt}Mediator   (mvar):{col 24}{res}mediator2
+{col 4}{txt}Covariates (cvars):{col 24}{res}AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20
+
+{col 4}{txt}Model for the outcome  (yreg):{col 35}{res}cox
+{col 4}{txt}Model for the mediator (mreg):{col 35}{res}linear
+
+{col 4}{txt}Referent exposure level (a0):{col 46}{res}0
+{col 4}{txt}Actual exposure level   (a1):{col 46}{res}1
+{col 4}{txt}Mediator level for the decomposition (m):{col 46}{res}0
+{col 4}{txt}Fixed values of the covariates (c):{col 46}{res}60.6 3702 2 -1.274 1.402 -.4611 .1179 -.04816 -.07928 -.08769 -.08756 .1206 .007199 .06987 -.007599 .01872 .02892 -.02357 .0559 .03545 .02186 -.02046 .001782
+
+
+{txt}-> Model for the outcome
+
+{col 10}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}note: {bf:SEX} omitted because of collinearity.
+Iteration 0:  Log likelihood = {res}-4076.6137
+{txt}Iteration 1:  Log likelihood = {res}-3878.8245
+{txt}Iteration 2:  Log likelihood = {res} -3833.631
+{txt}Iteration 3:  Log likelihood = {res}-3831.3402
+{txt}Iteration 4:  Log likelihood = {res}-3831.3141
+{txt}Iteration 5:  Log likelihood = {res}-3831.3141
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-3831.3141
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:18,563}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:18,563}
+{txt}No. of failures = {res}{ralign 11:469}
+{txt}Time at risk    = {res}{ralign 11:228,013.477}
+{col 57}{txt}{lalign 13:LR chi2({res:25})} = {res}{ralign 6:490.60}
+{txt}Log likelihood = {res}-3831.3141{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}                   _t{col 23}{c |} Haz. ratio{col 35}   Std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 15}AD_PGS {c |}{col 23}{res}{space 2} 1.877984{col 35}{space 2} .0927713{col 46}{space 1}   12.76{col 55}{space 3}0.000{col 63}{space 4} 1.704681{col 76}{space 3} 2.068906
+{txt}{space 12}mediator2 {c |}{col 23}{res}{space 2} 1.549507{col 35}{space 2} .0650871{col 46}{space 1}   10.43{col 55}{space 3}0.000{col 63}{space 4} 1.427049{col 76}{space 3} 1.682474
+{txt}_AD_PGSXmediator2_000 {c |}{col 23}{res}{space 2}  1.00117{col 35}{space 2} .0246338{col 46}{space 1}    0.05{col 55}{space 3}0.962{col 63}{space 4} .9540342{col 76}{space 3} 1.050635
+{txt}{space 18}AGE {c |}{col 23}{res}{space 2} .6846653{col 35}{space 2} .2108334{col 46}{space 1}   -1.23{col 55}{space 3}0.219{col 63}{space 4} .3744228{col 76}{space 3} 1.251971
+{txt}{space 16}Agesq {c |}{col 23}{res}{space 2}  1.00279{col 35}{space 2} .0024312{col 46}{space 1}    1.15{col 55}{space 3}0.250{col 63}{space 4} .9980362{col 76}{space 3} 1.007566
+{txt}{space 18}SEX {c |}{col 23}{res}{space 2}        1{col 35}{txt}  (omitted)
+{space 18}PC1 {c |}{col 23}{res}{space 2} 1.001609{col 35}{space 2} .0010946{col 46}{space 1}    1.47{col 55}{space 3}0.141{col 63}{space 4} .9994659{col 76}{space 3} 1.003757
+{txt}{space 18}PC2 {c |}{col 23}{res}{space 2} 1.007331{col 35}{space 2} .0052183{col 46}{space 1}    1.41{col 55}{space 3}0.159{col 63}{space 4} .9971546{col 76}{space 3}  1.01761
+{txt}{space 18}PC3 {c |}{col 23}{res}{space 2} 1.003541{col 35}{space 2} .0090448{col 46}{space 1}    0.39{col 55}{space 3}0.695{col 63}{space 4} .9859696{col 76}{space 3} 1.021426
+{txt}{space 18}PC4 {c |}{col 23}{res}{space 2} 1.002801{col 35}{space 2} .0052509{col 46}{space 1}    0.53{col 55}{space 3}0.593{col 63}{space 4} .9925616{col 76}{space 3} 1.013145
+{txt}{space 18}PC5 {c |}{col 23}{res}{space 2} 1.005289{col 35}{space 2} .0054844{col 46}{space 1}    0.97{col 55}{space 3}0.334{col 63}{space 4} .9945968{col 76}{space 3} 1.016096
+{txt}{space 18}PC6 {c |}{col 23}{res}{space 2} .9993924{col 35}{space 2} .0122613{col 46}{space 1}   -0.05{col 55}{space 3}0.960{col 63}{space 4} .9756474{col 76}{space 3} 1.023715
+{txt}{space 18}PC7 {c |}{col 23}{res}{space 2} .9913958{col 35}{space 2}  .010757{col 46}{space 1}   -0.80{col 55}{space 3}0.426{col 63}{space 4} .9705351{col 76}{space 3} 1.012705
+{txt}{space 18}PC8 {c |}{col 23}{res}{space 2} .9995343{col 35}{space 2} .0120922{col 46}{space 1}   -0.04{col 55}{space 3}0.969{col 63}{space 4} .9761127{col 76}{space 3} 1.023518
+{txt}{space 18}PC9 {c |}{col 23}{res}{space 2}   .99912{col 35}{space 2} .0107383{col 46}{space 1}   -0.08{col 55}{space 3}0.935{col 63}{space 4} .9782935{col 76}{space 3}  1.02039
+{txt}{space 17}PC10 {c |}{col 23}{res}{space 2} .9790175{col 35}{space 2} .0150768{col 46}{space 1}   -1.38{col 55}{space 3}0.169{col 63}{space 4}  .949909{col 76}{space 3} 1.009018
+{txt}{space 17}PC11 {c |}{col 23}{res}{space 2}  1.03207{col 35}{space 2} .0112745{col 46}{space 1}    2.89{col 55}{space 3}0.004{col 63}{space 4} 1.010207{col 76}{space 3} 1.054406
+{txt}{space 17}PC12 {c |}{col 23}{res}{space 2} .9809578{col 35}{space 2} .0132153{col 46}{space 1}   -1.43{col 55}{space 3}0.154{col 63}{space 4} .9553953{col 76}{space 3} 1.007204
+{txt}{space 17}PC13 {c |}{col 23}{res}{space 2} 1.016747{col 35}{space 2} .0252718{col 46}{space 1}    0.67{col 55}{space 3}0.504{col 63}{space 4} .9684027{col 76}{space 3} 1.067506
+{txt}{space 17}PC14 {c |}{col 23}{res}{space 2} .9859199{col 35}{space 2} .0132313{col 46}{space 1}   -1.06{col 55}{space 3}0.291{col 63}{space 4} .9603251{col 76}{space 3} 1.012197
+{txt}{space 17}PC15 {c |}{col 23}{res}{space 2} 1.000618{col 35}{space 2} .0142177{col 46}{space 1}    0.04{col 55}{space 3}0.965{col 63}{space 4} .9731361{col 76}{space 3} 1.028876
+{txt}{space 17}PC16 {c |}{col 23}{res}{space 2} .9959161{col 35}{space 2} .0146236{col 46}{space 1}   -0.28{col 55}{space 3}0.780{col 63}{space 4} .9676628{col 76}{space 3} 1.024994
+{txt}{space 17}PC17 {c |}{col 23}{res}{space 2} .9929413{col 35}{space 2} .0149426{col 46}{space 1}   -0.47{col 55}{space 3}0.638{col 63}{space 4}  .964082{col 76}{space 3} 1.022664
+{txt}{space 17}PC18 {c |}{col 23}{res}{space 2} .9887945{col 35}{space 2} .0154336{col 46}{space 1}   -0.72{col 55}{space 3}0.470{col 63}{space 4} .9590032{col 76}{space 3} 1.019511
+{txt}{space 17}PC19 {c |}{col 23}{res}{space 2} 1.015347{col 35}{space 2}  .016827{col 46}{space 1}    0.92{col 55}{space 3}0.358{col 63}{space 4} .9828967{col 76}{space 3} 1.048869
+{txt}{space 17}PC20 {c |}{col 23}{res}{space 2} 1.019748{col 35}{space 2} .0170553{col 46}{space 1}    1.17{col 55}{space 3}0.242{col 63}{space 4} .9868625{col 76}{space 3}  1.05373
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+
+-> Model for the mediator
+{res}{txt}note: {bf:SEX} omitted because of collinearity.
+{res}
+{txt}Iteration 0:{space 2}Log likelihood = {res:-29232.661}  
+Iteration 1:{space 2}Log likelihood = {res:-29232.661}  
+{res}
+{txt}{col 1}Linear regression (Maximum Likelihood){col 56}{lalign 13:Number of obs}{col 69} = {res}{ralign 7:18,563}
+{txt}{col 56}{lalign 13:Wald chi2({res:23})}{col 69} = {res}{ralign 7:4999.27}
+{txt}{col 1}{lalign 14:Log likelihood}{col 15} = {res}{ralign 10:-29232.661}{txt}{col 56}{lalign 13:Prob > chi2}{col 69} = {res}{ralign 7:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   mediator2{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}mu           {txt}{c |}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2} .0910912{col 26}{space 2} .0085207{col 37}{space 1}   10.69{col 46}{space 3}0.000{col 54}{space 4}  .074391{col 67}{space 3} .1077915
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2} .0369456{col 26}{space 2}  .035205{col 37}{space 1}    1.05{col 46}{space 3}0.294{col 54}{space 4} -.032055{col 67}{space 3} .1059462
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2} .0005731{col 26}{space 2} .0002921{col 37}{space 1}    1.96{col 46}{space 3}0.050{col 54}{space 4} 6.88e-07{col 67}{space 3} .0011456
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 9}PC1 {c |}{col 14}{res}{space 2}-.0013696{col 26}{space 2} .0001555{col 37}{space 1}   -8.81{col 46}{space 3}0.000{col 54}{space 4}-.0016743{col 67}{space 3}-.0010649
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2}-.0009058{col 26}{space 2} .0003432{col 37}{space 1}   -2.64{col 46}{space 3}0.008{col 54}{space 4}-.0015785{col 67}{space 3}-.0002332
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} .0026127{col 26}{space 2} .0006535{col 37}{space 1}    4.00{col 46}{space 3}0.000{col 54}{space 4} .0013319{col 67}{space 3} .0038935
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} .0025405{col 26}{space 2}  .000837{col 37}{space 1}    3.04{col 46}{space 3}0.002{col 54}{space 4} .0009001{col 67}{space 3} .0041809
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2}-.0013183{col 26}{space 2} .0011241{col 37}{space 1}   -1.17{col 46}{space 3}0.241{col 54}{space 4}-.0035215{col 67}{space 3} .0008849
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2}-.0025235{col 26}{space 2} .0018342{col 37}{space 1}   -1.38{col 46}{space 3}0.169{col 54}{space 4}-.0061185{col 67}{space 3} .0010715
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2}-.0026083{col 26}{space 2} .0017758{col 37}{space 1}   -1.47{col 46}{space 3}0.142{col 54}{space 4}-.0060888{col 67}{space 3} .0008722
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2}-.0045926{col 26}{space 2} .0018513{col 37}{space 1}   -2.48{col 46}{space 3}0.013{col 54}{space 4}-.0082211{col 67}{space 3}-.0009641
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2}-.0041688{col 26}{space 2} .0019401{col 37}{space 1}   -2.15{col 46}{space 3}0.032{col 54}{space 4}-.0079712{col 67}{space 3}-.0003664
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} .0023368{col 26}{space 2} .0023233{col 37}{space 1}    1.01{col 46}{space 3}0.314{col 54}{space 4}-.0022167{col 67}{space 3} .0068904
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2}-.0042336{col 26}{space 2} .0023028{col 37}{space 1}   -1.84{col 46}{space 3}0.066{col 54}{space 4}-.0087471{col 67}{space 3} .0002799
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .0006059{col 26}{space 2} .0025849{col 37}{space 1}    0.23{col 46}{space 3}0.815{col 54}{space 4}-.0044605{col 67}{space 3} .0056722
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} .0040891{col 26}{space 2}  .002678{col 37}{space 1}    1.53{col 46}{space 3}0.127{col 54}{space 4}-.0011598{col 67}{space 3} .0093379
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2} .0049689{col 26}{space 2} .0025593{col 37}{space 1}    1.94{col 46}{space 3}0.052{col 54}{space 4}-.0000473{col 67}{space 3} .0099851
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2}-.0057213{col 26}{space 2} .0026307{col 37}{space 1}   -2.17{col 46}{space 3}0.030{col 54}{space 4}-.0108774{col 67}{space 3}-.0005652
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2}-.0043095{col 26}{space 2} .0027267{col 37}{space 1}   -1.58{col 46}{space 3}0.114{col 54}{space 4}-.0096538{col 67}{space 3} .0010347
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2} .0045282{col 26}{space 2}  .003172{col 37}{space 1}    1.43{col 46}{space 3}0.153{col 54}{space 4}-.0016889{col 67}{space 3} .0107452
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2} .0017166{col 26}{space 2} .0029951{col 37}{space 1}    0.57{col 46}{space 3}0.567{col 54}{space 4}-.0041536{col 67}{space 3} .0075868
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2}-.0038093{col 26}{space 2} .0030375{col 37}{space 1}   -1.25{col 46}{space 3}0.210{col 54}{space 4}-.0097627{col 67}{space 3} .0021441
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} .0010819{col 26}{space 2} .0030491{col 37}{space 1}    0.35{col 46}{space 3}0.723{col 54}{space 4}-.0048943{col 67}{space 3} .0070581
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2}-4.394415{col 26}{space 2} 1.054268{col 37}{space 1}   -4.17{col 46}{space 3}0.000{col 54}{space 4}-6.460741{col 67}{space 3}-2.328088
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sigma2       {txt}{c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 1.365725{col 26}{space 2}  .014176{col 37}{space 1}   96.34{col 46}{space 3}0.000{col 54}{space 4}  1.33794{col 67}{space 3} 1.393509
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+
+{txt}-> 4-way decomposition: delta method
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}tereri {c |}{col 14}{res}{space 2} .9559163{col 26}{space 2} .0811365{col 37}{space 1}   11.78{col 46}{space 3}0.000{col 54}{space 4} .7968917{col 67}{space 3} 1.114941
+{txt}{space 3}ereri_cde {c |}{col 14}{res}{space 2} .7815752{col 26}{space 2} .0787933{col 37}{space 1}    9.92{col 46}{space 3}0.000{col 54}{space 4} .6271433{col 67}{space 3} .9360072
+{txt}ereri_intref {c |}{col 14}{res}{space 2} .0976509{col 26}{space 2} .0189401{col 37}{space 1}    5.16{col 46}{space 3}0.000{col 54}{space 4} .0605289{col 67}{space 3} .1347729
+{txt}ereri_intmed {c |}{col 14}{res}{space 2} .0359916{col 26}{space 2} .0052386{col 37}{space 1}    6.87{col 46}{space 3}0.000{col 54}{space 4}  .025724{col 67}{space 3} .0462591
+{txt}{space 3}ereri_pie {c |}{col 14}{res}{space 2} .0406986{col 26}{space 2} .0055621{col 37}{space 1}    7.32{col 46}{space 3}0.000{col 54}{space 4}  .029797{col 67}{space 3} .0516001
+{txt}{space 6}terira {c |}{col 14}{res}{space 2} 1.955916{col 26}{space 2} .0811365{col 37}{space 1}   24.11{col 46}{space 3}0.000{col 54}{space 4} 1.796892{col 67}{space 3} 2.114941
+{txt}{space 7}p_cde {c |}{col 14}{res}{space 2} .8176189{col 26}{space 2} .0272503{col 37}{space 1}   30.00{col 46}{space 3}0.000{col 54}{space 4} .7642093{col 67}{space 3} .8710285
+{txt}{space 4}p_intref {c |}{col 14}{res}{space 2} .1021542{col 26}{space 2} .0205086{col 37}{space 1}    4.98{col 46}{space 3}0.000{col 54}{space 4}  .061958{col 67}{space 3} .1423504
+{txt}{space 4}p_intmed {c |}{col 14}{res}{space 2} .0376514{col 26}{space 2} .0049521{col 37}{space 1}    7.60{col 46}{space 3}0.000{col 54}{space 4} .0279453{col 67}{space 3} .0473574
+{txt}{space 7}p_pie {c |}{col 14}{res}{space 2} .0425755{col 26}{space 2} .0060665{col 37}{space 1}    7.02{col 46}{space 3}0.000{col 54}{space 4} .0306854{col 67}{space 3} .0544655
+{txt}{space 8}op_m {c |}{col 14}{res}{space 2} .0802268{col 26}{space 2} .0100448{col 37}{space 1}    7.99{col 46}{space 3}0.000{col 54}{space 4} .0605394{col 67}{space 3} .0999143
+{txt}{space 6}op_ati {c |}{col 14}{res}{space 2} .1398056{col 26}{space 2} .0242436{col 37}{space 1}    5.77{col 46}{space 3}0.000{col 54}{space 4} .0922889{col 67}{space 3} .1873223
+{txt}{space 8}op_e {c |}{col 14}{res}{space 2} .1823811{col 26}{space 2} .0272503{col 37}{space 1}    6.69{col 46}{space 3}0.000{col 54}{space 4} .1289715{col 67}{space 3} .2357907
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{p 3 3 5 0}
+tereri=total excess relative risk; ereri_cde=excess relative risk due to controlled direct effect; ereri_intref=excess relative risk due to reference interaction; ereri_intmed=excess relative risk due to mediated interaction; ereri_pie=excess relative risk due to pure indirect effect; terira=total effect risk ratio; p_cde=proportion controlled direct effect; p_intref=proportion reference interaction; p_intmed=proportion mediated interaction; p_pie=proportion pure indirect effect; op_m=overall proportion mediated; op_ati=overall proportion attributable to interaction; op_e=overall proportion eliminated.
+{p_end}
+{res}{err}Warning: this analysis assumes a rare outcome.
+Warning: fixed values for the covariates AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20 were not provided. All covariates are fixed at their respective mean.
+
+{txt}-> Summary
+
+{col 4}Outcome    (yvar):{col 24}{res}Age_dementia
+{col 4}{txt}Exposure   (avar):{col 24}{res}AD_PGS
+{col 4}{txt}Mediator   (mvar):{col 24}{res}mediator3
+{col 4}{txt}Covariates (cvars):{col 24}{res}AGE Agesq SEX PC1 PC2 PC3 PC4 PC5 PC6 PC7 PC8 PC9 PC10 PC11 PC12 PC13 PC14 PC15 PC16 PC17 PC18 PC19 PC20
+
+{col 4}{txt}Model for the outcome  (yreg):{col 35}{res}cox
+{col 4}{txt}Model for the mediator (mreg):{col 35}{res}linear
+
+{col 4}{txt}Referent exposure level (a0):{col 46}{res}0
+{col 4}{txt}Actual exposure level   (a1):{col 46}{res}1
+{col 4}{txt}Mediator level for the decomposition (m):{col 46}{res}0
+{col 4}{txt}Fixed values of the covariates (c):{col 46}{res}60.6 3702 2 -1.274 1.402 -.4611 .1179 -.04816 -.07928 -.08769 -.08756 .1206 .007199 .06987 -.007599 .01872 .02892 -.02357 .0559 .03545 .02186 -.02046 .001782
+
+
+{txt}-> Model for the outcome
+
+{col 10}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}note: {bf:SEX} omitted because of collinearity.
+Iteration 0:  Log likelihood = {res}-4076.6137
+{txt}Iteration 1:  Log likelihood = {res}-3997.4371
+{txt}Iteration 2:  Log likelihood = {res}-3907.3662
+{txt}Iteration 3:  Log likelihood = {res}-3896.8206
+{txt}Iteration 4:  Log likelihood = {res}-3896.5425
+{txt}Iteration 5:  Log likelihood = {res}-3896.5421
+{txt}Iteration 6:  Log likelihood = {res}-3896.5421
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-3896.5421
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:18,563}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:18,563}
+{txt}No. of failures = {res}{ralign 11:469}
+{txt}Time at risk    = {res}{ralign 11:228,013.477}
+{col 57}{txt}{lalign 13:LR chi2({res:25})} = {res}{ralign 6:360.14}
+{txt}Log likelihood = {res}-3896.5421{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 22}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}                   _t{col 23}{c |} Haz. ratio{col 35}   Std. err.{col 47}      z{col 55}   P>|z|{col 63}     [95% con{col 76}f. interval]
+{hline 22}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 15}AD_PGS {c |}{col 23}{res}{space 2} 1.919532{col 35}{space 2} .0795917{col 46}{space 1}   15.73{col 55}{space 3}0.000{col 63}{space 4} 1.769706{col 76}{space 3} 2.082043
+{txt}{space 12}mediator3 {c |}{col 23}{res}{space 2} 1.155477{col 35}{space 2} .0622393{col 46}{space 1}    2.68{col 55}{space 3}0.007{col 63}{space 4} 1.039709{col 76}{space 3} 1.284136
+{txt}_AD_PGSXmediator3_000 {c |}{col 23}{res}{space 2} 1.029175{col 35}{space 2}  .034941{col 46}{space 1}    0.85{col 55}{space 3}0.397{col 63}{space 4} .9629203{col 76}{space 3} 1.099988
+{txt}{space 18}AGE {c |}{col 23}{res}{space 2} .6586016{col 35}{space 2} .2013048{col 46}{space 1}   -1.37{col 55}{space 3}0.172{col 63}{space 4} .3617836{col 76}{space 3} 1.198938
+{txt}{space 16}Agesq {c |}{col 23}{res}{space 2} 1.003474{col 35}{space 2} .0024145{col 46}{space 1}    1.44{col 55}{space 3}0.150{col 63}{space 4} .9987527{col 76}{space 3} 1.008218
+{txt}{space 18}SEX {c |}{col 23}{res}{space 2}        1{col 35}{txt}  (omitted)
+{space 18}PC1 {c |}{col 23}{res}{space 2} 1.001094{col 35}{space 2} .0010988{col 46}{space 1}    1.00{col 55}{space 3}0.319{col 63}{space 4} .9989424{col 76}{space 3}  1.00325
+{txt}{space 18}PC2 {c |}{col 23}{res}{space 2}  1.00741{col 35}{space 2} .0053303{col 46}{space 1}    1.40{col 55}{space 3}0.163{col 63}{space 4} .9970171{col 76}{space 3} 1.017912
+{txt}{space 18}PC3 {c |}{col 23}{res}{space 2} 1.004632{col 35}{space 2} .0093253{col 46}{space 1}    0.50{col 55}{space 3}0.619{col 63}{space 4} .9865201{col 76}{space 3} 1.023077
+{txt}{space 18}PC4 {c |}{col 23}{res}{space 2} 1.003108{col 35}{space 2} .0051792{col 46}{space 1}    0.60{col 55}{space 3}0.548{col 63}{space 4} .9930083{col 76}{space 3} 1.013311
+{txt}{space 18}PC5 {c |}{col 23}{res}{space 2} 1.004544{col 35}{space 2} .0055436{col 46}{space 1}    0.82{col 55}{space 3}0.411{col 63}{space 4} .9937373{col 76}{space 3} 1.015468
+{txt}{space 18}PC6 {c |}{col 23}{res}{space 2} 1.000111{col 35}{space 2} .0123746{col 46}{space 1}    0.01{col 55}{space 3}0.993{col 63}{space 4} .9761487{col 76}{space 3} 1.024661
+{txt}{space 18}PC7 {c |}{col 23}{res}{space 2} .9897799{col 35}{space 2} .0104074{col 46}{space 1}   -0.98{col 55}{space 3}0.329{col 63}{space 4} .9695904{col 76}{space 3}  1.01039
+{txt}{space 18}PC8 {c |}{col 23}{res}{space 2} .9956247{col 35}{space 2} .0119029{col 46}{space 1}   -0.37{col 55}{space 3}0.714{col 63}{space 4} .9725666{col 76}{space 3}  1.01923
+{txt}{space 18}PC9 {c |}{col 23}{res}{space 2} .9948438{col 35}{space 2} .0106214{col 46}{space 1}   -0.48{col 55}{space 3}0.628{col 63}{space 4} .9742426{col 76}{space 3} 1.015881
+{txt}{space 17}PC10 {c |}{col 23}{res}{space 2}    .9771{col 35}{space 2} .0150447{col 46}{space 1}   -1.50{col 55}{space 3}0.132{col 63}{space 4} .9480535{col 76}{space 3} 1.007037
+{txt}{space 17}PC11 {c |}{col 23}{res}{space 2} 1.034689{col 35}{space 2} .0112724{col 46}{space 1}    3.13{col 55}{space 3}0.002{col 63}{space 4}  1.01283{col 76}{space 3}  1.05702
+{txt}{space 17}PC12 {c |}{col 23}{res}{space 2}  .979082{col 35}{space 2} .0131692{col 46}{space 1}   -1.57{col 55}{space 3}0.116{col 63}{space 4} .9536081{col 76}{space 3} 1.005236
+{txt}{space 17}PC13 {c |}{col 23}{res}{space 2} 1.016886{col 35}{space 2} .0251153{col 46}{space 1}    0.68{col 55}{space 3}0.498{col 63}{space 4} .9688336{col 76}{space 3} 1.067322
+{txt}{space 17}PC14 {c |}{col 23}{res}{space 2} .9933434{col 35}{space 2} .0133373{col 46}{space 1}   -0.50{col 55}{space 3}0.619{col 63}{space 4} .9675437{col 76}{space 3} 1.019831
+{txt}{space 17}PC15 {c |}{col 23}{res}{space 2} 1.001841{col 35}{space 2} .0138946{col 46}{space 1}    0.13{col 55}{space 3}0.895{col 63}{space 4} .9749745{col 76}{space 3} 1.029447
+{txt}{space 17}PC16 {c |}{col 23}{res}{space 2} .9919749{col 35}{space 2} .0144013{col 46}{space 1}   -0.56{col 55}{space 3}0.579{col 63}{space 4} .9641468{col 76}{space 3} 1.020606
+{txt}{space 17}PC17 {c |}{col 23}{res}{space 2} .9926544{col 35}{space 2} .0190793{col 46}{space 1}   -0.38{col 55}{space 3}0.701{col 63}{space 4} .9559552{col 76}{space 3} 1.030762
+{txt}{space 17}PC18 {c |}{col 23}{res}{space 2} .9910344{col 35}{space 2} .0155135{col 46}{space 1}   -0.58{col 55}{space 3}0.565{col 63}{space 4} .9610902{col 76}{space 3} 1.021911
+{txt}{space 17}PC19 {c |}{col 23}{res}{space 2} 1.010682{col 35}{space 2} .0166935{col 46}{space 1}    0.64{col 55}{space 3}0.520{col 63}{space 4} .9784873{col 76}{space 3} 1.043936
+{txt}{space 17}PC20 {c |}{col 23}{res}{space 2}  1.02664{col 35}{space 2} .0169898{col 46}{space 1}    1.59{col 55}{space 3}0.112{col 63}{space 4} .9938753{col 76}{space 3} 1.060486
+{txt}{hline 22}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+
+-> Model for the mediator
+{res}{txt}note: {bf:SEX} omitted because of collinearity.
+{res}
+{txt}Iteration 0:{space 2}Log likelihood = {res:-27145.322}  
+Iteration 1:{space 2}Log likelihood = {res:-27145.322}  
+{res}
+{txt}{col 1}Linear regression (Maximum Likelihood){col 57}{lalign 13:Number of obs}{col 70} = {res}{ralign 6:18,563}
+{txt}{col 57}{lalign 13:Wald chi2({res:23})}{col 70} = {res}{ralign 6:740.41}
+{txt}{col 1}{lalign 14:Log likelihood}{col 15} = {res}{ralign 10:-27145.322}{txt}{col 57}{lalign 13:Prob > chi2}{col 70} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}   mediator3{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}mu           {txt}{c |}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2} .0588809{col 26}{space 2} .0076145{col 37}{space 1}    7.73{col 46}{space 3}0.000{col 54}{space 4} .0439568{col 67}{space 3}  .073805
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2}-.1282243{col 26}{space 2} .0314608{col 37}{space 1}   -4.08{col 46}{space 3}0.000{col 54}{space 4}-.1898864{col 67}{space 3}-.0665622
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2} .0013367{col 26}{space 2}  .000261{col 37}{space 1}    5.12{col 46}{space 3}0.000{col 54}{space 4} .0008251{col 67}{space 3} .0018483
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}        0{col 26}{txt}  (omitted)
+{space 9}PC1 {c |}{col 14}{res}{space 2}-.0008015{col 26}{space 2} .0001389{col 37}{space 1}   -5.77{col 46}{space 3}0.000{col 54}{space 4}-.0010738{col 67}{space 3}-.0005292
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2}-.0002662{col 26}{space 2} .0003067{col 37}{space 1}   -0.87{col 46}{space 3}0.385{col 54}{space 4}-.0008673{col 67}{space 3} .0003348
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} .0014678{col 26}{space 2}  .000584{col 37}{space 1}    2.51{col 46}{space 3}0.012{col 54}{space 4} .0003232{col 67}{space 3} .0026123
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} .0017771{col 26}{space 2} .0007479{col 37}{space 1}    2.38{col 46}{space 3}0.018{col 54}{space 4} .0003112{col 67}{space 3}  .003243
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2} -.001227{col 26}{space 2} .0010046{col 37}{space 1}   -1.22{col 46}{space 3}0.222{col 54}{space 4}-.0031959{col 67}{space 3} .0007419
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} -.002227{col 26}{space 2} .0016391{col 37}{space 1}   -1.36{col 46}{space 3}0.174{col 54}{space 4}-.0054396{col 67}{space 3} .0009856
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} .0007119{col 26}{space 2} .0015869{col 37}{space 1}    0.45{col 46}{space 3}0.654{col 54}{space 4}-.0023984{col 67}{space 3} .0038222
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2} .0027257{col 26}{space 2} .0016544{col 37}{space 1}    1.65{col 46}{space 3}0.099{col 54}{space 4}-.0005169{col 67}{space 3} .0059683
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2} .0024149{col 26}{space 2} .0017337{col 37}{space 1}    1.39{col 46}{space 3}0.164{col 54}{space 4}-.0009831{col 67}{space 3}  .005813
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2}-.0003606{col 26}{space 2} .0020762{col 37}{space 1}   -0.17{col 46}{space 3}0.862{col 54}{space 4}-.0044299{col 67}{space 3} .0037086
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2}-.0063942{col 26}{space 2} .0020579{col 37}{space 1}   -3.11{col 46}{space 3}0.002{col 54}{space 4}-.0104276{col 67}{space 3}-.0023607
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .0005644{col 26}{space 2}   .00231{col 37}{space 1}    0.24{col 46}{space 3}0.807{col 54}{space 4}-.0039631{col 67}{space 3} .0050919
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} .0035823{col 26}{space 2} .0023932{col 37}{space 1}    1.50{col 46}{space 3}0.134{col 54}{space 4}-.0011083{col 67}{space 3} .0082729
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2}-.0038304{col 26}{space 2} .0022871{col 37}{space 1}   -1.67{col 46}{space 3}0.094{col 54}{space 4}-.0083131{col 67}{space 3} .0006523
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2} .0010066{col 26}{space 2} .0023509{col 37}{space 1}    0.43{col 46}{space 3}0.669{col 54}{space 4}-.0036011{col 67}{space 3} .0056143
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2} -.001879{col 26}{space 2} .0024367{col 37}{space 1}   -0.77{col 46}{space 3}0.441{col 54}{space 4}-.0066549{col 67}{space 3} .0028969
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2}-.0006408{col 26}{space 2} .0028347{col 37}{space 1}   -0.23{col 46}{space 3}0.821{col 54}{space 4}-.0061966{col 67}{space 3} .0049151
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2} .0034057{col 26}{space 2} .0026765{col 37}{space 1}    1.27{col 46}{space 3}0.203{col 54}{space 4}-.0018402{col 67}{space 3} .0086516
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2} .0025857{col 26}{space 2} .0027145{col 37}{space 1}    0.95{col 46}{space 3}0.341{col 54}{space 4}-.0027345{col 67}{space 3}  .007906
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} .0006796{col 26}{space 2} .0027249{col 37}{space 1}    0.25{col 46}{space 3}0.803{col 54}{space 4} -.004661{col 67}{space 3} .0060202
+{txt}{space 7}_cons {c |}{col 14}{res}{space 2} 2.919653{col 26}{space 2} .9421413{col 37}{space 1}    3.10{col 46}{space 3}0.002{col 54}{space 4}  1.07309{col 67}{space 3} 4.766216
+{txt}{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}sigma2       {txt}{c |}
+{space 7}_cons {c |}{col 14}{res}{space 2} 1.090671{col 26}{space 2}  .011321{col 37}{space 1}   96.34{col 46}{space 3}0.000{col 54}{space 4} 1.068482{col 67}{space 3} 1.112859
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{res}
+
+{txt}-> 4-way decomposition: delta method
+
+{res}{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 14}{c |} Coefficient{col 26}  Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}tereri {c |}{col 14}{res}{space 2} .9544102{col 26}{space 2} .0744475{col 37}{space 1}   12.82{col 46}{space 3}0.000{col 54}{space 4} .8084959{col 67}{space 3} 1.100325
+{txt}{space 3}ereri_cde {c |}{col 14}{res}{space 2} .8963221{col 26}{space 2} .0761658{col 37}{space 1}   11.77{col 46}{space 3}0.000{col 54}{space 4} .7470399{col 67}{space 3} 1.045604
+{txt}ereri_intref {c |}{col 14}{res}{space 2}   .03825{col 26}{space 2} .0150616{col 37}{space 1}    2.54{col 46}{space 3}0.011{col 54}{space 4} .0087298{col 67}{space 3} .0677701
+{txt}ereri_intmed {c |}{col 14}{res}{space 2} .0112928{col 26}{space 2} .0034452{col 37}{space 1}    3.28{col 46}{space 3}0.001{col 54}{space 4} .0045404{col 67}{space 3} .0180452
+{txt}{space 3}ereri_pie {c |}{col 14}{res}{space 2} .0085454{col 26}{space 2} .0033858{col 37}{space 1}    2.52{col 46}{space 3}0.012{col 54}{space 4} .0019094{col 67}{space 3} .0151813
+{txt}{space 6}terira {c |}{col 14}{res}{space 2}  1.95441{col 26}{space 2} .0744475{col 37}{space 1}   26.25{col 46}{space 3}0.000{col 54}{space 4} 1.808496{col 67}{space 3} 2.100325
+{txt}{space 7}p_cde {c |}{col 14}{res}{space 2} .9391371{col 26}{space 2} .0208122{col 37}{space 1}   45.12{col 46}{space 3}0.000{col 54}{space 4} .8983459{col 67}{space 3} .9799283
+{txt}{space 4}p_intref {c |}{col 14}{res}{space 2} .0400771{col 26}{space 2} .0160783{col 37}{space 1}    2.49{col 46}{space 3}0.013{col 54}{space 4} .0085642{col 67}{space 3} .0715899
+{txt}{space 4}p_intmed {c |}{col 14}{res}{space 2} .0118322{col 26}{space 2} .0036612{col 37}{space 1}    3.23{col 46}{space 3}0.001{col 54}{space 4} .0046564{col 67}{space 3}  .019008
+{txt}{space 7}p_pie {c |}{col 14}{res}{space 2} .0089536{col 26}{space 2} .0035065{col 37}{space 1}    2.55{col 46}{space 3}0.011{col 54}{space 4} .0020809{col 67}{space 3} .0158262
+{txt}{space 8}op_m {c |}{col 14}{res}{space 2} .0207858{col 26}{space 2} .0058624{col 37}{space 1}    3.55{col 46}{space 3}0.000{col 54}{space 4} .0092956{col 67}{space 3}  .032276
+{txt}{space 6}op_ati {c |}{col 14}{res}{space 2} .0519093{col 26}{space 2} .0194318{col 37}{space 1}    2.67{col 46}{space 3}0.008{col 54}{space 4} .0138236{col 67}{space 3} .0899949
+{txt}{space 8}op_e {c |}{col 14}{res}{space 2} .0608629{col 26}{space 2} .0208122{col 37}{space 1}    2.92{col 46}{space 3}0.003{col 54}{space 4} .0200717{col 67}{space 3} .1016541
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{p 3 3 5 0}
+tereri=total excess relative risk; ereri_cde=excess relative risk due to controlled direct effect; ereri_intref=excess relative risk due to reference interaction; ereri_intmed=excess relative risk due to mediated interaction; ereri_pie=excess relative risk due to pure indirect effect; terira=total effect risk ratio; p_cde=proportion controlled direct effect; p_intref=proportion reference interaction; p_intmed=proportion mediated interaction; p_pie=proportion pure indirect effect; op_m=overall proportion mediated; op_ati=overall proportion attributable to interaction; op_e=overall proportion eliminated.
+{p_end}
+
+{com}. 
+. 
+. save, replace
+{txt}{p 0 4 2}
+file {bf}
+E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. capture log close
+{smcl}
+{com}{sf}{ul off}

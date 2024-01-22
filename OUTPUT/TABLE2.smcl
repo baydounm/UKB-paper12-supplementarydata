@@ -1,0 +1,405 @@
+{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. use "E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin",clear
+{txt}
+{com}. 
+. capture mi stset, clear
+{txt}
+{com}. capture mi set, clear
+{txt}
+{com}. 
+. stset Age_dementia, failure(dem_diag==1) enter(AGE) id(n_eid) scale(1)
+
+{txt}Survival-time data settings
+
+{col 12}ID variable: {res}n_eid
+{col 10}{txt}Failure event: {res}dem_diag==1
+{col 1}{txt}Observed time interval: {res}(Age_dementia[_n-1], Age_dementia]
+{col 6}{txt}Enter on or after: {res}time AGE
+{col 6}{txt}Exit on or before: {res}failure
+
+{txt}{hline 74}
+{res}     40,139{txt}  total observations
+{res}          0{txt}  exclusions
+{hline 74}
+{res}     40,139{txt}  observations remaining, representing
+{res}     40,139{txt}  subjects
+{res}      1,167{txt}  failures in single-failure-per-subject data
+{res} 486,433.58{txt}  total analysis time at risk and under observation
+                                                At risk from t = {res}        0
+                                     {txt}Earliest observed entry t = {res} 50.00137
+                                          {txt}Last observed exit t = {res} 84.54757
+{txt}
+{com}. 
+. capture drop AD_PGStert
+{txt}
+{com}. xtile AD_PGStert=AD_PGS if sample_final==1, nq(3)
+{txt}
+{com}. 
+. save, replace
+{txt}{p 0 4 2}
+file {bf}
+E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. ***************************************************************OVERALL*******************
+. 
+. 
+. stcox AD_PGS AGE Agesq SEX PC1-PC20  if sample_final==1
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}Iteration 0:  Log likelihood = {res}-11071.497
+{txt}Iteration 1:  Log likelihood = {res}-10778.205
+{txt}Iteration 2:  Log likelihood = {res}-10756.442
+{txt}Iteration 3:  Log likelihood = {res}-10756.237
+{txt}Iteration 4:  Log likelihood = {res}-10756.223
+{txt}Iteration 5:  Log likelihood = {res}-10756.223
+{txt}Iteration 6:  Log likelihood = {res}-10756.223
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-10756.223
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:40,139}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:40,139}
+{txt}No. of failures = {res}{ralign 11:1,167}
+{txt}Time at risk    = {res}{ralign 11:486,433.582}
+{col 57}{txt}{lalign 13:LR chi2({res:24})} = {res}{ralign 6:630.55}
+{txt}Log likelihood = {res}-10756.223{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2} 1.785564{col 26}{space 2} .0421175{col 37}{space 1}   24.58{col 46}{space 3}0.000{col 54}{space 4} 1.704894{col 67}{space 3}  1.87005
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2} .6547773{col 26}{space 2} .1339656{col 37}{space 1}   -2.07{col 46}{space 3}0.038{col 54}{space 4} .4384703{col 67}{space 3} .9777933
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2}  1.00361{col 26}{space 2}  .001611{col 37}{space 1}    2.25{col 46}{space 3}0.025{col 54}{space 4} 1.000458{col 67}{space 3} 1.006773
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .8052458{col 26}{space 2} .0473591{col 37}{space 1}   -3.68{col 46}{space 3}0.000{col 54}{space 4} .7175738{col 67}{space 3} .9036294
+{txt}{space 9}PC1 {c |}{col 14}{res}{space 2} 1.000886{col 26}{space 2} .0007622{col 37}{space 1}    1.16{col 46}{space 3}0.245{col 54}{space 4} .9993936{col 67}{space 3} 1.002381
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2} 1.007425{col 26}{space 2}  .003812{col 37}{space 1}    1.95{col 46}{space 3}0.051{col 54}{space 4} .9999809{col 67}{space 3} 1.014924
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2}  1.00723{col 26}{space 2} .0063585{col 37}{space 1}    1.14{col 46}{space 3}0.254{col 54}{space 4} .9948439{col 67}{space 3} 1.019769
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} 1.003718{col 26}{space 2} .0033796{col 37}{space 1}    1.10{col 46}{space 3}0.270{col 54}{space 4} .9971156{col 67}{space 3} 1.010363
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2} 1.006809{col 26}{space 2} .0036476{col 37}{space 1}    1.87{col 46}{space 3}0.061{col 54}{space 4} .9996847{col 67}{space 3} 1.013983
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} 1.001621{col 26}{space 2} .0107624{col 37}{space 1}    0.15{col 46}{space 3}0.880{col 54}{space 4} .9807478{col 67}{space 3} 1.022939
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} 1.004257{col 26}{space 2} .0070937{col 37}{space 1}    0.60{col 46}{space 3}0.548{col 54}{space 4} .9904497{col 67}{space 3} 1.018258
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2} .9992582{col 26}{space 2} .0089373{col 37}{space 1}   -0.08{col 46}{space 3}0.934{col 54}{space 4}  .981894{col 67}{space 3}  1.01693
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2} 1.001279{col 26}{space 2} .0066128{col 37}{space 1}    0.19{col 46}{space 3}0.847{col 54}{space 4} .9884015{col 67}{space 3} 1.014324
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} 1.000709{col 26}{space 2} .0085682{col 37}{space 1}    0.08{col 46}{space 3}0.934{col 54}{space 4} .9840559{col 67}{space 3} 1.017644
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2} 1.018757{col 26}{space 2} .0072618{col 37}{space 1}    2.61{col 46}{space 3}0.009{col 54}{space 4} 1.004624{col 67}{space 3}  1.03309
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .9801365{col 26}{space 2} .0083246{col 37}{space 1}   -2.36{col 46}{space 3}0.018{col 54}{space 4} .9639557{col 67}{space 3} .9965889
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} 1.003753{col 26}{space 2} .0165786{col 37}{space 1}    0.23{col 46}{space 3}0.821{col 54}{space 4} .9717801{col 67}{space 3} 1.036778
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2} .9909755{col 26}{space 2} .0084133{col 37}{space 1}   -1.07{col 46}{space 3}0.286{col 54}{space 4} .9746222{col 67}{space 3} 1.007603
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2} 1.002326{col 26}{space 2}  .009687{col 37}{space 1}    0.24{col 46}{space 3}0.810{col 54}{space 4} .9835182{col 67}{space 3} 1.021493
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2} .9991464{col 26}{space 2} .0089877{col 37}{space 1}   -0.09{col 46}{space 3}0.924{col 54}{space 4} .9816853{col 67}{space 3} 1.016918
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2} .9962695{col 26}{space 2} .0123515{col 37}{space 1}   -0.30{col 46}{space 3}0.763{col 54}{space 4} .9723527{col 67}{space 3} 1.020775
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2} 1.000361{col 26}{space 2} .0098378{col 37}{space 1}    0.04{col 46}{space 3}0.971{col 54}{space 4} .9812645{col 67}{space 3}  1.01983
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2}   1.0044{col 26}{space 2}  .010334{col 37}{space 1}    0.43{col 46}{space 3}0.670{col 54}{space 4} .9843485{col 67}{space 3}  1.02486
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} 1.017189{col 26}{space 2} .0106195{col 37}{space 1}    1.63{col 46}{space 3}0.103{col 54}{space 4} .9965868{col 67}{space 3} 1.038217
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. stcox i.AD_PGStert AGE Agesq SEX PC1-PC20  if sample_final==1
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}Iteration 0:  Log likelihood = {res}-11071.497
+{txt}Iteration 1:  Log likelihood = {res}-10844.855
+{txt}Iteration 2:  Log likelihood = {res}-10840.271
+{txt}Iteration 3:  Log likelihood = {res} -10840.14
+{txt}Iteration 4:  Log likelihood = {res}-10840.133
+{txt}Iteration 5:  Log likelihood = {res}-10840.133
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-10840.133
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:40,139}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:40,139}
+{txt}No. of failures = {res}{ralign 11:1,167}
+{txt}Time at risk    = {res}{ralign 11:486,433.582}
+{col 57}{txt}{lalign 13:LR chi2({res:25})} = {res}{ralign 6:462.73}
+{txt}Log likelihood = {res}-10840.133{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 2}AD_PGStert {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} 1.538463{col 26}{space 2} .1465951{col 37}{space 1}    4.52{col 46}{space 3}0.000{col 54}{space 4} 1.276377{col 67}{space 3} 1.854365
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 3.877773{col 26}{space 2} .3229724{col 37}{space 1}   16.27{col 46}{space 3}0.000{col 54}{space 4} 3.293726{col 67}{space 3} 4.565385
+{txt}{space 12} {c |}
+{space 9}AGE {c |}{col 14}{res}{space 2}  .571585{col 26}{space 2} .1163266{col 37}{space 1}   -2.75{col 46}{space 3}0.006{col 54}{space 4} .3835728{col 67}{space 3} .8517532
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2}  1.00476{col 26}{space 2} .0016046{col 37}{space 1}    2.97{col 46}{space 3}0.003{col 54}{space 4}  1.00162{col 67}{space 3} 1.007909
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2} .7941693{col 26}{space 2}   .04669{col 37}{space 1}   -3.92{col 46}{space 3}0.000{col 54}{space 4}  .707734{col 67}{space 3} .8911609
+{txt}{space 9}PC1 {c |}{col 14}{res}{space 2} 1.000526{col 26}{space 2} .0007696{col 37}{space 1}    0.68{col 46}{space 3}0.494{col 54}{space 4} .9990188{col 67}{space 3} 1.002036
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2} 1.007257{col 26}{space 2} .0038871{col 37}{space 1}    1.87{col 46}{space 3}0.061{col 54}{space 4} .9996677{col 67}{space 3} 1.014905
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2}  1.00675{col 26}{space 2}  .006458{col 37}{space 1}    1.05{col 46}{space 3}0.294{col 54}{space 4} .9941719{col 67}{space 3} 1.019488
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} 1.003829{col 26}{space 2} .0033881{col 37}{space 1}    1.13{col 46}{space 3}0.258{col 54}{space 4} .9972099{col 67}{space 3} 1.010491
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2} 1.007271{col 26}{space 2} .0036621{col 37}{space 1}    1.99{col 46}{space 3}0.046{col 54}{space 4} 1.000119{col 67}{space 3} 1.014474
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} 1.000194{col 26}{space 2} .0108505{col 37}{space 1}    0.02{col 46}{space 3}0.986{col 54}{space 4} .9791522{col 67}{space 3} 1.021689
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} 1.003952{col 26}{space 2} .0071057{col 37}{space 1}    0.56{col 46}{space 3}0.577{col 54}{space 4} .9901208{col 67}{space 3} 1.017975
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2} .9983147{col 26}{space 2} .0089941{col 37}{space 1}   -0.19{col 46}{space 3}0.851{col 54}{space 4} .9808414{col 67}{space 3} 1.016099
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2} 1.004598{col 26}{space 2}  .006678{col 37}{space 1}    0.69{col 46}{space 3}0.490{col 54}{space 4} .9915945{col 67}{space 3} 1.017773
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} 1.000722{col 26}{space 2} .0086187{col 37}{space 1}    0.08{col 46}{space 3}0.933{col 54}{space 4} .9839716{col 67}{space 3} 1.017758
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2} 1.018167{col 26}{space 2}  .007213{col 37}{space 1}    2.54{col 46}{space 3}0.011{col 54}{space 4} 1.004127{col 67}{space 3} 1.032402
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .9823208{col 26}{space 2} .0082734{col 37}{space 1}   -2.12{col 46}{space 3}0.034{col 54}{space 4} .9662383{col 67}{space 3}  .998671
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} 1.000524{col 26}{space 2} .0166543{col 37}{space 1}    0.03{col 46}{space 3}0.975{col 54}{space 4} .9684086{col 67}{space 3} 1.033704
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2}  .991387{col 26}{space 2} .0083925{col 37}{space 1}   -1.02{col 46}{space 3}0.307{col 54}{space 4} .9750738{col 67}{space 3} 1.007973
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2} 1.003094{col 26}{space 2} .0096156{col 37}{space 1}    0.32{col 46}{space 3}0.747{col 54}{space 4} .9844239{col 67}{space 3} 1.022119
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2} 1.001982{col 26}{space 2} .0090315{col 37}{space 1}    0.22{col 46}{space 3}0.826{col 54}{space 4} .9844357{col 67}{space 3}  1.01984
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2} .9943459{col 26}{space 2} .0124235{col 37}{space 1}   -0.45{col 46}{space 3}0.650{col 54}{space 4}  .970292{col 67}{space 3} 1.018996
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2}   1.0023{col 26}{space 2} .0098943{col 37}{space 1}    0.23{col 46}{space 3}0.816{col 54}{space 4} .9830939{col 67}{space 3} 1.021881
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2} 1.001991{col 26}{space 2} .0102837{col 37}{space 1}    0.19{col 46}{space 3}0.846{col 54}{space 4} .9820363{col 67}{space 3}  1.02235
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} 1.013078{col 26}{space 2} .0104969{col 37}{space 1}    1.25{col 46}{space 3}0.210{col 54}{space 4} .9927123{col 67}{space 3} 1.033862
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. ***********************************************AMONG MEN***************************************
+. 
+. 
+. stcox AD_PGS AGE Agesq SEX PC1-PC20 if SEX==1 & sample_final==1
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}note: {bf:SEX} omitted because of collinearity.
+Iteration 0:  Log likelihood = {res}-5384.3657
+{txt}Iteration 1:  Log likelihood = {res}-5268.4105
+{txt}Iteration 2:  Log likelihood = {res}-5261.7885
+{txt}Iteration 3:  Log likelihood = {res}-5261.6942
+{txt}Iteration 4:  Log likelihood = {res}-5261.6859
+{txt}Iteration 5:  Log likelihood = {res}-5261.6858
+{txt}Iteration 6:  Log likelihood = {res}-5261.6858
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-5261.6858
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:18,565}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:18,565}
+{txt}No. of failures = {res}{ralign 11:616}
+{txt}Time at risk    = {res}{ralign 11:221,412.168}
+{col 57}{txt}{lalign 13:LR chi2({res:23})} = {res}{ralign 6:245.36}
+{txt}Log likelihood = {res}-5261.6858{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2} 1.642227{col 26}{space 2} .0539454{col 37}{space 1}   15.10{col 46}{space 3}0.000{col 54}{space 4} 1.539827{col 67}{space 3} 1.751436
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2}   .74249{col 26}{space 2} .2216804{col 37}{space 1}   -1.00{col 46}{space 3}0.319{col 54}{space 4} .4135737{col 67}{space 3} 1.332994
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2} 1.002699{col 26}{space 2}  .002342{col 37}{space 1}    1.15{col 46}{space 3}0.248{col 54}{space 4} .9981194{col 67}{space 3}   1.0073
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (omitted)
+{space 9}PC1 {c |}{col 14}{res}{space 2} 1.000561{col 26}{space 2} .0011929{col 37}{space 1}    0.47{col 46}{space 3}0.638{col 54}{space 4} .9982261{col 67}{space 3} 1.002902
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2} 1.008459{col 26}{space 2} .0059981{col 37}{space 1}    1.42{col 46}{space 3}0.157{col 54}{space 4} .9967709{col 67}{space 3} 1.020284
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} 1.007513{col 26}{space 2} .0098017{col 37}{space 1}    0.77{col 46}{space 3}0.442{col 54}{space 4} .9884844{col 67}{space 3} 1.026909
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} 1.007091{col 26}{space 2}   .00534{col 37}{space 1}    1.33{col 46}{space 3}0.183{col 54}{space 4} .9966785{col 67}{space 3} 1.017611
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2} 1.004256{col 26}{space 2}  .005253{col 37}{space 1}    0.81{col 46}{space 3}0.417{col 54}{space 4}  .994013{col 67}{space 3} 1.014605
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} .9926134{col 26}{space 2} .0213013{col 37}{space 1}   -0.35{col 46}{space 3}0.730{col 54}{space 4} .9517293{col 67}{space 3} 1.035254
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} 1.008367{col 26}{space 2} .0108952{col 37}{space 1}    0.77{col 46}{space 3}0.441{col 54}{space 4} .9872377{col 67}{space 3} 1.029949
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2}  1.00763{col 26}{space 2} .0153138{col 37}{space 1}    0.50{col 46}{space 3}0.617{col 54}{space 4} .9780578{col 67}{space 3} 1.038096
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2}  1.00256{col 26}{space 2} .0090056{col 37}{space 1}    0.28{col 46}{space 3}0.776{col 54}{space 4} .9850636{col 67}{space 3} 1.020367
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} 1.009386{col 26}{space 2} .0117846{col 37}{space 1}    0.80{col 46}{space 3}0.424{col 54}{space 4}  .986551{col 67}{space 3}  1.03275
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2} 1.011603{col 26}{space 2} .0104761{col 37}{space 1}    1.11{col 46}{space 3}0.265{col 54}{space 4} .9912771{col 67}{space 3} 1.032346
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .9790129{col 26}{space 2} .0122986{col 37}{space 1}   -1.69{col 46}{space 3}0.091{col 54}{space 4} .9552025{col 67}{space 3} 1.003417
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} .9899198{col 26}{space 2}  .023701{col 37}{space 1}   -0.42{col 46}{space 3}0.672{col 54}{space 4} .9445397{col 67}{space 3}  1.03748
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2} .9871031{col 26}{space 2} .0116382{col 37}{space 1}   -1.10{col 46}{space 3}0.271{col 54}{space 4} .9645542{col 67}{space 3} 1.010179
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2}  1.00707{col 26}{space 2} .0153719{col 37}{space 1}    0.46{col 46}{space 3}0.644{col 54}{space 4} .9773879{col 67}{space 3} 1.037654
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2} 1.005722{col 26}{space 2} .0124105{col 37}{space 1}    0.46{col 46}{space 3}0.644{col 54}{space 4} .9816899{col 67}{space 3} 1.030343
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2} 1.001131{col 26}{space 2} .0174139{col 37}{space 1}    0.07{col 46}{space 3}0.948{col 54}{space 4}  .967576{col 67}{space 3} 1.035851
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2} 1.004091{col 26}{space 2} .0136023{col 37}{space 1}    0.30{col 46}{space 3}0.763{col 54}{space 4} .9777816{col 67}{space 3} 1.031108
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2} 1.011189{col 26}{space 2} .0142109{col 37}{space 1}    0.79{col 46}{space 3}0.429{col 54}{space 4} .9837163{col 67}{space 3} 1.039429
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} 1.007383{col 26}{space 2} .0143999{col 37}{space 1}    0.51{col 46}{space 3}0.607{col 54}{space 4} .9795511{col 67}{space 3} 1.036005
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. 
+. stcox i.AD_PGStert AGE Agesq SEX PC1-PC20  if SEX==1 & sample_final==1
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}note: {bf:SEX} omitted because of collinearity.
+Iteration 0:  Log likelihood = {res}-5384.3657
+{txt}Iteration 1:  Log likelihood = {res}-5300.2598
+{txt}Iteration 2:  Log likelihood = {res}-5298.2318
+{txt}Iteration 3:  Log likelihood = {res}-5298.1471
+{txt}Iteration 4:  Log likelihood = {res}-5298.1407
+{txt}Iteration 5:  Log likelihood = {res}-5298.1406
+{txt}Iteration 6:  Log likelihood = {res}-5298.1406
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-5298.1406
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:18,565}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:18,565}
+{txt}No. of failures = {res}{ralign 11:616}
+{txt}Time at risk    = {res}{ralign 11:221,412.168}
+{col 57}{txt}{lalign 13:LR chi2({res:24})} = {res}{ralign 6:172.45}
+{txt}Log likelihood = {res}-5298.1406{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 2}AD_PGStert {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} 1.543513{col 26}{space 2} .1899088{col 37}{space 1}    3.53{col 46}{space 3}0.000{col 54}{space 4} 1.212778{col 67}{space 3} 1.964443
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 3.118657{col 26}{space 2}  .344221{col 37}{space 1}   10.30{col 46}{space 3}0.000{col 54}{space 4} 2.511982{col 67}{space 3} 3.871853
+{txt}{space 12} {c |}
+{space 9}AGE {c |}{col 14}{res}{space 2} .6632501{col 26}{space 2} .1969563{col 37}{space 1}   -1.38{col 46}{space 3}0.167{col 54}{space 4} .3706019{col 67}{space 3}  1.18699
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2} 1.003651{col 26}{space 2}  .002332{col 37}{space 1}    1.57{col 46}{space 3}0.117{col 54}{space 4} .9990912{col 67}{space 3} 1.008232
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (omitted)
+{space 9}PC1 {c |}{col 14}{res}{space 2}  1.00011{col 26}{space 2} .0012295{col 37}{space 1}    0.09{col 46}{space 3}0.929{col 54}{space 4}  .997703{col 67}{space 3} 1.002523
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2} 1.008844{col 26}{space 2} .0063346{col 37}{space 1}    1.40{col 46}{space 3}0.161{col 54}{space 4} .9965044{col 67}{space 3} 1.021336
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} 1.007823{col 26}{space 2} .0103072{col 37}{space 1}    0.76{col 46}{space 3}0.446{col 54}{space 4} .9878221{col 67}{space 3} 1.028228
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} 1.007267{col 26}{space 2} .0053529{col 37}{space 1}    1.36{col 46}{space 3}0.173{col 54}{space 4} .9968302{col 67}{space 3} 1.017813
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2} 1.004097{col 26}{space 2} .0052603{col 37}{space 1}    0.78{col 46}{space 3}0.435{col 54}{space 4}   .99384{col 67}{space 3}  1.01446
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} .9886081{col 26}{space 2}  .021739{col 37}{space 1}   -0.52{col 46}{space 3}0.602{col 54}{space 4} .9469057{col 67}{space 3} 1.032147
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} 1.007574{col 26}{space 2} .0108663{col 37}{space 1}    0.70{col 46}{space 3}0.484{col 54}{space 4} .9865003{col 67}{space 3} 1.029099
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2} 1.009108{col 26}{space 2} .0154599{col 37}{space 1}    0.59{col 46}{space 3}0.554{col 54}{space 4} .9792577{col 67}{space 3} 1.039869
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2} 1.004188{col 26}{space 2} .0091229{col 37}{space 1}    0.46{col 46}{space 3}0.645{col 54}{space 4} .9864661{col 67}{space 3} 1.022229
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} 1.008344{col 26}{space 2} .0118478{col 37}{space 1}    0.71{col 46}{space 3}0.479{col 54}{space 4} .9853876{col 67}{space 3} 1.031834
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2} 1.012003{col 26}{space 2} .0104318{col 37}{space 1}    1.16{col 46}{space 3}0.247{col 54}{space 4} .9917617{col 67}{space 3} 1.032657
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .9794809{col 26}{space 2} .0122258{col 37}{space 1}   -1.66{col 46}{space 3}0.097{col 54}{space 4} .9558095{col 67}{space 3} 1.003739
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} .9894582{col 26}{space 2} .0236139{col 37}{space 1}   -0.44{col 46}{space 3}0.657{col 54}{space 4} .9442416{col 67}{space 3}  1.03684
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2} .9881354{col 26}{space 2}  .011666{col 37}{space 1}   -1.01{col 46}{space 3}0.312{col 54}{space 4} .9655329{col 67}{space 3} 1.011267
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2}  1.00784{col 26}{space 2} .0153311{col 37}{space 1}    0.51{col 46}{space 3}0.608{col 54}{space 4} .9782352{col 67}{space 3} 1.038341
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2}   1.0093{col 26}{space 2}  .012509{col 37}{space 1}    0.75{col 46}{space 3}0.455{col 54}{space 4} .9850784{col 67}{space 3} 1.034118
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2} 1.001717{col 26}{space 2} .0171584{col 37}{space 1}    0.10{col 46}{space 3}0.920{col 54}{space 4}  .968645{col 67}{space 3} 1.035917
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2} 1.004088{col 26}{space 2} .0136973{col 37}{space 1}    0.30{col 46}{space 3}0.765{col 54}{space 4} .9775975{col 67}{space 3} 1.031296
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2} 1.009743{col 26}{space 2} .0141684{col 37}{space 1}    0.69{col 46}{space 3}0.490{col 54}{space 4} .9823521{col 67}{space 3} 1.037898
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} 1.002344{col 26}{space 2} .0142084{col 37}{space 1}    0.17{col 46}{space 3}0.869{col 54}{space 4} .9748796{col 67}{space 3} 1.030583
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. 
+. 
+. ************************************************AMONG WOMEN***************************************
+. 
+. 
+. stcox AD_PGS AGE Agesq SEX PC1-PC20 if SEX==2 & sample_final==1
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}note: {bf:SEX} omitted because of collinearity.
+Iteration 0:  Log likelihood = {res}-4872.6714
+{txt}Iteration 1:  Log likelihood = {res}-4696.2972
+{txt}Iteration 2:  Log likelihood = {res}-4677.1514
+{txt}Iteration 3:  Log likelihood = {res}-4676.8451
+{txt}Iteration 4:  Log likelihood = {res}-4676.8326
+{txt}Iteration 5:  Log likelihood = {res}-4676.8326
+{txt}Iteration 6:  Log likelihood = {res}-4676.8326
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-4676.8326
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:21,574}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:21,574}
+{txt}No. of failures = {res}{ralign 11:551}
+{txt}Time at risk    = {res}{ralign 11:265,021.414}
+{col 57}{txt}{lalign 13:LR chi2({res:23})} = {res}{ralign 6:391.68}
+{txt}Log likelihood = {res}-4676.8326{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 6}AD_PGS {c |}{col 14}{res}{space 2} 1.960075{col 26}{space 2} .0667634{col 37}{space 1}   19.76{col 46}{space 3}0.000{col 54}{space 4} 1.833494{col 67}{space 3} 2.095396
+{txt}{space 9}AGE {c |}{col 14}{res}{space 2} .5882635{col 26}{space 2} .1661555{col 37}{space 1}   -1.88{col 46}{space 3}0.060{col 54}{space 4} .3381811{col 67}{space 3}  1.02328
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2}  1.00437{col 26}{space 2} .0022321{col 37}{space 1}    1.96{col 46}{space 3}0.050{col 54}{space 4} 1.000005{col 67}{space 3} 1.008755
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (omitted)
+{space 9}PC1 {c |}{col 14}{res}{space 2} 1.000792{col 26}{space 2} .0010601{col 37}{space 1}    0.75{col 46}{space 3}0.455{col 54}{space 4}  .998716{col 67}{space 3} 1.002871
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2} 1.008542{col 26}{space 2}  .005399{col 37}{space 1}    1.59{col 46}{space 3}0.112{col 54}{space 4} .9980157{col 67}{space 3}  1.01918
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} 1.009098{col 26}{space 2} .0092106{col 37}{space 1}    0.99{col 46}{space 3}0.321{col 54}{space 4} .9912057{col 67}{space 3} 1.027312
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} 1.001986{col 26}{space 2} .0046045{col 37}{space 1}    0.43{col 46}{space 3}0.666{col 54}{space 4}  .993002{col 67}{space 3} 1.011052
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2} 1.008209{col 26}{space 2} .0051354{col 37}{space 1}    1.61{col 46}{space 3}0.108{col 54}{space 4} .9981936{col 67}{space 3} 1.018324
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} 1.003576{col 26}{space 2} .0117154{col 37}{space 1}    0.31{col 46}{space 3}0.760{col 54}{space 4} .9808747{col 67}{space 3} 1.026802
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} .9999333{col 26}{space 2} .0096312{col 37}{space 1}   -0.01{col 46}{space 3}0.994{col 54}{space 4} .9812335{col 67}{space 3} 1.018989
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2} .9952887{col 26}{space 2} .0112596{col 37}{space 1}   -0.42{col 46}{space 3}0.676{col 54}{space 4} .9734631{col 67}{space 3} 1.017604
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2}  .997813{col 26}{space 2} .0097874{col 37}{space 1}   -0.22{col 46}{space 3}0.823{col 54}{space 4} .9788132{col 67}{space 3} 1.017182
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} .9882082{col 26}{space 2} .0131415{col 37}{space 1}   -0.89{col 46}{space 3}0.372{col 54}{space 4} .9627841{col 67}{space 3} 1.014304
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2} 1.027868{col 26}{space 2} .0104878{col 37}{space 1}    2.69{col 46}{space 3}0.007{col 54}{space 4} 1.007517{col 67}{space 3} 1.048631
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .9799229{col 26}{space 2} .0120969{col 37}{space 1}   -1.64{col 46}{space 3}0.100{col 54}{space 4} .9564978{col 67}{space 3} 1.003922
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} 1.019316{col 26}{space 2}  .023814{col 37}{space 1}    0.82{col 46}{space 3}0.413{col 54}{space 4} .9736943{col 67}{space 3} 1.067076
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2} .9961197{col 26}{space 2} .0122517{col 37}{space 1}   -0.32{col 46}{space 3}0.752{col 54}{space 4} .9723938{col 67}{space 3} 1.020424
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2} .9997579{col 26}{space 2} .0126962{col 37}{space 1}   -0.02{col 46}{space 3}0.985{col 54}{space 4} .9751809{col 67}{space 3} 1.024954
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2} .9902028{col 26}{space 2}  .013205{col 37}{space 1}   -0.74{col 46}{space 3}0.460{col 54}{space 4} .9646567{col 67}{space 3} 1.016425
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2} .9927977{col 26}{space 2} .0173679{col 37}{space 1}   -0.41{col 46}{space 3}0.679{col 54}{space 4} .9593341{col 67}{space 3} 1.027429
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2} .9944212{col 26}{space 2} .0143172{col 37}{space 1}   -0.39{col 46}{space 3}0.698{col 54}{space 4} .9667522{col 67}{space 3} 1.022882
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2}  .996616{col 26}{space 2} .0150991{col 37}{space 1}   -0.22{col 46}{space 3}0.823{col 54}{space 4} .9674574{col 67}{space 3} 1.026654
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} 1.027889{col 26}{space 2} .0157406{col 37}{space 1}    1.80{col 46}{space 3}0.072{col 54}{space 4} .9974966{col 67}{space 3} 1.059208
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. 
+. stcox i.AD_PGStert AGE Agesq SEX PC1-PC20  if SEX==2 & sample_final==1
+
+{col 10}{txt}Failure {bf:_d}: {res}dem_diag==1
+{col 4}{txt}Analysis time {bf:_t}: {res}Age_dementia
+{col 3}{txt}Enter on or after: {res}time AGE
+{col 9}{txt}ID variable: {res}n_eid
+
+{txt}note: {bf:SEX} omitted because of collinearity.
+Iteration 0:  Log likelihood = {res}-4872.6714
+{txt}Iteration 1:  Log likelihood = {res}-4726.6972
+{txt}Iteration 2:  Log likelihood = {res}-4722.8997
+{txt}Iteration 3:  Log likelihood = {res}-4722.6755
+{txt}Iteration 4:  Log likelihood = {res}-4722.6686
+{txt}Iteration 5:  Log likelihood = {res}-4722.6686
+{txt}Refining estimates:
+Iteration 0:  Log likelihood = {res}-4722.6686
+
+{txt}Cox regression with Breslow method for ties
+
+No. of subjects = {res}{ralign 11:21,574}{col 57}{txt}{lalign 13:Number of obs} = {res}{ralign 6:21,574}
+{txt}No. of failures = {res}{ralign 11:551}
+{txt}Time at risk    = {res}{ralign 11:265,021.414}
+{col 57}{txt}{lalign 13:LR chi2({res:24})} = {res}{ralign 6:300.01}
+{txt}Log likelihood = {res}-4722.6686{col 57}{txt}{lalign 13:Prob > chi2} = {res}{ralign 6:0.0000}
+
+{txt}{hline 13}{c TT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{col 1}          _t{col 14}{c |} Haz. ratio{col 26}   Std. err.{col 38}      z{col 46}   P>|z|{col 54}     [95% con{col 67}f. interval]
+{hline 13}{c +}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+{space 2}AD_PGStert {c |}
+{space 10}2  {c |}{col 14}{res}{space 2} 1.524769{col 26}{space 2} .2299727{col 37}{space 1}    2.80{col 46}{space 3}0.005{col 54}{space 4} 1.134545{col 67}{space 3} 2.049209
+{txt}{space 10}3  {c |}{col 14}{res}{space 2} 5.021316{col 26}{space 2} .6449242{col 37}{space 1}   12.56{col 46}{space 3}0.000{col 54}{space 4} 3.903836{col 67}{space 3} 6.458677
+{txt}{space 12} {c |}
+{space 9}AGE {c |}{col 14}{res}{space 2} .4967587{col 26}{space 2} .1395063{col 37}{space 1}   -2.49{col 46}{space 3}0.013{col 54}{space 4} .2864837{col 67}{space 3} .8613726
+{txt}{space 7}Agesq {c |}{col 14}{res}{space 2} 1.005801{col 26}{space 2} .0022228{col 37}{space 1}    2.62{col 46}{space 3}0.009{col 54}{space 4} 1.001454{col 67}{space 3} 1.010167
+{txt}{space 9}SEX {c |}{col 14}{res}{space 2}        1{col 26}{txt}  (omitted)
+{space 9}PC1 {c |}{col 14}{res}{space 2} 1.000619{col 26}{space 2} .0010718{col 37}{space 1}    0.58{col 46}{space 3}0.564{col 54}{space 4} .9985203{col 67}{space 3} 1.002722
+{txt}{space 9}PC2 {c |}{col 14}{res}{space 2} 1.007332{col 26}{space 2} .0054969{col 37}{space 1}    1.34{col 46}{space 3}0.181{col 54}{space 4} .9966155{col 67}{space 3} 1.018163
+{txt}{space 9}PC3 {c |}{col 14}{res}{space 2} 1.007001{col 26}{space 2} .0093728{col 37}{space 1}    0.75{col 46}{space 3}0.454{col 54}{space 4} .9887968{col 67}{space 3}  1.02554
+{txt}{space 9}PC4 {c |}{col 14}{res}{space 2} 1.001846{col 26}{space 2} .0046527{col 37}{space 1}    0.40{col 46}{space 3}0.691{col 54}{space 4} .9927685{col 67}{space 3} 1.011007
+{txt}{space 9}PC5 {c |}{col 14}{res}{space 2} 1.009617{col 26}{space 2} .0051696{col 37}{space 1}    1.87{col 46}{space 3}0.062{col 54}{space 4} .9995359{col 67}{space 3} 1.019801
+{txt}{space 9}PC6 {c |}{col 14}{res}{space 2} 1.001918{col 26}{space 2} .0111761{col 37}{space 1}    0.17{col 46}{space 3}0.864{col 54}{space 4} .9802511{col 67}{space 3} 1.024064
+{txt}{space 9}PC7 {c |}{col 14}{res}{space 2} .9995861{col 26}{space 2}  .009687{col 37}{space 1}   -0.04{col 46}{space 3}0.966{col 54}{space 4} .9807791{col 67}{space 3} 1.018754
+{txt}{space 9}PC8 {c |}{col 14}{res}{space 2}  .992889{col 26}{space 2} .0112867{col 37}{space 1}   -0.63{col 46}{space 3}0.530{col 54}{space 4} .9710121{col 67}{space 3} 1.015259
+{txt}{space 9}PC9 {c |}{col 14}{res}{space 2} 1.003182{col 26}{space 2} .0098201{col 37}{space 1}    0.32{col 46}{space 3}0.746{col 54}{space 4} .9841186{col 67}{space 3} 1.022615
+{txt}{space 8}PC10 {c |}{col 14}{res}{space 2} .9894678{col 26}{space 2} .0134411{col 37}{space 1}   -0.78{col 46}{space 3}0.436{col 54}{space 4} .9634714{col 67}{space 3} 1.016166
+{txt}{space 8}PC11 {c |}{col 14}{res}{space 2} 1.026168{col 26}{space 2} .0104109{col 37}{space 1}    2.55{col 46}{space 3}0.011{col 54}{space 4} 1.005964{col 67}{space 3} 1.046777
+{txt}{space 8}PC12 {c |}{col 14}{res}{space 2} .9859107{col 26}{space 2} .0120389{col 37}{space 1}   -1.16{col 46}{space 3}0.245{col 54}{space 4}  .962595{col 67}{space 3} 1.009791
+{txt}{space 8}PC13 {c |}{col 14}{res}{space 2} 1.010639{col 26}{space 2} .0236802{col 37}{space 1}    0.45{col 46}{space 3}0.652{col 54}{space 4} .9652758{col 67}{space 3} 1.058133
+{txt}{space 8}PC14 {c |}{col 14}{res}{space 2} .9955995{col 26}{space 2} .0121278{col 37}{space 1}   -0.36{col 46}{space 3}0.717{col 54}{space 4} .9721109{col 67}{space 3} 1.019656
+{txt}{space 8}PC15 {c |}{col 14}{res}{space 2} 1.001278{col 26}{space 2} .0125397{col 37}{space 1}    0.10{col 46}{space 3}0.919{col 54}{space 4} .9770002{col 67}{space 3}  1.02616
+{txt}{space 8}PC16 {c |}{col 14}{res}{space 2} .9916334{col 26}{space 2}  .013152{col 37}{space 1}   -0.63{col 46}{space 3}0.526{col 54}{space 4} .9661881{col 67}{space 3} 1.017749
+{txt}{space 8}PC17 {c |}{col 14}{res}{space 2} .9864864{col 26}{space 2} .0179497{col 37}{space 1}   -0.75{col 46}{space 3}0.455{col 54}{space 4} .9519256{col 67}{space 3} 1.022302
+{txt}{space 8}PC18 {c |}{col 14}{res}{space 2} .9999589{col 26}{space 2} .0143284{col 37}{space 1}   -0.00{col 46}{space 3}0.998{col 54}{space 4} .9722665{col 67}{space 3}  1.02844
+{txt}{space 8}PC19 {c |}{col 14}{res}{space 2} .9924562{col 26}{space 2} .0149606{col 37}{space 1}   -0.50{col 46}{space 3}0.615{col 54}{space 4} .9635629{col 67}{space 3} 1.022216
+{txt}{space 8}PC20 {c |}{col 14}{res}{space 2} 1.026343{col 26}{space 2} .0156282{col 37}{space 1}    1.71{col 46}{space 3}0.088{col 54}{space 4} .9961648{col 67}{space 3} 1.057435
+{txt}{hline 13}{c BT}{hline 11}{hline 11}{hline 9}{hline 8}{hline 13}{hline 12}
+
+{com}. 
+. 
+. capture log close
+{smcl}
+{com}{sf}{ul off}

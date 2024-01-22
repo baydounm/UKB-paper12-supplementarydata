@@ -1,0 +1,1927 @@
+{smcl}
+{com}{sf}{ul off}{txt}
+{com}. 
+. use "E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin",clear
+{txt}
+{com}. 
+. 
+. capture drop zLE8*
+{txt}
+{com}. foreach x of varlist LE8* {c -(}
+{txt}  2{com}.         egen z`x'=std(`x') if sample_final==1 
+{txt}  3{com}. {c )-}
+{txt}(72 missing values generated)
+(362 missing values generated)
+(197 missing values generated)
+(5,063 missing values generated)
+(2,016 missing values generated)
+(2,396 missing values generated)
+(1 missing value generated)
+(31 missing values generated)
+(1 missing value generated)
+(1 missing value generated)
+
+{com}. 
+. 
+. save, replace
+{txt}{p 0 4 2}
+file {bf}
+E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. su zLE8_TOTALSCORE if sample_final==1
+
+{txt}    Variable {c |}        Obs        Mean    Std. dev.       Min        Max
+{hline 13}{c +}{hline 57}
+zLE8_TOTAL~E {c |}{res}     40,138   -1.47e-09           1  -4.464323   3.141791
+{txt}
+{com}. histogram zLE8_TOTALSCORE if sample_final==1
+{txt}(bin={res}46{txt}, start={res}-4.4643226{txt}, width={res}.16535029{txt})
+{res}{txt}
+{com}. 
+. 
+. capture drop zLE8_TOTALSCOREinv
+{txt}
+{com}. gen zLE8_TOTALSCOREinv=zLE8_TOTALSCORE*-1 if sample_final==1
+{txt}(1 missing value generated)
+
+{com}. 
+. save, replace
+{txt}{p 0 4 2}
+file {bf}
+E:\16GBBACKUPUSB\BACKUP_USB_SEPTEMBER2014\May Baydoun_folder\UK_BIOBANK_PROJECT\UKB_PAPER8E_ADPRSPROTDEM\DATA\finaldata_unimputedfin.dta{rm}
+saved
+{p_end}
+
+{com}. 
+. 
+. bysort LE8_TOTALSCOREtert: su LE8_TOTALSCORE if sample_final==1, det
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 1
+
+                       LE8_TOTALSCORE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      225       68.57143
+{txt} 5%    {res} 285.7143       114.2857
+{txt}10%    {res}      315       114.2857       {txt}Obs         {res}     13,971
+{txt}25%    {res}      365            120       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res}      410                      {txt}Mean          {res} 394.4378
+                        {txt}Largest       Std. dev.     {res} 54.97419
+{txt}75%    {res}      435            460
+{txt}90%    {res}      455            460       {txt}Variance      {res} 3022.162
+{txt}95%    {res} 457.1429            460       {txt}Skewness      {res}-1.163845
+{txt}99%    {res}      460            460       {txt}Kurtosis      {res} 4.336884
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 2
+
+                       LE8_TOTALSCORE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      465          462.5
+{txt} 5%    {res}      465          462.5
+{txt}10%    {res}      470       462.8571       {txt}Obs         {res}     12,856
+{txt}25%    {res}      485       462.8571       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res} 502.8571                      {txt}Mean          {res} 502.5191
+                        {txt}Largest       Std. dev.     {res} 22.69146
+{txt}75%    {res}      520            540
+{txt}90%    {res}      535            540       {txt}Variance      {res} 514.9023
+{txt}95%    {res} 537.1429            540       {txt}Skewness      {res}-.0229743
+{txt}99%    {res}      540            540       {txt}Kurtosis      {res} 1.815359
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 3
+
+                       LE8_TOTALSCORE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 542.8571          542.5
+{txt} 5%    {res}      545       542.8571
+{txt}10%    {res}      550       542.8571       {txt}Obs         {res}     13,311
+{txt}25%    {res}      565       542.8571       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res}      590                      {txt}Mean          {res} 601.9561
+                        {txt}Largest       Std. dev.     {res} 46.16793
+{txt}75%    {res}      630            800
+{txt}90%    {res} 668.5714            800       {txt}Variance      {res} 2131.478
+{txt}95%    {res} 691.4286            800       {txt}Skewness      {res} .9799861
+{txt}99%    {res}      740            800       {txt}Kurtosis      {res} 3.627275
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = .
+
+                       LE8_TOTALSCORE
+{hline 61}
+no observations
+
+
+{com}. bysort LE8_TOTALSCOREtert: su zLE8_TOTALSCOREinv if sample_final==1, det
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 1
+
+                     zLE8_TOTALSCOREinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} .3938634       .3938634
+{txt} 5%    {res} .4235749       .3938634
+{txt}10%    {res} .4458584       .3938634       {txt}Obs         {res}     13,971
+{txt}25%    {res}  .653838       .3938634       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res} .9138126                      {txt}Mean          {res} 1.075644
+                        {txt}Largest       Std. dev.     {res} .5716757
+{txt}75%    {res} 1.381767       3.929518
+{txt}90%    {res} 1.901716        3.98894       {txt}Variance      {res} .3268131
+{txt}95%    {res} 2.206257        3.98894       {txt}Skewness      {res} 1.163845
+{txt}99%    {res} 2.837624       4.464323       {txt}Kurtosis      {res} 4.336884
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 2
+
+                     zLE8_TOTALSCOREinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.4380552      -.4380552
+{txt} 5%    {res} -.408344      -.4380552
+{txt}10%    {res}-.3860602      -.4380552       {txt}Obs         {res}     12,856
+{txt}25%    {res}-.2300755      -.4380552       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res}-.0518073                      {txt}Mean          {res}-.0482923
+                        {txt}Largest       Std. dev.     {res} .2359681
+{txt}75%    {res} .1338889        .364152
+{txt}90%    {res} .2898736        .364152       {txt}Variance      {res} .0556809
+{txt}95%    {res} .3418685        .367866       {txt}Skewness      {res} .0229743
+{txt}99%    {res} .3418685        .367866       {txt}Kurtosis      {res} 1.815359
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 3
+
+                     zLE8_TOTALSCOREinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.517852      -3.141791
+{txt} 5%    {res}-2.012758      -3.141791
+{txt}10%    {res}-1.775067      -3.141791       {txt}Obs         {res}     13,311
+{txt}25%    {res}-1.373964      -3.141791       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res}-.9580043                      {txt}Mean          {res}-1.082336
+                        {txt}Largest       Std. dev.     {res} .4800995
+{txt}75%    {res}-.6980297      -.4677663
+{txt}90%    {res} -.542045      -.4677663       {txt}Variance      {res} .2304956
+{txt}95%    {res}  -.49005      -.4677663       {txt}Skewness      {res}-.9799861
+{txt}99%    {res}-.4677663      -.4640526       {txt}Kurtosis      {res} 3.627274
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = .
+
+                     zLE8_TOTALSCOREinv
+{hline 61}
+no observations
+
+
+{com}. su zLE8_TOTALSCOREinv if sample_final==1,det
+
+                     {txt}zLE8_TOTALSCOREinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.191026      -3.141791
+{txt} 5%    {res}-1.581943      -3.141791
+{txt}10%    {res}-1.269974      -3.141791       {txt}Obs         {res}     40,138
+{txt}25%    {res}-.6980297      -3.141791       {txt}Sum of wgt. {res}     40,138
+
+{txt}50%    {res}-.0220958                      {txt}Mean          {res} 1.47e-09
+                        {txt}Largest       Std. dev.     {res}        1
+{txt}75%    {res}  .653838       3.929518
+{txt}90%    {res} 1.314916        3.98894       {txt}Variance      {res}        1
+{txt}95%    {res} 1.693736        3.98894       {txt}Skewness      {res} .1687871
+{txt}99%    {res} 2.443949       4.464323       {txt}Kurtosis      {res} 2.956504
+{txt}
+{com}. su LE8* if sample_final==1, det
+
+                        {txt}LE8_COMP1DIET
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     40,067
+{txt}25%    {res}        0              0       {txt}Sum of wgt. {res}     40,067
+
+{txt}50%    {res}       25                      {txt}Mean          {res} 33.59373
+                        {txt}Largest       Std. dev.     {res} 31.03939
+{txt}75%    {res}       50            100
+{txt}90%    {res}       80            100       {txt}Variance      {res} 963.4438
+{txt}95%    {res}      100            100       {txt}Skewness      {res} .5459392
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.204826
+
+                         {txt}LE8_COMP2PA
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     40,139
+{txt}25%    {res}       20              0       {txt}Sum of wgt. {res}     40,139
+
+{txt}50%    {res}       40                      {txt}Mean          {res} 46.35741
+                        {txt}Largest       Std. dev.     {res} 35.48147
+{txt}75%    {res}       80            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 1258.935
+{txt}95%    {res}      100            100       {txt}Skewness      {res} .1222244
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res}  1.67174
+
+                      {txt}LE8_COMP3NICOTINE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}     37.5              0       {txt}Obs         {res}     40,139
+{txt}25%    {res}       80              0       {txt}Sum of wgt. {res}     40,139
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 84.49345
+                        {txt}Largest       Std. dev.     {res} 29.65018
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 879.1331
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-2.170383
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 6.433014
+
+                       {txt}LE8_COMP4SLEEP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       20              0
+{txt} 5%    {res}       40              0
+{txt}10%    {res}       70              0       {txt}Obs         {res}     39,777
+{txt}25%    {res}       70              0       {txt}Sum of wgt. {res}     39,777
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 88.44181
+                        {txt}Largest       Std. dev.     {res} 19.50992
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 380.6372
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-1.736096
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 5.394854
+
+                        {txt}LE8_COMP5BMI
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}       15              0
+{txt}10%    {res}       30              0       {txt}Obs         {res}     39,942
+{txt}25%    {res}       30              0       {txt}Sum of wgt. {res}     39,942
+
+{txt}50%    {res}       70                      {txt}Mean          {res} 67.69491
+                        {txt}Largest       Std. dev.     {res} 28.57466
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 816.5111
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-.5613168
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.274411
+
+                       {txt}LE8_COMP6LIPIDS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     35,076
+{txt}25%    {res}       20              0       {txt}Sum of wgt. {res}     35,076
+
+{txt}50%    {res}       40                      {txt}Mean          {res} 49.09169
+                        {txt}Largest       Std. dev.     {res} 30.73157
+{txt}75%    {res}       60            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 944.4294
+{txt}95%    {res}      100            100       {txt}Skewness      {res} .2582589
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res}  2.19077
+
+                        {txt}LE8_COMP7GLUC
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       20              0
+{txt} 5%    {res}       40              0
+{txt}10%    {res}       60              0       {txt}Obs         {res}     38,123
+{txt}25%    {res}      100              0       {txt}Sum of wgt. {res}     38,123
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 88.63547
+                        {txt}Largest       Std. dev.     {res} 21.73294
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 472.3209
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-1.671615
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 4.608705
+
+                         {txt}LE8_COMP8BP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     37,743
+{txt}25%    {res}       25              0       {txt}Sum of wgt. {res}     37,743
+
+{txt}50%    {res}       25                      {txt}Mean          {res} 37.94584
+                        {txt}Largest       Std. dev.     {res} 30.86594
+{txt}75%    {res}       50            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 952.7063
+{txt}95%    {res}      100            100       {txt}Skewness      {res}  .600583
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.420715
+
+                       {txt}LE8_TOTALSCORE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 262.8571       68.57143
+{txt} 5%    {res}      335       114.2857
+{txt}10%    {res} 371.4286       114.2857       {txt}Obs         {res}     40,138
+{txt}25%    {res}      435            120       {txt}Sum of wgt. {res}     40,138
+
+{txt}50%    {res}      500                      {txt}Mean          {res} 497.8752
+                        {txt}Largest       Std. dev.     {res} 96.16325
+{txt}75%    {res}      565            800
+{txt}90%    {res}      620            800       {txt}Variance      {res} 9247.371
+{txt}95%    {res}      650            800       {txt}Skewness      {res}-.1687871
+{txt}99%    {res} 708.5714            800       {txt}Kurtosis      {res} 2.956504
+
+                        {txt}LE8_LIFESTYLE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       80              0
+{txt} 5%    {res}      140              0
+{txt}10%    {res}      170              0       {txt}Obs         {res}     40,139
+{txt}25%    {res}      210              0       {txt}Sum of wgt. {res}     40,139
+
+{txt}50%    {res}      260                      {txt}Mean          {res} 252.5397
+                        {txt}Largest       Std. dev.     {res} 64.39935
+{txt}75%    {res}      300            400
+{txt}90%    {res}      330            400       {txt}Variance      {res} 4147.277
+{txt}95%    {res}      350            400       {txt}Skewness      {res}-.4110765
+{txt}99%    {res}      380            400       {txt}Kurtosis      {res} 3.214809
+
+                       {txt}LE8_BIOLOGICAL
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 93.33334              0
+{txt} 5%    {res}      135              0
+{txt}10%    {res}      160              0       {txt}Obs         {res}     40,108
+{txt}25%    {res}      200              0       {txt}Sum of wgt. {res}     40,108
+
+{txt}50%    {res}      245                      {txt}Mean          {res} 245.3138
+                        {txt}Largest       Std. dev.     {res} 66.03004
+{txt}75%    {res}      290            400
+{txt}90%    {res} 333.3333            400       {txt}Variance      {res} 4359.966
+{txt}95%    {res}      360            400       {txt}Skewness      {res}-.0408294
+{txt}99%    {res}      400            400       {txt}Kurtosis      {res} 2.820964
+
+               {txt}3 quantiles of LE8_TOTALSCORE 
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              1       {txt}Obs         {res}     40,138
+{txt}25%    {res}        1              1       {txt}Sum of wgt. {res}     40,138
+
+{txt}50%    {res}        2                      {txt}Mean          {res} 1.983557
+                        {txt}Largest       Std. dev.     {res} .8242885
+{txt}75%    {res}        3              3
+{txt}90%    {res}        3              3       {txt}Variance      {res} .6794516
+{txt}95%    {res}        3              3       {txt}Skewness      {res} .0304933
+{txt}99%    {res}        3              3       {txt}Kurtosis      {res} 1.472443
+
+                    {txt}LE8_TOTALSCOREtertinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              1       {txt}Obs         {res}     40,138
+{txt}25%    {res}        1              1       {txt}Sum of wgt. {res}     40,138
+
+{txt}50%    {res}        2                      {txt}Mean          {res} 2.016443
+                        {txt}Largest       Std. dev.     {res} .8242885
+{txt}75%    {res}        3              3
+{txt}90%    {res}        3              3       {txt}Variance      {res} .6794516
+{txt}95%    {res}        3              3       {txt}Skewness      {res}-.0304933
+{txt}99%    {res}        3              3       {txt}Kurtosis      {res} 1.472443
+{txt}
+{com}. 
+. bysort LE8_TOTALSCOREtert: su LE8* if sample_final==1, det
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 1
+
+                        LE8_COMP1DIET
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     13,919
+{txt}25%    {res}        0              0       {txt}Sum of wgt. {res}     13,919
+
+{txt}50%    {res}        0                      {txt}Mean          {res} 18.71183
+                        {txt}Largest       Std. dev.     {res} 23.96777
+{txt}75%    {res}       25            100
+{txt}90%    {res}       50            100       {txt}Variance      {res} 574.4542
+{txt}95%    {res}       80            100       {txt}Skewness      {res} 1.205419
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 3.825582
+
+                         {txt}LE8_COMP2PA
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     13,971
+{txt}25%    {res}        0              0       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res}       20                      {txt}Mean          {res} 27.39246
+                        {txt}Largest       Std. dev.     {res} 30.49427
+{txt}75%    {res}       40            100
+{txt}90%    {res}       80            100       {txt}Variance      {res} 929.9003
+{txt}95%    {res}       90            100       {txt}Skewness      {res} .9237779
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.795563
+
+                      {txt}LE8_COMP3NICOTINE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     13,971
+{txt}25%    {res}       75              0       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 71.96282
+                        {txt}Largest       Std. dev.     {res} 39.12427
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 1530.708
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-1.142808
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.571957
+
+                       {txt}LE8_COMP4SLEEP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       20              0
+{txt} 5%    {res}       40              0
+{txt}10%    {res}       40              0       {txt}Obs         {res}     13,737
+{txt}25%    {res}       70              0       {txt}Sum of wgt. {res}     13,737
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 82.07906
+                        {txt}Largest       Std. dev.     {res} 23.66257
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 559.9172
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-1.145733
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 3.317485
+
+                        {txt}LE8_COMP5BMI
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}       15              0
+{txt}10%    {res}       15              0       {txt}Obs         {res}     13,869
+{txt}25%    {res}       30              0       {txt}Sum of wgt. {res}     13,869
+
+{txt}50%    {res}       70                      {txt}Mean          {res} 50.60927
+                        {txt}Largest       Std. dev.     {res} 28.86175
+{txt}75%    {res}       70            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 833.0006
+{txt}95%    {res}      100            100       {txt}Skewness      {res} .0905647
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res}  1.85879
+
+                       {txt}LE8_COMP6LIPIDS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     12,462
+{txt}25%    {res}       20              0       {txt}Sum of wgt. {res}     12,462
+
+{txt}50%    {res}       40                      {txt}Mean          {res} 39.71915
+                        {txt}Largest       Std. dev.     {res} 29.95679
+{txt}75%    {res}       60            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 897.4093
+{txt}95%    {res}      100            100       {txt}Skewness      {res} .5343523
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.511105
+
+                        {txt}LE8_COMP7GLUC
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       10              0
+{txt} 5%    {res}       30              0
+{txt}10%    {res}       40              0       {txt}Obs         {res}     12,995
+{txt}25%    {res}       60              0       {txt}Sum of wgt. {res}     12,995
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 79.03886
+                        {txt}Largest       Std. dev.     {res} 26.72824
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 714.3986
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-.8058133
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.365582
+
+                         {txt}LE8_COMP8BP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     13,291
+{txt}25%    {res}        0              0       {txt}Sum of wgt. {res}     13,291
+
+{txt}50%    {res}       25                      {txt}Mean          {res} 25.54247
+                        {txt}Largest       Std. dev.     {res} 24.49857
+{txt}75%    {res}       50            100
+{txt}90%    {res}       50            100       {txt}Variance      {res} 600.1797
+{txt}95%    {res}       75            100       {txt}Skewness      {res} .9896085
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 3.748987
+
+                       {txt}LE8_TOTALSCORE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      225       68.57143
+{txt} 5%    {res} 285.7143       114.2857
+{txt}10%    {res}      315       114.2857       {txt}Obs         {res}     13,971
+{txt}25%    {res}      365            120       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res}      410                      {txt}Mean          {res} 394.4378
+                        {txt}Largest       Std. dev.     {res} 54.97419
+{txt}75%    {res}      435            460
+{txt}90%    {res}      455            460       {txt}Variance      {res} 3022.162
+{txt}95%    {res} 457.1429            460       {txt}Skewness      {res}-1.163845
+{txt}99%    {res}      460            460       {txt}Kurtosis      {res} 4.336884
+
+                        {txt}LE8_LIFESTYLE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       55              0
+{txt} 5%    {res}      100              0
+{txt}10%    {res}      120              0       {txt}Obs         {res}     13,971
+{txt}25%    {res}      170              0       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res}      200                      {txt}Mean          {res} 199.5587
+                        {txt}Largest       Std. dev.     {res} 55.28473
+{txt}75%    {res}      240            350
+{txt}90%    {res}      265            360       {txt}Variance      {res} 3056.401
+{txt}95%    {res}      285            370       {txt}Skewness      {res}-.4635048
+{txt}99%    {res}      310            370       {txt}Kurtosis      {res} 3.276077
+
+                       {txt}LE8_BIOLOGICAL
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       70              0
+{txt} 5%    {res} 106.6667              0
+{txt}10%    {res} 126.6667              0       {txt}Obs         {res}     13,954
+{txt}25%    {res}      155              0       {txt}Sum of wgt. {res}     13,954
+
+{txt}50%    {res}      195                      {txt}Mean          {res} 194.6463
+                        {txt}Largest       Std. dev.     {res} 54.54024
+{txt}75%    {res}      230            400
+{txt}90%    {res}      260            400       {txt}Variance      {res} 2974.638
+{txt}95%    {res}      285            400       {txt}Skewness      {res} .1099705
+{txt}99%    {res} 333.3333            400       {txt}Kurtosis      {res} 3.331634
+
+               {txt}3 quantiles of LE8_TOTALSCORE 
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              1       {txt}Obs         {res}     13,971
+{txt}25%    {res}        1              1       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res}        1                      {txt}Mean          {res}        1
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res}        1              1
+{txt}90%    {res}        1              1       {txt}Variance      {res}        0
+{txt}95%    {res}        1              1       {txt}Skewness      {res}        .
+{txt}99%    {res}        1              1       {txt}Kurtosis      {res}        .
+
+                    {txt}LE8_TOTALSCOREtertinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        3              3
+{txt} 5%    {res}        3              3
+{txt}10%    {res}        3              3       {txt}Obs         {res}     13,971
+{txt}25%    {res}        3              3       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res}        3                      {txt}Mean          {res}        3
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res}        3              3
+{txt}90%    {res}        3              3       {txt}Variance      {res}        0
+{txt}95%    {res}        3              3       {txt}Skewness      {res}        .
+{txt}99%    {res}        3              3       {txt}Kurtosis      {res}        .
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 2
+
+                        LE8_COMP1DIET
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     12,844
+{txt}25%    {res}        0              0       {txt}Sum of wgt. {res}     12,844
+
+{txt}50%    {res}       25                      {txt}Mean          {res} 32.09125
+                        {txt}Largest       Std. dev.     {res} 28.75641
+{txt}75%    {res}       50            100
+{txt}90%    {res}       80            100       {txt}Variance      {res} 826.9313
+{txt}95%    {res}       80            100       {txt}Skewness      {res} .5587749
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.393313
+
+                         {txt}LE8_COMP2PA
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     12,856
+{txt}25%    {res}       20              0       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res}       40                      {txt}Mean          {res} 47.42377
+                        {txt}Largest       Std. dev.     {res} 34.08306
+{txt}75%    {res}       80            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 1161.655
+{txt}95%    {res}      100            100       {txt}Skewness      {res} .1042644
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res}  1.77111
+
+                      {txt}LE8_COMP3NICOTINE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}       75              0       {txt}Obs         {res}     12,856
+{txt}25%    {res}       80              0       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 88.38675
+                        {txt}Largest       Std. dev.     {res} 23.92529
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 572.4196
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-2.771798
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 10.32209
+
+                       {txt}LE8_COMP4SLEEP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       40              0
+{txt} 5%    {res}       40              0
+{txt}10%    {res}       70              0       {txt}Obs         {res}     12,771
+{txt}25%    {res}       70              0       {txt}Sum of wgt. {res}     12,771
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 89.72907
+                        {txt}Largest       Std. dev.     {res} 17.71625
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 313.8655
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-1.793592
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 5.740738
+
+                        {txt}LE8_COMP5BMI
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       15              0
+{txt} 5%    {res}       30              0
+{txt}10%    {res}       30              0       {txt}Obs         {res}     12,807
+{txt}25%    {res}       70              0       {txt}Sum of wgt. {res}     12,807
+
+{txt}50%    {res}       70                      {txt}Mean          {res} 69.30858
+                        {txt}Largest       Std. dev.     {res} 25.26233
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 638.1854
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-.6000291
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.651568
+
+                       {txt}LE8_COMP6LIPIDS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}       20              0       {txt}Obs         {res}     11,412
+{txt}25%    {res}       20              0       {txt}Sum of wgt. {res}     11,412
+
+{txt}50%    {res}       40                      {txt}Mean          {res} 47.45181
+                        {txt}Largest       Std. dev.     {res} 29.43677
+{txt}75%    {res}       60            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 866.5234
+{txt}95%    {res}      100            100       {txt}Skewness      {res} .3588796
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.379393
+
+                        {txt}LE8_COMP7GLUC
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       30              0
+{txt} 5%    {res}       40              0
+{txt}10%    {res}       60              0       {txt}Obs         {res}     12,277
+{txt}25%    {res}      100              0       {txt}Sum of wgt. {res}     12,277
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 91.02305
+                        {txt}Largest       Std. dev.     {res} 19.26676
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 371.2081
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-1.921281
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res}   5.4525
+
+                         {txt}LE8_COMP8BP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     12,168
+{txt}25%    {res}       25              0       {txt}Sum of wgt. {res}     12,168
+
+{txt}50%    {res}       25                      {txt}Mean          {res} 35.36654
+                        {txt}Largest       Std. dev.     {res}  28.5179
+{txt}75%    {res}       50            100
+{txt}90%    {res}       75            100       {txt}Variance      {res} 813.2708
+{txt}95%    {res}      100            100       {txt}Skewness      {res} .6648677
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.748124
+
+                       {txt}LE8_TOTALSCORE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      465          462.5
+{txt} 5%    {res}      465          462.5
+{txt}10%    {res}      470       462.8571       {txt}Obs         {res}     12,856
+{txt}25%    {res}      485       462.8571       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res} 502.8571                      {txt}Mean          {res} 502.5191
+                        {txt}Largest       Std. dev.     {res} 22.69146
+{txt}75%    {res}      520            540
+{txt}90%    {res}      535            540       {txt}Variance      {res} 514.9023
+{txt}95%    {res} 537.1429            540       {txt}Skewness      {res}-.0229743
+{txt}99%    {res}      540            540       {txt}Kurtosis      {res} 1.815359
+
+                        {txt}LE8_LIFESTYLE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}    142.5       66.66666
+{txt} 5%    {res} 186.6667             70
+{txt}10%    {res}      200             70       {txt}Obs         {res}     12,856
+{txt}25%    {res}      225             70       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res}      260                      {txt}Mean          {res} 257.4187
+                        {txt}Largest       Std. dev.     {res} 43.91831
+{txt}75%    {res}      290            390
+{txt}90%    {res}      310            390       {txt}Variance      {res} 1928.818
+{txt}95%    {res}      325            390       {txt}Skewness      {res}-.2252239
+{txt}99%    {res}      350            390       {txt}Kurtosis      {res} 3.168895
+
+                       {txt}LE8_BIOLOGICAL
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      140       73.33334
+{txt} 5%    {res}      170       73.33334
+{txt}10%    {res}      190             80       {txt}Obs         {res}     12,847
+{txt}25%    {res}      215       93.33334       {txt}Sum of wgt. {res}     12,847
+
+{txt}50%    {res}      240                      {txt}Mean          {res} 245.0022
+                        {txt}Largest       Std. dev.     {res} 46.53914
+{txt}75%    {res}      275            400
+{txt}90%    {res}      305            400       {txt}Variance      {res} 2165.891
+{txt}95%    {res}      325            400       {txt}Skewness      {res} .1908735
+{txt}99%    {res}      360            400       {txt}Kurtosis      {res} 3.165483
+
+               {txt}3 quantiles of LE8_TOTALSCORE 
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        2              2
+{txt} 5%    {res}        2              2
+{txt}10%    {res}        2              2       {txt}Obs         {res}     12,856
+{txt}25%    {res}        2              2       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res}        2                      {txt}Mean          {res}        2
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res}        2              2
+{txt}90%    {res}        2              2       {txt}Variance      {res}        0
+{txt}95%    {res}        2              2       {txt}Skewness      {res}        .
+{txt}99%    {res}        2              2       {txt}Kurtosis      {res}        .
+
+                    {txt}LE8_TOTALSCOREtertinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        2              2
+{txt} 5%    {res}        2              2
+{txt}10%    {res}        2              2       {txt}Obs         {res}     12,856
+{txt}25%    {res}        2              2       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res}        2                      {txt}Mean          {res}        2
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res}        2              2
+{txt}90%    {res}        2              2       {txt}Variance      {res}        0
+{txt}95%    {res}        2              2       {txt}Skewness      {res}        .
+{txt}99%    {res}        2              2       {txt}Kurtosis      {res}        .
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 3
+
+                        LE8_COMP1DIET
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}        0              0       {txt}Obs         {res}     13,304
+{txt}25%    {res}       25              0       {txt}Sum of wgt. {res}     13,304
+
+{txt}50%    {res}       50                      {txt}Mean          {res}  50.6141
+                        {txt}Largest       Std. dev.     {res} 31.28471
+{txt}75%    {res}       80            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 978.7328
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-.0667471
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res}  1.94924
+
+                         {txt}LE8_COMP2PA
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}       20              0       {txt}Obs         {res}     13,311
+{txt}25%    {res}       40              0       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res}       60                      {txt}Mean          {res} 65.23627
+                        {txt}Largest       Std. dev.     {res} 31.03696
+{txt}75%    {res}       90            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 963.2932
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-.5751774
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res}  2.23616
+
+                      {txt}LE8_COMP3NICOTINE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}       75              0
+{txt}10%    {res}       80              0       {txt}Obs         {res}     13,311
+{txt}25%    {res}      100              0       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 93.88401
+                        {txt}Largest       Std. dev.     {res} 14.96705
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 224.0127
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-3.968254
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 23.04113
+
+                       {txt}LE8_COMP4SLEEP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       40              0
+{txt} 5%    {res}       70              0
+{txt}10%    {res}       70              0       {txt}Obs         {res}     13,269
+{txt}25%    {res}      100              0       {txt}Sum of wgt. {res}     13,269
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 93.79004
+                        {txt}Largest       Std. dev.     {res} 13.68356
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 187.2399
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-2.471117
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res}  9.37661
+
+                        {txt}LE8_COMP5BMI
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       30              0
+{txt} 5%    {res}       30              0
+{txt}10%    {res}       70              0       {txt}Obs         {res}     13,266
+{txt}25%    {res}       70              0       {txt}Sum of wgt. {res}     13,266
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 83.99932
+                        {txt}Largest       Std. dev.     {res} 19.94922
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 397.9714
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-1.172078
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 4.217594
+
+                       {txt}LE8_COMP6LIPIDS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}       20              0
+{txt}10%    {res}       20              0       {txt}Obs         {res}     11,201
+{txt}25%    {res}       40              0       {txt}Sum of wgt. {res}     11,201
+
+{txt}50%    {res}       60                      {txt}Mean          {res} 61.19275
+                        {txt}Largest       Std. dev.     {res} 28.79866
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 829.3629
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-.0157046
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 2.077146
+
+                        {txt}LE8_COMP7GLUC
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       40              0
+{txt} 5%    {res}       60              0
+{txt}10%    {res}      100             10       {txt}Obs         {res}     12,851
+{txt}25%    {res}      100             10       {txt}Sum of wgt. {res}     12,851
+
+{txt}50%    {res}      100                      {txt}Mean          {res} 96.05867
+                        {txt}Largest       Std. dev.     {res}   13.058
+{txt}75%    {res}      100            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 170.5114
+{txt}95%    {res}      100            100       {txt}Skewness      {res}-3.273097
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 12.96194
+
+                         {txt}LE8_COMP8BP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              0
+{txt}10%    {res}       25              0       {txt}Obs         {res}     12,284
+{txt}25%    {res}       25              0       {txt}Sum of wgt. {res}     12,284
+
+{txt}50%    {res}       50                      {txt}Mean          {res} 53.92095
+                        {txt}Largest       Std. dev.     {res}  32.3129
+{txt}75%    {res}       75            100
+{txt}90%    {res}      100            100       {txt}Variance      {res} 1044.124
+{txt}95%    {res}      100            100       {txt}Skewness      {res} .0477419
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res} 1.838579
+
+                       {txt}LE8_TOTALSCORE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 542.8571          542.5
+{txt} 5%    {res}      545       542.8571
+{txt}10%    {res}      550       542.8571       {txt}Obs         {res}     13,311
+{txt}25%    {res}      565       542.8571       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res}      590                      {txt}Mean          {res} 601.9561
+                        {txt}Largest       Std. dev.     {res} 46.16793
+{txt}75%    {res}      630            800
+{txt}90%    {res} 668.5714            800       {txt}Variance      {res} 2131.478
+{txt}95%    {res} 691.4286            800       {txt}Skewness      {res} .9799861
+{txt}99%    {res}      740            800       {txt}Kurtosis      {res} 3.627275
+
+                        {txt}LE8_LIFESTYLE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      200       106.6667
+{txt} 5%    {res}      230            145
+{txt}10%    {res}      245            150       {txt}Obs         {res}     13,311
+{txt}25%    {res}      275            150       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res}      305                      {txt}Mean          {res} 303.4395
+                        {txt}Largest       Std. dev.     {res} 43.30388
+{txt}75%    {res}      330            400
+{txt}90%    {res}      360            400       {txt}Variance      {res} 1875.226
+{txt}95%    {res}      380            400       {txt}Skewness      {res}-.1239744
+{txt}99%    {res}      400            400       {txt}Kurtosis      {res} 2.786855
+
+                       {txt}LE8_BIOLOGICAL
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      190            110
+{txt} 5%    {res}      220       126.6667
+{txt}10%    {res}      235       133.3333       {txt}Obs         {res}     13,307
+{txt}25%    {res}      265            140       {txt}Sum of wgt. {res}     13,307
+
+{txt}50%    {res}      295                      {txt}Mean          {res} 298.7456
+                        {txt}Largest       Std. dev.     {res} 48.82674
+{txt}75%    {res} 333.3333            400
+{txt}90%    {res}      360            400       {txt}Variance      {res} 2384.051
+{txt}95%    {res}      400            400       {txt}Skewness      {res} .0436351
+{txt}99%    {res}      400            400       {txt}Kurtosis      {res} 2.668417
+
+               {txt}3 quantiles of LE8_TOTALSCORE 
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        3              3
+{txt} 5%    {res}        3              3
+{txt}10%    {res}        3              3       {txt}Obs         {res}     13,311
+{txt}25%    {res}        3              3       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res}        3                      {txt}Mean          {res}        3
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res}        3              3
+{txt}90%    {res}        3              3       {txt}Variance      {res}        0
+{txt}95%    {res}        3              3       {txt}Skewness      {res}        .
+{txt}99%    {res}        3              3       {txt}Kurtosis      {res}        .
+
+                    {txt}LE8_TOTALSCOREtertinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        1              1
+{txt} 5%    {res}        1              1
+{txt}10%    {res}        1              1       {txt}Obs         {res}     13,311
+{txt}25%    {res}        1              1       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res}        1                      {txt}Mean          {res}        1
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res}        1              1
+{txt}90%    {res}        1              1       {txt}Variance      {res}        0
+{txt}95%    {res}        1              1       {txt}Skewness      {res}        .
+{txt}99%    {res}        1              1       {txt}Kurtosis      {res}        .
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = .
+
+                        LE8_COMP1DIET
+{hline 61}
+no observations
+
+                         LE8_COMP2PA
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}        0              0
+{txt} 5%    {res}        0              .
+{txt}10%    {res}        0              .       {txt}Obs         {res}          1
+{txt}25%    {res}        0              .       {txt}Sum of wgt. {res}          1
+
+{txt}50%    {res}        0                      {txt}Mean          {res}        0
+                        {txt}Largest       Std. dev.     {res}        .
+{txt}75%    {res}        0              .
+{txt}90%    {res}        0              .       {txt}Variance      {res}        .
+{txt}95%    {res}        0              .       {txt}Skewness      {res}        .
+{txt}99%    {res}        0              0       {txt}Kurtosis      {res}        .
+
+                      {txt}LE8_COMP3NICOTINE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      100            100
+{txt} 5%    {res}      100              .
+{txt}10%    {res}      100              .       {txt}Obs         {res}          1
+{txt}25%    {res}      100              .       {txt}Sum of wgt. {res}          1
+
+{txt}50%    {res}      100                      {txt}Mean          {res}      100
+                        {txt}Largest       Std. dev.     {res}        .
+{txt}75%    {res}      100              .
+{txt}90%    {res}      100              .       {txt}Variance      {res}        .
+{txt}95%    {res}      100              .       {txt}Skewness      {res}        .
+{txt}99%    {res}      100            100       {txt}Kurtosis      {res}        .
+
+                       {txt}LE8_COMP4SLEEP
+{hline 61}
+no observations
+
+                        LE8_COMP5BMI
+{hline 61}
+no observations
+
+                       LE8_COMP6LIPIDS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}       20             20
+{txt} 5%    {res}       20              .
+{txt}10%    {res}       20              .       {txt}Obs         {res}          1
+{txt}25%    {res}       20              .       {txt}Sum of wgt. {res}          1
+
+{txt}50%    {res}       20                      {txt}Mean          {res}       20
+                        {txt}Largest       Std. dev.     {res}        .
+{txt}75%    {res}       20              .
+{txt}90%    {res}       20              .       {txt}Variance      {res}        .
+{txt}95%    {res}       20              .       {txt}Skewness      {res}        .
+{txt}99%    {res}       20             20       {txt}Kurtosis      {res}        .
+
+                        {txt}LE8_COMP7GLUC
+{hline 61}
+no observations
+
+                         LE8_COMP8BP
+{hline 61}
+no observations
+
+                       LE8_TOTALSCORE
+{hline 61}
+no observations
+
+                        LE8_LIFESTYLE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}      200            200
+{txt} 5%    {res}      200              .
+{txt}10%    {res}      200              .       {txt}Obs         {res}          1
+{txt}25%    {res}      200              .       {txt}Sum of wgt. {res}          1
+
+{txt}50%    {res}      200                      {txt}Mean          {res}      200
+                        {txt}Largest       Std. dev.     {res}        .
+{txt}75%    {res}      200              .
+{txt}90%    {res}      200              .       {txt}Variance      {res}        .
+{txt}95%    {res}      200              .       {txt}Skewness      {res}        .
+{txt}99%    {res}      200            200       {txt}Kurtosis      {res}        .
+
+                       {txt}LE8_BIOLOGICAL
+{hline 61}
+no observations
+
+               3 quantiles of LE8_TOTALSCORE 
+{hline 61}
+no observations
+
+                    LE8_TOTALSCOREtertinv
+{hline 61}
+no observations
+
+
+{com}. bysort LE8_TOTALSCOREtert: su zLE8* if sample_final==1, det
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 1
+
+            Standardized values of LE8_COMP1DIET
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.082294      -1.082294
+{txt} 5%    {res}-1.082294      -1.082294
+{txt}10%    {res}-1.082294      -1.082294       {txt}Obs         {res}     13,919
+{txt}25%    {res}-1.082294      -1.082294       {txt}Sum of wgt. {res}     13,919
+
+{txt}50%    {res}-1.082294                      {txt}Mean          {res} -.479452
+                        {txt}Largest       Std. dev.     {res} .7721728
+{txt}75%    {res}-.2768653       2.139419
+{txt}90%    {res} .5285628       2.139419       {txt}Variance      {res} .5962509
+{txt}95%    {res} 1.495077       2.139419       {txt}Skewness      {res} 1.205419
+{txt}99%    {res} 2.139419       2.139419       {txt}Kurtosis      {res} 3.825582
+
+             {txt}Standardized values of LE8_COMP2PA
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.306525      -1.306525
+{txt} 5%    {res}-1.306525      -1.306525
+{txt}10%    {res}-1.306525      -1.306525       {txt}Obs         {res}     13,971
+{txt}25%    {res}-1.306525      -1.306525       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res}  -.74285                      {txt}Mean          {res} -.534503
+                        {txt}Largest       Std. dev.     {res} .8594421
+{txt}75%    {res}-.1791755       1.511848
+{txt}90%    {res} .9481736       1.511848       {txt}Variance      {res} .7386407
+{txt}95%    {res} 1.230011       1.511848       {txt}Skewness      {res} .9237779
+{txt}99%    {res} 1.511848       1.511848       {txt}Kurtosis      {res} 2.795563
+
+          {txt}Standardized values of LE8_COMP3NICOTINE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.849678      -2.849678
+{txt} 5%    {res}-2.849678      -2.849678
+{txt}10%    {res}-2.849678      -2.849678       {txt}Obs         {res}     13,971
+{txt}25%    {res}-.3201818      -2.849678       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res} .5229834                      {txt}Mean          {res}-.4226157
+                        {txt}Largest       Std. dev.     {res} 1.319529
+{txt}75%    {res} .5229834       .5229834
+{txt}90%    {res} .5229834       .5229834       {txt}Variance      {res} 1.741156
+{txt}95%    {res} .5229834       .5229834       {txt}Skewness      {res}-1.142808
+{txt}99%    {res} .5229834       .5229834       {txt}Kurtosis      {res} 2.571957
+
+            {txt}Standardized values of LE8_COMP4SLEEP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-3.508051       -4.53317
+{txt} 5%    {res}-2.482932       -4.53317
+{txt}10%    {res}-2.482932       -4.53317       {txt}Obs         {res}     13,737
+{txt}25%    {res}-.9452529       -4.53317       {txt}Sum of wgt. {res}     13,737
+
+{txt}50%    {res}  .592426                      {txt}Mean          {res}-.3261292
+                        {txt}Largest       Std. dev.     {res} 1.212848
+{txt}75%    {res}  .592426        .592426
+{txt}90%    {res}  .592426        .592426       {txt}Variance      {res}    1.471
+{txt}95%    {res}  .592426        .592426       {txt}Skewness      {res}-1.145733
+{txt}99%    {res}  .592426        .592426       {txt}Kurtosis      {res} 3.317485
+
+             {txt}Standardized values of LE8_COMP5BMI
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.369054      -2.369054
+{txt} 5%    {res}-1.844113      -2.369054
+{txt}10%    {res}-1.844113      -2.369054       {txt}Obs         {res}     13,869
+{txt}25%    {res}-1.319173      -2.369054       {txt}Sum of wgt. {res}     13,869
+
+{txt}50%    {res} .0806691                      {txt}Mean          {res}-.5979296
+                        {txt}Largest       Std. dev.     {res} 1.010047
+{txt}75%    {res} .0806691        1.13055
+{txt}90%    {res}  1.13055        1.13055       {txt}Variance      {res} 1.020195
+{txt}95%    {res}  1.13055        1.13055       {txt}Skewness      {res} .0905647
+{txt}99%    {res}  1.13055        1.13055       {txt}Kurtosis      {res}  1.85879
+
+           {txt}Standardized values of LE8_COMP6LIPIDS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.597435      -1.597435
+{txt} 5%    {res}-1.597435      -1.597435
+{txt}10%    {res}-1.597435      -1.597435       {txt}Obs         {res}     12,462
+{txt}25%    {res}-.9466385      -1.597435       {txt}Sum of wgt. {res}     12,462
+
+{txt}50%    {res}-.2958419                      {txt}Mean          {res}-.3049808
+                        {txt}Largest       Std. dev.     {res} .9747888
+{txt}75%    {res} .3549546       1.656548
+{txt}90%    {res} 1.656548       1.656548       {txt}Variance      {res} .9502132
+{txt}95%    {res} 1.656548       1.656548       {txt}Skewness      {res} .5343523
+{txt}99%    {res} 1.656548       1.656548       {txt}Kurtosis      {res} 2.511105
+
+            {txt}Standardized values of LE8_COMP7GLUC
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-3.618261      -4.078392
+{txt} 5%    {res}-2.697999      -4.078392
+{txt}10%    {res}-2.237868      -4.078392       {txt}Obs         {res}     12,995
+{txt}25%    {res}-1.317606      -4.078392       {txt}Sum of wgt. {res}     12,995
+
+{txt}50%    {res} .5229172                      {txt}Mean          {res}-.4415696
+                        {txt}Largest       Std. dev.     {res} 1.229849
+{txt}75%    {res} .5229172       .5229172
+{txt}90%    {res} .5229172       .5229172       {txt}Variance      {res} 1.512528
+{txt}95%    {res} .5229172       .5229172       {txt}Skewness      {res}-.8058133
+{txt}99%    {res} .5229172       .5229172       {txt}Kurtosis      {res} 2.365582
+
+             {txt}Standardized values of LE8_COMP8BP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.229376      -1.229376
+{txt} 5%    {res}-1.229376      -1.229376
+{txt}10%    {res}-1.229376      -1.229376       {txt}Obs         {res}     13,291
+{txt}25%    {res}-1.229376      -1.229376       {txt}Sum of wgt. {res}     13,291
+
+{txt}50%    {res}-.4194217                      {txt}Mean          {res}-.4018466
+                        {txt}Largest       Std. dev.     {res} .7937087
+{txt}75%    {res} .3905326       2.010441
+{txt}90%    {res} .3905326       2.010441       {txt}Variance      {res} .6299735
+{txt}95%    {res} 1.200487       2.010441       {txt}Skewness      {res} .9896085
+{txt}99%    {res} 2.010441       2.010441       {txt}Kurtosis      {res} 3.748987
+
+            {txt}Standardized values of LE8_TOTALSCORE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.837624      -4.464323
+{txt} 5%    {res}-2.206257       -3.98894
+{txt}10%    {res}-1.901716       -3.98894       {txt}Obs         {res}     13,971
+{txt}25%    {res}-1.381767      -3.929518       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res}-.9138126                      {txt}Mean          {res}-1.075644
+                        {txt}Largest       Std. dev.     {res} .5716757
+{txt}75%    {res} -.653838      -.3938634
+{txt}90%    {res}-.4458584      -.3938634       {txt}Variance      {res} .3268131
+{txt}95%    {res}-.4235749      -.3938634       {txt}Skewness      {res}-1.163845
+{txt}99%    {res}-.3938634      -.3938634       {txt}Kurtosis      {res} 4.336884
+
+            {txt}Standardized values of LE8_LIFESTYLE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-3.067418      -3.921464
+{txt} 5%    {res}-2.368653      -3.921464
+{txt}10%    {res}-2.058091      -3.921464       {txt}Obs         {res}     13,971
+{txt}25%    {res}-1.281686      -3.921464       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res}-.8158426                      {txt}Mean          {res}-.8226957
+                        {txt}Largest       Std. dev.     {res} .8584671
+{txt}75%    {res}-.1947184       1.513373
+{txt}90%    {res} .1934843       1.668654       {txt}Variance      {res} .7369658
+{txt}95%    {res} .5040464       1.823935       {txt}Skewness      {res}-.4635048
+{txt}99%    {res}  .892249       1.823935       {txt}Kurtosis      {res} 3.276077
+
+            {txt}Standardized values of LE8_BIOLOGICAL
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.655061      -3.715185
+{txt} 5%    {res}-2.099759      -3.715185
+{txt}10%    {res}-1.796866      -3.715185       {txt}Obs         {res}     13,954
+{txt}25%    {res}-1.367769      -3.715185       {txt}Sum of wgt. {res}     13,954
+
+{txt}50%    {res}-.7619838                      {txt}Mean          {res}-.7673399
+                        {txt}Largest       Std. dev.     {res} .8259913
+{txt}75%    {res} -.231922       2.342664
+{txt}90%    {res} .2224167       2.342664       {txt}Variance      {res} .6822616
+{txt}95%    {res} .6010322       2.342664       {txt}Skewness      {res} .1099705
+{txt}99%    {res} 1.333022       2.342664       {txt}Kurtosis      {res} 3.331634
+
+          {txt}Standardized values of LE8_TOTALSCOREtert
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.193219      -1.193219
+{txt} 5%    {res}-1.193219      -1.193219
+{txt}10%    {res}-1.193219      -1.193219       {txt}Obs         {res}     13,971
+{txt}25%    {res}-1.193219      -1.193219       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res}-1.193219                      {txt}Mean          {res}-1.193219
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res}-1.193219      -1.193219
+{txt}90%    {res}-1.193219      -1.193219       {txt}Variance      {res}        0
+{txt}95%    {res}-1.193219      -1.193219       {txt}Skewness      {res}        .
+{txt}99%    {res}-1.193219      -1.193219       {txt}Kurtosis      {res}        .
+
+        {txt}Standardized values of LE8_TOTALSCOREtertinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 1.193219       1.193219
+{txt} 5%    {res} 1.193219       1.193219
+{txt}10%    {res} 1.193219       1.193219       {txt}Obs         {res}     13,971
+{txt}25%    {res} 1.193219       1.193219       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res} 1.193219                      {txt}Mean          {res} 1.193219
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res} 1.193219       1.193219
+{txt}90%    {res} 1.193219       1.193219       {txt}Variance      {res}        0
+{txt}95%    {res} 1.193219       1.193219       {txt}Skewness      {res}        .
+{txt}99%    {res} 1.193219       1.193219       {txt}Kurtosis      {res}        .
+
+                     {txt}zLE8_TOTALSCOREinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} .3938634       .3938634
+{txt} 5%    {res} .4235749       .3938634
+{txt}10%    {res} .4458584       .3938634       {txt}Obs         {res}     13,971
+{txt}25%    {res}  .653838       .3938634       {txt}Sum of wgt. {res}     13,971
+
+{txt}50%    {res} .9138126                      {txt}Mean          {res} 1.075644
+                        {txt}Largest       Std. dev.     {res} .5716757
+{txt}75%    {res} 1.381767       3.929518
+{txt}90%    {res} 1.901716        3.98894       {txt}Variance      {res} .3268131
+{txt}95%    {res} 2.206257        3.98894       {txt}Skewness      {res} 1.163845
+{txt}99%    {res} 2.837624       4.464323       {txt}Kurtosis      {res} 4.336884
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 2
+
+            Standardized values of LE8_COMP1DIET
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.082294      -1.082294
+{txt} 5%    {res}-1.082294      -1.082294
+{txt}10%    {res}-1.082294      -1.082294       {txt}Obs         {res}     12,844
+{txt}25%    {res}-1.082294      -1.082294       {txt}Sum of wgt. {res}     12,844
+
+{txt}50%    {res}-.2768653                      {txt}Mean          {res}-.0484057
+                        {txt}Largest       Std. dev.     {res}  .926449
+{txt}75%    {res} .5285628       2.139419
+{txt}90%    {res} 1.495077       2.139419       {txt}Variance      {res} .8583078
+{txt}95%    {res} 1.495077       2.139419       {txt}Skewness      {res} .5587749
+{txt}99%    {res} 2.139419       2.139419       {txt}Kurtosis      {res} 2.393313
+
+             {txt}Standardized values of LE8_COMP2PA
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.306525      -1.306525
+{txt} 5%    {res}-1.306525      -1.306525
+{txt}10%    {res}-1.306525      -1.306525       {txt}Obs         {res}     12,856
+{txt}25%    {res}  -.74285      -1.306525       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res}-.1791755                      {txt}Mean          {res} .0300541
+                        {txt}Largest       Std. dev.     {res} .9605877
+{txt}75%    {res} .9481736       1.511848
+{txt}90%    {res} 1.511848       1.511848       {txt}Variance      {res} .9227286
+{txt}95%    {res} 1.511848       1.511848       {txt}Skewness      {res} .1042644
+{txt}99%    {res} 1.511848       1.511848       {txt}Kurtosis      {res}  1.77111
+
+          {txt}Standardized values of LE8_COMP3NICOTINE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.849678      -2.849678
+{txt} 5%    {res}-2.849678      -2.849678
+{txt}10%    {res}-.3201818      -2.849678       {txt}Obs         {res}     12,856
+{txt}25%    {res}-.1515488      -2.849678       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res} .5229834                      {txt}Mean          {res} .1313077
+                        {txt}Largest       Std. dev.     {res}  .806919
+{txt}75%    {res} .5229834       .5229834
+{txt}90%    {res} .5229834       .5229834       {txt}Variance      {res} .6511182
+{txt}95%    {res} .5229834       .5229834       {txt}Skewness      {res}-2.771798
+{txt}99%    {res} .5229834       .5229834       {txt}Kurtosis      {res} 10.32209
+
+            {txt}Standardized values of LE8_COMP4SLEEP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.482932       -4.53317
+{txt} 5%    {res}-2.482932       -4.53317
+{txt}10%    {res}-.9452529       -4.53317       {txt}Obs         {res}     12,771
+{txt}25%    {res}-.9452529       -4.53317       {txt}Sum of wgt. {res}     12,771
+
+{txt}50%    {res}  .592426                      {txt}Mean          {res} .0659798
+                        {txt}Largest       Std. dev.     {res} .9080635
+{txt}75%    {res}  .592426        .592426
+{txt}90%    {res}  .592426        .592426       {txt}Variance      {res} .8245793
+{txt}95%    {res}  .592426        .592426       {txt}Skewness      {res}-1.793592
+{txt}99%    {res}  .592426        .592426       {txt}Kurtosis      {res} 5.740738
+
+             {txt}Standardized values of LE8_COMP5BMI
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.844113      -2.369054
+{txt} 5%    {res}-1.319173      -2.369054
+{txt}10%    {res}-1.319173      -2.369054       {txt}Obs         {res}     12,807
+{txt}25%    {res} .0806691      -2.369054       {txt}Sum of wgt. {res}     12,807
+
+{txt}50%    {res} .0806691                      {txt}Mean          {res} .0564722
+                        {txt}Largest       Std. dev.     {res} .8840817
+{txt}75%    {res}  1.13055        1.13055
+{txt}90%    {res}  1.13055        1.13055       {txt}Variance      {res} .7816004
+{txt}95%    {res}  1.13055        1.13055       {txt}Skewness      {res}-.6000291
+{txt}99%    {res}  1.13055        1.13055       {txt}Kurtosis      {res} 2.651568
+
+           {txt}Standardized values of LE8_COMP6LIPIDS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.597435      -1.597435
+{txt} 5%    {res}-1.597435      -1.597435
+{txt}10%    {res}-.9466385      -1.597435       {txt}Obs         {res}     11,412
+{txt}25%    {res}-.9466385      -1.597435       {txt}Sum of wgt. {res}     11,412
+
+{txt}50%    {res}-.2958419                      {txt}Mean          {res}-.0533615
+                        {txt}Largest       Std. dev.     {res} .9578674
+{txt}75%    {res} .3549546       1.656548
+{txt}90%    {res} 1.656548       1.656548       {txt}Variance      {res}   .91751
+{txt}95%    {res} 1.656548       1.656548       {txt}Skewness      {res} .3588796
+{txt}99%    {res} 1.656548       1.656548       {txt}Kurtosis      {res} 2.379393
+
+            {txt}Standardized values of LE8_COMP7GLUC
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.697999      -4.078392
+{txt} 5%    {res}-2.237868      -4.078392
+{txt}10%    {res}-1.317606      -4.078392       {txt}Obs         {res}     12,277
+{txt}25%    {res} .5229172      -4.078392       {txt}Sum of wgt. {res}     12,277
+
+{txt}50%    {res} .5229172                      {txt}Mean          {res}   .10986
+                        {txt}Largest       Std. dev.     {res} .8865233
+{txt}75%    {res} .5229172       .5229172
+{txt}90%    {res} .5229172       .5229172       {txt}Variance      {res} .7859235
+{txt}95%    {res} .5229172       .5229172       {txt}Skewness      {res}-1.921281
+{txt}99%    {res} .5229172       .5229172       {txt}Kurtosis      {res}   5.4525
+
+             {txt}Standardized values of LE8_COMP8BP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.229376      -1.229376
+{txt} 5%    {res}-1.229376      -1.229376
+{txt}10%    {res}-1.229376      -1.229376       {txt}Obs         {res}     12,168
+{txt}25%    {res}-.4194217      -1.229376       {txt}Sum of wgt. {res}     12,168
+
+{txt}50%    {res}-.4194217                      {txt}Mean          {res}-.0835649
+                        {txt}Largest       Std. dev.     {res} .9239279
+{txt}75%    {res} .3905326       2.010441
+{txt}90%    {res} 1.200487       2.010441       {txt}Variance      {res} .8536427
+{txt}95%    {res} 2.010441       2.010441       {txt}Skewness      {res} .6648677
+{txt}99%    {res} 2.010441       2.010441       {txt}Kurtosis      {res} 2.748124
+
+            {txt}Standardized values of LE8_TOTALSCORE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.3418685       -.367866
+{txt} 5%    {res}-.3418685       -.367866
+{txt}10%    {res}-.2898736       -.364152       {txt}Obs         {res}     12,856
+{txt}25%    {res}-.1338889       -.364152       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res} .0518073                      {txt}Mean          {res} .0482923
+                        {txt}Largest       Std. dev.     {res} .2359681
+{txt}75%    {res} .2300755       .4380552
+{txt}90%    {res} .3860602       .4380552       {txt}Variance      {res} .0556809
+{txt}95%    {res}  .408344       .4380552       {txt}Skewness      {res}-.0229743
+{txt}99%    {res} .4380552       .4380552       {txt}Kurtosis      {res} 1.815359
+
+            {txt}Standardized values of LE8_LIFESTYLE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.708709      -2.886257
+{txt} 5%    {res}-1.022884      -2.834496
+{txt}10%    {res}-.8158426      -2.834496       {txt}Obs         {res}     12,856
+{txt}25%    {res}  -.42764      -2.834496       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res} .1158438                      {txt}Mean          {res} .0757613
+                        {txt}Largest       Std. dev.     {res} .6819681
+{txt}75%    {res} .5816869       2.134498
+{txt}90%    {res}  .892249       2.134498       {txt}Variance      {res} .4650805
+{txt}95%    {res} 1.125171       2.134498       {txt}Skewness      {res}-.2252239
+{txt}99%    {res} 1.513373       2.134498       {txt}Kurtosis      {res} 3.168895
+
+            {txt}Standardized values of LE8_BIOLOGICAL
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.594938      -2.604579
+{txt} 5%    {res}-1.140599      -2.604579
+{txt}10%    {res}-.8377069      -2.503615       {txt}Obs         {res}     12,847
+{txt}25%    {res}-.4590913      -2.301687       {txt}Sum of wgt. {res}     12,847
+
+{txt}50%    {res}-.0804758                      {txt}Mean          {res}-.0047193
+                        {txt}Largest       Std. dev.     {res} .7048177
+{txt}75%    {res}  .449586       2.342664
+{txt}90%    {res} .9039246       2.342664       {txt}Variance      {res}  .496768
+{txt}95%    {res} 1.206817       2.342664       {txt}Skewness      {res} .1908735
+{txt}99%    {res} 1.736879       2.342664       {txt}Kurtosis      {res} 3.165483
+
+          {txt}Standardized values of LE8_TOTALSCOREtert
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} .0199484       .0199484
+{txt} 5%    {res} .0199484       .0199484
+{txt}10%    {res} .0199484       .0199484       {txt}Obs         {res}     12,856
+{txt}25%    {res} .0199484       .0199484       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res} .0199484                      {txt}Mean          {res} .0199484
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res} .0199484       .0199484
+{txt}90%    {res} .0199484       .0199484       {txt}Variance      {res}        0
+{txt}95%    {res} .0199484       .0199484       {txt}Skewness      {res}        .
+{txt}99%    {res} .0199484       .0199484       {txt}Kurtosis      {res}        .
+
+        {txt}Standardized values of LE8_TOTALSCOREtertinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.0199484      -.0199484
+{txt} 5%    {res}-.0199484      -.0199484
+{txt}10%    {res}-.0199484      -.0199484       {txt}Obs         {res}     12,856
+{txt}25%    {res}-.0199484      -.0199484       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res}-.0199484                      {txt}Mean          {res}-.0199484
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res}-.0199484      -.0199484
+{txt}90%    {res}-.0199484      -.0199484       {txt}Variance      {res}        0
+{txt}95%    {res}-.0199484      -.0199484       {txt}Skewness      {res}        .
+{txt}99%    {res}-.0199484      -.0199484       {txt}Kurtosis      {res}        .
+
+                     {txt}zLE8_TOTALSCOREinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.4380552      -.4380552
+{txt} 5%    {res} -.408344      -.4380552
+{txt}10%    {res}-.3860602      -.4380552       {txt}Obs         {res}     12,856
+{txt}25%    {res}-.2300755      -.4380552       {txt}Sum of wgt. {res}     12,856
+
+{txt}50%    {res}-.0518073                      {txt}Mean          {res}-.0482923
+                        {txt}Largest       Std. dev.     {res} .2359681
+{txt}75%    {res} .1338889        .364152
+{txt}90%    {res} .2898736        .364152       {txt}Variance      {res} .0556809
+{txt}95%    {res} .3418685        .367866       {txt}Skewness      {res} .0229743
+{txt}99%    {res} .3418685        .367866       {txt}Kurtosis      {res} 1.815359
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = 3
+
+            Standardized values of LE8_COMP1DIET
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.082294      -1.082294
+{txt} 5%    {res}-1.082294      -1.082294
+{txt}10%    {res}-1.082294      -1.082294       {txt}Obs         {res}     13,304
+{txt}25%    {res}-.2768653      -1.082294       {txt}Sum of wgt. {res}     13,304
+
+{txt}50%    {res} .5285628                      {txt}Mean          {res} .5483474
+                        {txt}Largest       Std. dev.     {res} 1.007903
+{txt}75%    {res} 1.495077       2.139419
+{txt}90%    {res} 2.139419       2.139419       {txt}Variance      {res} 1.015869
+{txt}95%    {res} 2.139419       2.139419       {txt}Skewness      {res} -.066747
+{txt}99%    {res} 2.139419       2.139419       {txt}Kurtosis      {res} 1.949241
+
+             {txt}Standardized values of LE8_COMP2PA
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.306525      -1.306525
+{txt} 5%    {res}-1.306525      -1.306525
+{txt}10%    {res}  -.74285      -1.306525       {txt}Obs         {res}     13,311
+{txt}25%    {res}-.1791755      -1.306525       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res} .3844991                      {txt}Mean          {res} .5320767
+                        {txt}Largest       Std. dev.     {res} .8747373
+{txt}75%    {res} 1.230011       1.511848
+{txt}90%    {res} 1.511848       1.511848       {txt}Variance      {res} .7651654
+{txt}95%    {res} 1.511848       1.511848       {txt}Skewness      {res}-.5751775
+{txt}99%    {res} 1.511848       1.511848       {txt}Kurtosis      {res}  2.23616
+
+          {txt}Standardized values of LE8_COMP3NICOTINE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.849678      -2.849678
+{txt} 5%    {res}-.3201818      -2.849678
+{txt}10%    {res}-.1515488      -2.849678       {txt}Obs         {res}     13,311
+{txt}25%    {res} .5229834      -2.849678       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res} .5229834                      {txt}Mean          {res} .3167117
+                        {txt}Largest       Std. dev.     {res}  .504788
+{txt}75%    {res} .5229834       .5229834
+{txt}90%    {res} .5229834       .5229834       {txt}Variance      {res} .2548109
+{txt}95%    {res} .5229834       .5229834       {txt}Skewness      {res}-3.968254
+{txt}99%    {res} .5229834       .5229834       {txt}Kurtosis      {res} 23.04113
+
+            {txt}Standardized values of LE8_COMP4SLEEP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.482932       -4.53317
+{txt} 5%    {res}-.9452529       -4.53317
+{txt}10%    {res}-.9452529       -4.53317       {txt}Obs         {res}     13,269
+{txt}25%    {res}  .592426       -4.53317       {txt}Sum of wgt. {res}     13,269
+
+{txt}50%    {res}  .592426                      {txt}Mean          {res} .2741284
+                        {txt}Largest       Std. dev.     {res} .7013642
+{txt}75%    {res}  .592426        .592426
+{txt}90%    {res}  .592426        .592426       {txt}Variance      {res} .4919118
+{txt}95%    {res}  .592426        .592426       {txt}Skewness      {res}-2.471117
+{txt}99%    {res}  .592426        .592426       {txt}Kurtosis      {res}  9.37661
+
+             {txt}Standardized values of LE8_COMP5BMI
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.319173      -2.369054
+{txt} 5%    {res}-1.319173      -2.369054
+{txt}10%    {res} .0806691      -2.369054       {txt}Obs         {res}     13,266
+{txt}25%    {res} .0806691      -2.369054       {txt}Sum of wgt. {res}     13,266
+
+{txt}50%    {res}  1.13055                      {txt}Mean          {res}   .57059
+                        {txt}Largest       Std. dev.     {res} .6981438
+{txt}75%    {res}  1.13055        1.13055
+{txt}90%    {res}  1.13055        1.13055       {txt}Variance      {res} .4874048
+{txt}95%    {res}  1.13055        1.13055       {txt}Skewness      {res}-1.172078
+{txt}99%    {res}  1.13055        1.13055       {txt}Kurtosis      {res} 4.217594
+
+           {txt}Standardized values of LE8_COMP6LIPIDS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.597435      -1.597435
+{txt} 5%    {res}-.9466385      -1.597435
+{txt}10%    {res}-.9466385      -1.597435       {txt}Obs         {res}     11,201
+{txt}25%    {res}-.2958419      -1.597435       {txt}Sum of wgt. {res}     11,201
+
+{txt}50%    {res} .3549546                      {txt}Mean          {res} .3937665
+                        {txt}Largest       Std. dev.     {res} .9371035
+{txt}75%    {res} 1.656548       1.656548
+{txt}90%    {res} 1.656548       1.656548       {txt}Variance      {res}  .878163
+{txt}95%    {res} 1.656548       1.656548       {txt}Skewness      {res}-.0157046
+{txt}99%    {res} 1.656548       1.656548       {txt}Kurtosis      {res} 2.077146
+
+            {txt}Standardized values of LE8_COMP7GLUC
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.237868      -4.078392
+{txt} 5%    {res}-1.317606      -4.078392
+{txt}10%    {res} .5229172      -3.618261       {txt}Obs         {res}     12,851
+{txt}25%    {res} .5229172      -3.618261       {txt}Sum of wgt. {res}     12,851
+
+{txt}50%    {res} .5229172                      {txt}Mean          {res} .3415645
+                        {txt}Largest       Std. dev.     {res} .6008391
+{txt}75%    {res} .5229172       .5229172
+{txt}90%    {res} .5229172       .5229172       {txt}Variance      {res} .3610076
+{txt}95%    {res} .5229172       .5229172       {txt}Skewness      {res}-3.273097
+{txt}99%    {res} .5229172       .5229172       {txt}Kurtosis      {res} 12.96194
+
+             {txt}Standardized values of LE8_COMP8BP
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.229376      -1.229376
+{txt} 5%    {res}-1.229376      -1.229376
+{txt}10%    {res}-.4194217      -1.229376       {txt}Obs         {res}     12,284
+{txt}25%    {res}-.4194217      -1.229376       {txt}Sum of wgt. {res}     12,284
+
+{txt}50%    {res} .3905326                      {txt}Mean          {res} .5175643
+                        {txt}Largest       Std. dev.     {res} 1.046879
+{txt}75%    {res} 1.200487       2.010441
+{txt}90%    {res} 2.010441       2.010441       {txt}Variance      {res} 1.095956
+{txt}95%    {res} 2.010441       2.010441       {txt}Skewness      {res} .0477418
+{txt}99%    {res} 2.010441       2.010441       {txt}Kurtosis      {res} 1.838579
+
+            {txt}Standardized values of LE8_TOTALSCORE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} .4677663       .4640526
+{txt} 5%    {res}   .49005       .4677663
+{txt}10%    {res}  .542045       .4677663       {txt}Obs         {res}     13,311
+{txt}25%    {res} .6980297       .4677663       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res} .9580043                      {txt}Mean          {res} 1.082336
+                        {txt}Largest       Std. dev.     {res} .4800995
+{txt}75%    {res} 1.373964       3.141791
+{txt}90%    {res} 1.775067       3.141791       {txt}Variance      {res} .2304956
+{txt}95%    {res} 2.012758       3.141791       {txt}Skewness      {res} .9799861
+{txt}99%    {res} 2.517852       3.141791       {txt}Kurtosis      {res} 3.627274
+
+            {txt}Standardized values of LE8_LIFESTYLE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.8158426      -2.265133
+{txt} 5%    {res}-.3499994      -1.669888
+{txt}10%    {res}-.1170778      -1.592248       {txt}Obs         {res}     13,311
+{txt}25%    {res} .3487653      -1.592248       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res} .8146085                      {txt}Mean          {res} .7903771
+                        {txt}Largest       Std. dev.     {res} .6724272
+{txt}75%    {res} 1.202811       2.289779
+{txt}90%    {res} 1.668654       2.289779       {txt}Variance      {res} .4521584
+{txt}95%    {res} 1.979216       2.289779       {txt}Skewness      {res}-.1239744
+{txt}99%    {res} 2.289779       2.289779       {txt}Kurtosis      {res} 2.786855
+
+            {txt}Standardized values of LE8_BIOLOGICAL
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.8377069      -2.049277
+{txt} 5%    {res}-.3833682      -1.796866
+{txt}10%    {res}-.1561989      -1.695902       {txt}Obs         {res}     13,307
+{txt}25%    {res} .2981398      -1.594938       {txt}Sum of wgt. {res}     13,307
+
+{txt}50%    {res} .7524784                      {txt}Mean          {res} .8092049
+                        {txt}Largest       Std. dev.     {res} .7394625
+{txt}75%    {res} 1.333022       2.342664
+{txt}90%    {res} 1.736879       2.342664       {txt}Variance      {res} .5468048
+{txt}95%    {res} 2.342664       2.342664       {txt}Skewness      {res} .0436351
+{txt}99%    {res} 2.342664       2.342664       {txt}Kurtosis      {res} 2.668417
+
+          {txt}Standardized values of LE8_TOTALSCOREtert
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} 1.233116       1.233116
+{txt} 5%    {res} 1.233116       1.233116
+{txt}10%    {res} 1.233116       1.233116       {txt}Obs         {res}     13,311
+{txt}25%    {res} 1.233116       1.233116       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res} 1.233116                      {txt}Mean          {res} 1.233116
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res} 1.233116       1.233116
+{txt}90%    {res} 1.233116       1.233116       {txt}Variance      {res}        0
+{txt}95%    {res} 1.233116       1.233116       {txt}Skewness      {res}        .
+{txt}99%    {res} 1.233116       1.233116       {txt}Kurtosis      {res}        .
+
+        {txt}Standardized values of LE8_TOTALSCOREtertinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.233116      -1.233116
+{txt} 5%    {res}-1.233116      -1.233116
+{txt}10%    {res}-1.233116      -1.233116       {txt}Obs         {res}     13,311
+{txt}25%    {res}-1.233116      -1.233116       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res}-1.233116                      {txt}Mean          {res}-1.233116
+                        {txt}Largest       Std. dev.     {res}        0
+{txt}75%    {res}-1.233116      -1.233116
+{txt}90%    {res}-1.233116      -1.233116       {txt}Variance      {res}        0
+{txt}95%    {res}-1.233116      -1.233116       {txt}Skewness      {res}        .
+{txt}99%    {res}-1.233116      -1.233116       {txt}Kurtosis      {res}        .
+
+                     {txt}zLE8_TOTALSCOREinv
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-2.517852      -3.141791
+{txt} 5%    {res}-2.012758      -3.141791
+{txt}10%    {res}-1.775067      -3.141791       {txt}Obs         {res}     13,311
+{txt}25%    {res}-1.373964      -3.141791       {txt}Sum of wgt. {res}     13,311
+
+{txt}50%    {res}-.9580043                      {txt}Mean          {res}-1.082336
+                        {txt}Largest       Std. dev.     {res} .4800995
+{txt}75%    {res}-.6980297      -.4677663
+{txt}90%    {res} -.542045      -.4677663       {txt}Variance      {res} .2304956
+{txt}95%    {res}  -.49005      -.4677663       {txt}Skewness      {res}-.9799861
+{txt}99%    {res}-.4677663      -.4640526       {txt}Kurtosis      {res} 3.627274
+
+{txt}{hline}
+-> LE8_TOTALSCOREtert = .
+
+            Standardized values of LE8_COMP1DIET
+{hline 61}
+no observations
+
+             Standardized values of LE8_COMP2PA
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-1.306525      -1.306525
+{txt} 5%    {res}-1.306525              .
+{txt}10%    {res}-1.306525              .       {txt}Obs         {res}          1
+{txt}25%    {res}-1.306525              .       {txt}Sum of wgt. {res}          1
+
+{txt}50%    {res}-1.306525                      {txt}Mean          {res}-1.306525
+                        {txt}Largest       Std. dev.     {res}        .
+{txt}75%    {res}-1.306525              .
+{txt}90%    {res}-1.306525              .       {txt}Variance      {res}        .
+{txt}95%    {res}-1.306525              .       {txt}Skewness      {res}        .
+{txt}99%    {res}-1.306525      -1.306525       {txt}Kurtosis      {res}        .
+
+          {txt}Standardized values of LE8_COMP3NICOTINE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} .5229834       .5229834
+{txt} 5%    {res} .5229834              .
+{txt}10%    {res} .5229834              .       {txt}Obs         {res}          1
+{txt}25%    {res} .5229834              .       {txt}Sum of wgt. {res}          1
+
+{txt}50%    {res} .5229834                      {txt}Mean          {res} .5229834
+                        {txt}Largest       Std. dev.     {res}        .
+{txt}75%    {res} .5229834              .
+{txt}90%    {res} .5229834              .       {txt}Variance      {res}        .
+{txt}95%    {res} .5229834              .       {txt}Skewness      {res}        .
+{txt}99%    {res} .5229834       .5229834       {txt}Kurtosis      {res}        .
+
+            {txt}Standardized values of LE8_COMP4SLEEP
+{hline 61}
+no observations
+
+             Standardized values of LE8_COMP5BMI
+{hline 61}
+no observations
+
+           Standardized values of LE8_COMP6LIPIDS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.9466385      -.9466385
+{txt} 5%    {res}-.9466385              .
+{txt}10%    {res}-.9466385              .       {txt}Obs         {res}          1
+{txt}25%    {res}-.9466385              .       {txt}Sum of wgt. {res}          1
+
+{txt}50%    {res}-.9466385                      {txt}Mean          {res}-.9466385
+                        {txt}Largest       Std. dev.     {res}        .
+{txt}75%    {res}-.9466385              .
+{txt}90%    {res}-.9466385              .       {txt}Variance      {res}        .
+{txt}95%    {res}-.9466385              .       {txt}Skewness      {res}        .
+{txt}99%    {res}-.9466385      -.9466385       {txt}Kurtosis      {res}        .
+
+            {txt}Standardized values of LE8_COMP7GLUC
+{hline 61}
+no observations
+
+             Standardized values of LE8_COMP8BP
+{hline 61}
+no observations
+
+            Standardized values of LE8_TOTALSCORE
+{hline 61}
+no observations
+
+            Standardized values of LE8_LIFESTYLE
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}-.8158426      -.8158426
+{txt} 5%    {res}-.8158426              .
+{txt}10%    {res}-.8158426              .       {txt}Obs         {res}          1
+{txt}25%    {res}-.8158426              .       {txt}Sum of wgt. {res}          1
+
+{txt}50%    {res}-.8158426                      {txt}Mean          {res}-.8158426
+                        {txt}Largest       Std. dev.     {res}        .
+{txt}75%    {res}-.8158426              .
+{txt}90%    {res}-.8158426              .       {txt}Variance      {res}        .
+{txt}95%    {res}-.8158426              .       {txt}Skewness      {res}        .
+{txt}99%    {res}-.8158426      -.8158426       {txt}Kurtosis      {res}        .
+
+            {txt}Standardized values of LE8_BIOLOGICAL
+{hline 61}
+no observations
+
+          Standardized values of LE8_TOTALSCOREtert
+{hline 61}
+no observations
+
+        Standardized values of LE8_TOTALSCOREtertinv
+{hline 61}
+no observations
+
+                     zLE8_TOTALSCOREinv
+{hline 61}
+no observations
+
+
+{com}. 
+. 
+. capture drop zLE8_LIFESTYLE 
+{txt}
+{com}. capture drop zLE8_BIOLOGICAL
+{txt}
+{com}. egen zLE8_LIFESTYLE=std(LE8_LIFESTYLE) if sample_final==1
+{txt}
+{com}. egen zLE8_BIOLOGICAL=std(LE8_BIOLOGICAL) if sample_final==1
+{txt}(31 missing values generated)
+
+{com}. 
+. 
+. capture drop zLE8_LIFESTYLEinv
+{txt}
+{com}. capture drop zLE8_BIOLOGICALinv
+{txt}
+{com}. gen zLE8_LIFESTYLEinv=zLE8_LIFESTYLE*-1
+{txt}
+{com}. gen zLE8_BIOLOGICALinv=zLE8_LIFESTYLE*-1
+{txt}
+{com}. 
+. 
+. bysort AD_PGStert: su AD_PGS if sample_final==1, det
+
+{txt}{hline}
+-> AD_PGStert = 1
+
+                           AD_PGS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} -2.07007       -3.33377
+{txt} 5%    {res} -1.71386       -3.25108
+{txt}10%    {res}-1.501165       -3.07275       {txt}Obs         {res}     13,380
+{txt}25%    {res} -1.16759       -2.99177       {txt}Sum of wgt. {res}     13,380
+
+{txt}50%    {res}-.8606715                      {txt}Mean          {res}-.9487374
+                        {txt}Largest       Std. dev.     {res} .3875135
+{txt}75%    {res} -.643941       -.451778
+{txt}90%    {res} -.527236       -.451775       {txt}Variance      {res} .1501667
+{txt}95%    {res} -.487802       -.451764       {txt}Skewness      {res}-1.089733
+{txt}99%    {res} -.459486       -.451712       {txt}Kurtosis      {res} 4.243885
+
+{txt}{hline}
+-> AD_PGStert = 2
+
+                           AD_PGS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res} -.444404       -.451558
+{txt} 5%    {res} -.414064       -.451485
+{txt}10%    {res} -.377475       -.451368       {txt}Obs         {res}     13,380
+{txt}25%    {res} -.272703       -.451307       {txt}Sum of wgt. {res}     13,380
+
+{txt}50%    {res}-.0843685                      {txt}Mean          {res}-.0757458
+                        {txt}Largest       Std. dev.     {res} .2254769
+{txt}75%    {res}  .110653         .34903
+{txt}90%    {res} .2468555        .349085       {txt}Variance      {res} .0508398
+{txt}95%    {res}  .294637        .349186       {txt}Skewness      {res} .1227774
+{txt}99%    {res}   .33736        .349275       {txt}Kurtosis      {res} 1.857567
+
+{txt}{hline}
+-> AD_PGStert = 3
+
+                           AD_PGS
+{hline 61}
+      Percentiles      Smallest
+ 1%    {res}  .358985        .349311
+{txt} 5%    {res}  .403396        .349355
+{txt}10%    {res}  .457483        .349684       {txt}Obs         {res}     13,379
+{txt}25%    {res}  .648458        .349732       {txt}Sum of wgt. {res}     13,379
+
+{txt}50%    {res}  1.06293                      {txt}Mean          {res} 1.218853
+                        {txt}Largest       Std. dev.     {res} .7087784
+{txt}75%    {res}  1.61494         4.9002
+{txt}90%    {res}  2.18804         4.9028       {txt}Variance      {res} .5023669
+{txt}95%    {res}  2.62607        4.92824       {txt}Skewness      {res} 1.140709
+{txt}99%    {res}  3.44426        4.98366       {txt}Kurtosis      {res} 4.324853
+
+{txt}
+{com}. 
+. capture log close
+{smcl}
+{com}{sf}{ul off}
