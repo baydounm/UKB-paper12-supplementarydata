@@ -5,5 +5,5 @@ This repository contains supplementary and main analyses, Stata script, and code
 May A. Beydoun1,*,#, † ; Hind A. Beydoun1,#; Zhiguang Li1,# ; Yi-Han Hu1; Nicole Noren Hooten1; Jun Ding2; Sharmin Hossain1; Christian A. Maino Vieytes1;  Lenore J. Launer1; Michele K. Evans1; Alan B. Zonderman1
 
 
-Currently under review in Brain. 
+Published in Geroscience. 
 
